@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>分享设备</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link href="../css/app.css" rel="stylesheet" />
+		<link href="../css/mui.picker.css" rel="stylesheet" />
+		<link href="../css/mui.poppicker.css" rel="stylesheet" />
+		<style>
+			.mui-btn {
+				font-size: 16px;
+				padding: 8px;
+				margin: 3px;
+			}
+			h5.mui-content-padded {
+				margin-left: 3px;
+				margin-top: 20px !important;
+			}
+			h5.mui-content-padded:first-child {
+				margin-top: 12px !important;
+			}
+			.ui-alert {
+				text-align: center;
+				padding: 20px 10px;
+				font-size: 16px;
+			}
+			.mui-switch:before{
+				content:'停用';
+				top:0px;
+			}
+			.mui-switch.mui-active:before{
+				content:'启用';
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+			<header id="header" class="mui-bar mui-bar-nav backwhite shadow0">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left col333"></a>
+				<h1 class="mui-title col333">分享设备</h1>
+			</header>
+			
+			<div class="mui-content">
+				<div  class="">
+					<form action="" method="">
+						<div class="module">
+							<p class="amblist col333">分享设置</p>
+							<ul class="device-ul">
+								<li class="mui-card bor-radius5">
+									<div class="mui-card-content">
+										<div class="mui-card-content-inner">
+											<ul class="mui-table-view">
+												<li class="mui-table-view-cell padd0" id="share-name-li">
+													<label class="fl fosize09 list-form-name">有效期</label>
+													
+													<a class="mui-icon mui-icon-arrowright form-icon colgrey fr" style="line-height:60px !important;"></a>
+													<input type="text" readonly="readonly" class="mui-input-clear colgrey fosize09 fl share-input" name=""  value="一小时有效"  id='share-name'>
+												</li>
+												<li class="mui-table-view-cell padd0">
+													<label class="fl fosize09 list-form-name">分享给</label>
+													<input type="text" readonly="readonly" class="mui-input-clear colgrey fosize09 fl reg-input" name=""  value="23.00">					
+												</li>
+												<!-- <li class="mui-table-view-cell padd0">
+													<label class="fl fosize09 list-form-name">状态</label>
+													<input type="text" class="mui-input-clear colgrey fosize09 fl reg-input" name=""  value="启用">					
+												</li> -->
+												<li class="mui-table-view-cell padd0">
+													<span class="fl fosize09 list-form-name">状态</span>
+													<div class="mui-switch mui-switch-blue mui-disabled mui-active">
+														<div class="mui-switch-handle"></div>
+													</div>
+												</li>
+												
+											</ul>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						
+						<div class="module">
+							<p class="amblist col333">分享二维码，长按发送给朋友</p>
+							<ul class="device-ul">
+								<li class="mui-card bor-radius5">
+									<div class="mui-card-content">
+										<div class="mui-card-content-inner">
+											<ul class="mui-table-view">
+												<li class="mui-table-view-cell padd0">
+													<img src="../images/ercode.png" class="er-code">					
+												</li>
+											</ul>
+											
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</form>
+				</div>
+			</div>
+			
+			
+			
+			
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.picker.js"></script>
+		<script src="../js/mui.picker.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			
+			
+			
+			
+			
+		</script>
+	</body>
+
+</html>

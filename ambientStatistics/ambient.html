@@ -1,0 +1,300 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>环境</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../css/icons-extra.css"/>
+    <link href="../css/app.css" rel="stylesheet"/>
+    <style>
+		.echarts{
+			width: 100vw;
+			height: 50vh;
+			margin: 30px auto;
+		}
+		.data-range {
+			display: flex;
+			justify-content: space-around;
+			flex-wrap: wrap;
+			padding: 10px 16px;
+		}
+
+		.data-range .range-item {
+			margin: 10px 4px;
+		}
+
+		.data-range .range-item.active {
+			background-color: #007aff;
+			color: #fff;
+		}
+    </style>
+</head>
+
+<body>
+
+<!-- <header id="header" class="mui-bar mui-bar-nav backblue">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left colwhite"></a>
+    <h1 class="mui-title colwhite">环境</h1>
+</header> -->
+<header id="header" class="mui-bar mui-bar-nav backwhite shadow0">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left col333"></a>
+    <h1 class="mui-title col333">环境统计</h1>
+</header>
+
+<div class="mui-content">
+    <div class="execu-tab backwhite">
+        <div id="segmentedControl"
+             class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
+            <a class="mui-control-item mui-active" href="#item1">数据统计</a>
+            <a class="mui-control-item" href="#item2">图表展示</a>
+        </div>
+    </div>
+    <div>
+        <div id="item1" class="mui-control-content mui-active">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media sys-alert">
+					<a href="javascript:;">
+						<div class="mui-media-body">
+							<div>
+								<p class='mui-ellipsis log-content fosize09'>
+									<span>设备1</span>
+									<span class="log-time fr fosize09">2020-07-24 23:29</span>
+								</p>
+								<span class="log-name fosize09">温度：23，湿度：23，光照：23</span>
+								
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media sys-alert">
+					<a href="javascript:;">
+						<div class="mui-media-body">
+							<div>
+								<p class='mui-ellipsis log-content fosize09'>
+									<span>设备1</span>
+									<span class="log-time fr fosize09">2020-07-24 23:29</span>
+								</p>
+								<span class="log-name fosize09">温度：23，湿度：23，光照：23</span>
+								
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media sys-alert">
+					<a href="javascript:;">
+						<div class="mui-media-body">
+							<div>
+								<p class='mui-ellipsis log-content fosize09'>
+									<span>设备1</span>
+									<span class="log-time fr fosize09">2020-07-24 23:29</span>
+								</p>
+								<span class="log-name fosize09">温度：23，湿度：23，光照：23</span>
+								
+							</div>
+						</div>
+					</a>
+				</li>
+				
+				
+			</ul>
+           <!-- <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                    <span class="fl fosize09">设备1</span>
+                    <span class="fr fosize08 colgrey">2018-09-10 12:23:22</span>
+                </li>
+                <li class="mui-table-view-cell">
+                    <p class="fl icon-back icon-back-color">
+                        <span class="mui-icon-extra mui-icon-extra-lamp icon-color"></span>
+                    </p>
+                    <span class="fl fosize09 list-name">温度</span>
+                    <span class="fr fosize08 list-content colgrey ml5">度</span>
+                    <span class="fr fosize12 list-content colblue">36</span>
+                </li>
+                <li class="mui-table-view-cell">
+                    <p class="fl icon-back icon-back-color">
+                        <span class="mui-icon-extra mui-icon-extra-lamp icon-color"></span>
+                    </p>
+                    <span class="fl fosize09 list-name">湿度</span>
+                    <span class="fr fosize08 list-content colgrey ml5">%</span>
+                    <span class="fr fosize12 list-content colblue">36</span>
+                </li>
+                <li class="mui-table-view-cell">
+                    <p class="fl icon-back icon-back-color">
+                        <span class="mui-icon-extra mui-icon-extra-lamp icon-color"></span>
+                    </p>
+                    <span class="fl fosize09 list-name">光照</span>
+                    <span class="fr fosize08 list-content colgrey ml5">LUX</span>
+                    <span class="fr fosize12 list-content colblue">36</span>
+                </li>
+                <li class="mui-table-view-cell">
+                    <p class="fl icon-back icon-back-color">
+                        <span class="mui-icon-extra mui-icon-extra-lamp icon-color"></span>
+                    </p>
+                    <span class="fl fosize09 list-name">瞬时流量</span>
+                    <span class="fr fosize08 list-content colgrey ml5">LUX</span>
+                    <span class="fr fosize12 list-content colblue">36</span>
+                </li>
+                <li class="mui-table-view-cell">
+                    <p class="fl icon-back icon-back-color">
+                        <span class="mui-icon-extra mui-icon-extra-lamp icon-color"></span>
+                    </p>
+                    <span class="fl fosize09 list-name">累计流量</span>
+                    <span class="fr fosize08 list-content colgrey ml5">LUX</span>
+                    <span class="fr fosize12 list-content colblue">36</span>
+                </li>
+                <li class="mui-table-view-cell">
+                    <p class="fl icon-back icon-back-color">
+                        <span class="mui-icon-extra mui-icon-extra-lamp icon-color"></span>
+                    </p>
+                    <span class="fl fosize09 list-name">压力</span>
+                    <span class="fr fosize08 list-content colgrey ml5">PA</span>
+                    <span class="fr fosize12 list-content colblue">36</span>
+                </li>
+            </ul> -->
+        </div>
+        <div id="item2" class="mui-control-content backwhite">
+			<div class="data-range">
+				<a class="mui-btn mui-btn-primary mui-btn-outlined range-item active">
+					24小时
+				</a>
+				<a class="mui-btn mui-btn-primary mui-btn-outlined range-item">
+					最近3天
+				</a>
+				<a class="mui-btn mui-btn-primary mui-btn-outlined range-item">
+					最近7天
+				</a>
+				<a class="mui-btn mui-btn-primary mui-btn-outlined range-item">
+					最近2周
+				</a>
+				<a class="mui-btn mui-btn-primary mui-btn-outlined range-item">
+					最近1月
+				</a>
+				<a class="mui-btn mui-btn-primary mui-btn-outlined range-item">
+					最近3月
+				</a>
+			</div>
+            <div id="echarts_1" class="echarts"></div>
+            <div id="echarts_2" class="echarts"></div>
+            <div id="echarts_3" class="echarts"></div>
+
+        </div>
+    </div>
+</div>
+
+
+<script src="../js/mui.min.js"></script>
+<script src="../js/echarts-all.js"></script>
+<script src="../js/utile.js"></script>
+<script type="text/javascript">
+    mui.init({
+        swipeBack: true,//启用右滑关闭功能
+    });
+    (function ($) {
+        $('#scroll').scroll({
+            indicators: true //是否显示滚动条
+        });
+		$('.data-range').on('tap', '.range-item', function () {
+			this.classList.add('active');
+			utils.siblings(this, function (sibling) {
+				sibling.classList.remove('active')
+			})
+		})
+        var segmentedControl = document.getElementById('segmentedControl');
+
+
+    })(mui);
+	
+    var base = +new Date(1968, 9, 3);
+    var oneDay = 24 * 3600 * 1000;
+    var date = [];//x轴时间范围数据
+
+    var data = [Math.random() * 300];//y轴数据
+
+    for (var i = 1; i < 20000; i++) {
+        var now = new Date(base += oneDay);
+        date.push([now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'));
+        data.push(Math.round((Math.random() - 0.5) * 20 + data[i - 1]));
+    }
+ //    utils.set_echarts({
+	// 	title: {
+	// 		text: 'A12温度曲线图',
+	// 	},
+	// 	yAxis: {
+	// 		name:'℃'
+	// 	},
+	// }, 'echarts_1', date, data);
+ //    utils.set_echarts({
+	// 	title: {
+	// 		text: 'A12湿度曲线图',
+	// 	},
+	// 	yAxis: {
+	// 		name:'%'
+	// 	},
+	// }, 'echarts_2', date, data);
+	
+	// utils.set_echarts({
+	// 	title: {
+	// 		text: 'A12光照度曲线图',
+	// 	},
+	// 	yAxis: {
+	// 		name:'Lux',
+	// 	},
+	// }, 'echarts_3', date, data);
+	
+	utils.set_echarts('echarts_1', function (option) {
+		option.title.text = 'A12温度曲线图';
+		option.yAxis.name = '℃';
+		option.series[0].itemStyle.color = 'rgb(0, 70, 131)';
+		option.xAxis.data = date;
+		option.series[0].data = data;
+		option.series[0].areaStyle = {
+			color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+				offset: 0,
+				color: 'rgba(91, 79, 246,1)'
+			}, {
+				offset: 1,
+				color: 'rgba(48, 36, 202)'
+			}])
+		}
+	});
+	utils.set_echarts('echarts_2', function (option) {
+		option.title.text = 'A12湿度曲线图';
+		option.yAxis.name = '℃';
+		option.series[0].itemStyle.color = 'rgb(0, 70, 131)';
+		option.xAxis.data = date;
+		option.series[0].data = data;
+		option.series[0].areaStyle = {
+			color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+				offset: 0,
+				color: 'rgba(91, 79, 246,1)'
+			}, {
+				offset: 1,
+				color: 'rgba(48, 36, 202)'
+			}])
+		}
+	});
+	utils.set_echarts('echarts_3', function (option) {
+		option.title.text = 'A12光照曲线图';
+		option.yAxis.name = '℃';
+		option.series[0].itemStyle.color = 'rgb(0, 70, 131)';
+		option.xAxis.data = date;
+		option.series[0].data = data;
+		option.series[0].areaStyle = {
+			color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+				offset: 0,
+				color: 'rgba(91, 79, 246,1)'
+			}, {
+				offset: 1,
+				color: 'rgba(48, 36, 202)'
+			}])
+		}
+	});
+</script>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>通知设置</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link href="../css/app.css" rel="stylesheet" />
+		<style>
+			.mui-btn {
+				font-size: 16px;
+				padding: 8px;
+				margin: 3px;
+			}
+			h5.mui-content-padded {
+				margin-left: 3px;
+				margin-top: 20px !important;
+			}
+			h5.mui-content-padded:first-child {
+				margin-top: 12px !important;
+			}
+			.ui-alert {
+				text-align: center;
+				padding: 20px 10px;
+				font-size: 16px;
+			}
+			.add-last-bor:after{
+				height: 1px !important;
+			}
+		</style>
+	</head>
+	<body>
+			<header id="header" class="mui-bar mui-bar-nav backwhite shadow0">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left col333"></a>
+				<h1 class="mui-title col333">通知设置</h1>
+			</header>
+			
+			<div class="mui-content">
+				<div class="module">
+					<p class="amblist col333">系统通知</p>
+					<ul class="device-ul">
+						<li class="mui-card bor-radius5">
+							<div class="mui-card-content">
+								<div class="mui-card-content-inner">
+									<ul class="mui-table-view">
+										<li class="mui-table-view-cell padd0">
+											<span class="fl fosize09 list-form-name">系统通知</span>
+											<div class="mui-switch mui-switch-blue mui-switch-mini">
+												<div class="mui-switch-handle"></div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="module">
+					<p class="amblist col333">通知方式</p>
+					<ul class="device-ul">
+						<li class="mui-card bor-radius5">
+							<div class="mui-card-content">
+								<div class="mui-card-content-inner">
+									<ul class="mui-table-view">
+										<li class="mui-table-view-cell padd0">
+											<span class="fl fosize09 list-form-name">微信通知</span>
+											<div class="mui-switch mui-switch-blue mui-switch-mini">
+												<div class="mui-switch-handle"></div>
+											</div>
+										</li>
+										<li class="mui-table-view-cell padd0">
+											<span class="fl fosize09 list-form-name">短信通知</span>
+											<div class="mui-switch mui-switch-blue mui-switch-mini mui-active">
+												<div class="mui-switch-handle"></div>
+											</div>
+										</li>
+									</ul>
+									
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="module">
+					<p class="amblist col333">通知类别</p>
+					<ul class="device-ul">
+						<li class="mui-card bor-radius5">
+							<div class="mui-card-content">
+								<div class="mui-card-content-inner">
+									<ul class="mui-table-view">
+										<li class="mui-table-view-cell padd0">
+											<span class="fl fosize09 list-form-name">参数预警</span>
+											<div class="mui-switch mui-switch-blue mui-switch-mini">
+												<div class="mui-switch-handle"></div>
+											</div>
+										</li>
+										<li class="mui-table-view-cell padd0">
+											<span class="fl fosize09 list-form-name">操作通知</span>
+											<div class="mui-switch mui-switch-blue mui-switch-mini mui-active">
+												<div class="mui-switch-handle"></div>
+											</div>
+										</li>
+										<li class="mui-table-view-cell padd0">
+											<span class="fl fosize09 list-form-name">离线通知</span>
+											<div class="mui-switch mui-switch-blue mui-switch-mini mui-active">
+												<div class="mui-switch-handle"></div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			
+			
+			
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init({
+				swipeBack: true ,//启用右滑关闭功能
+			});
+			
+			//是否开启通知单
+			document.getElementById("mySwitch").addEventListener("toggle",function(event){
+			  if(event.detail.isActive){
+				console.log("你启动了开关");
+			  }else{
+				console.log("你关闭了开关");  
+			  }
+			})
+			
+			
+			mui('.mui-content .mui-switch').each(function() { //循环所有toggle
+				//toggle.classList.contains('mui-active') 可识别该toggle的开关状态
+				// this.parentNode.querySelector('span').innerText = '状态：' + (this.classList.contains('mui-active') ? 'true' : 'false');
+				/**
+				 * toggle 事件监听
+				 */
+				this.addEventListener('toggle', function(event) {
+					//event.detail.isActive 可直接获取当前状态
+					// this.parentNode.querySelector('span').innerText = '状态：' + (event.detail.isActive ? 'true' : 'false');
+				});
+			});
+			
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>设备预警</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../font_icon/iconfont.css" rel="stylesheet" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link href="../css/app.css" rel="stylesheet" />
+		<style>
+		</style>
+	</head>
+		
+	<body>
+		
+			<header id="header" class="mui-bar mui-bar-nav backwhite shadow0">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left col333"></a>
+				<h1 class="mui-title col333">设备预警</h1>
+				<button class="mui-btn mui-btn-link mui-pull-right col333" id="warn-jilu">预警记录</button>
+			</header>
+			
+			<div class="mui-content">
+				<div class="my-device">
+						<p class="mb10"></p>
+						<ul class="device-ul">
+							<li class="mui-card bor-radius5 shadow-none">
+									<div class="mui-card-content">
+										<div class="mui-card-content-inner">
+											<span class="icon iconfont icon-huabanfuben colblue fosize14"></span>
+											<span class="fosize09 ml5">设备1</span>
+											
+											<a class="mui-icon mui-icon-forward mui-pull-right colgrey fr"></a>
+											<p class="fosize08 ml5 fr colju warnlist-information">
+												<span>参数预警</span>
+												<span>设备离线</span>
+											</p>
+										</div>
+									</div>
+							</li>
+							<li class="mui-card bor-radius5 shadow-none">
+									<div class="mui-card-content">
+										<div class="mui-card-content-inner">
+											<span class="icon iconfont icon-huabanfuben colblue fosize14"></span>
+											<span class="fosize09 ml5">设备1</span>
+											<a class="mui-icon mui-icon-forward mui-pull-right colgrey fr"></a>
+											<p class="fosize08 ml5 fr colju warnlist-information">
+												<span>参数预警</span>
+											</p>
+										</div>
+									</div>
+							</li>
+							<li class="mui-card bor-radius5 shadow-none">
+									<div class="mui-card-content">
+										<div class="mui-card-content-inner">
+											<span class="icon iconfont icon-huabanfuben colblue fosize14"></span>
+											<span class="fosize09 ml5">设备1</span>
+											<a class="mui-icon mui-icon-forward mui-pull-right colgrey fr"></a>
+											<p class="fosize08 ml5 fr colju warnlist-information">
+												<span>设备离线</span>
+											</p>
+										</div>
+									</div>
+							</li>
+						</ul>
+				</div>
+				
+			</div>
+			
+			
+			
+			
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui(".device-ul").on("tap",".mui-card",function(){
+				mui.openWindow({
+					url: 'warning.html', 
+					id:''
+				});
+			});
+			
+			document.getElementById('warn-jilu').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: 'warningRecord.html', 
+				id:'info'
+			  });
+			});
+			
+			
+			
+		</script>
+	</body>
+
+</html>

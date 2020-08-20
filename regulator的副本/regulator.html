@@ -1,0 +1,312 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>控制器设置</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link href="../css/app.css" rel="stylesheet" />
+		<style>
+			.mui-btn {
+				font-size: 16px;
+				padding: 8px;
+				margin: 3px;
+			}
+			h5.mui-content-padded {
+				margin-left: 3px;
+				margin-top: 20px !important;
+			}
+			h5.mui-content-padded:first-child {
+				margin-top: 12px !important;
+			}
+			.ui-alert {
+				text-align: center;
+				padding: 20px 10px;
+				font-size: 16px;
+			}
+			.add-last-bor:after{
+				height: 1px !important;
+			}
+		</style>
+	</head>
+	<body>
+			<header id="header" class="mui-bar mui-bar-nav backwhite shadow0">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left col333"></a>
+				<h1 class="mui-title col333">设备12控制器设置</h1>
+			</header>
+			
+			<div class="mui-content">
+				<div class="execu-tab backwhite">
+					<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
+						<a class="mui-control-item mui-active" href="#item1">场景信息</a>
+						<a class="mui-control-item" href="#item2">预警设置</a>
+					</div>
+				</div>
+				<div>
+					<div id="item1" class="mui-control-content mui-active">
+						<form action="" method="">
+							<div class="module">
+								<ul class="device-ul">
+									<li class="mui-card bor-radius5">
+										<div class="mui-card-content">
+											<div class="mui-card-content-inner">
+												<ul class="mui-table-view">
+													<li class="mui-table-view-cell padd0">
+														<label class="fl fosize09 list-form-name">控制器SN</label>
+														<input type="text" class="mui-input-clear colgrey fosize09 fl reg-input" name=""  value="23.00">					
+													</li>
+													<li class="mui-table-view-cell padd0">
+														<label class="fl fosize09 list-form-name">场景名称</label>
+														<input type="text" class="mui-input-clear colgrey fosize09 fl reg-input" name=""  value="23.00">					
+													</li>
+													<li class="mui-table-view-cell padd0">
+														<label class="fl fosize09 list-form-name">备注信息</label>
+														<input type="text" class="mui-input-clear colgrey fosize09 fl reg-input" name=""  value="23.00">					
+													</li>
+													<li class="mui-table-view-cell padd0">
+														<label class="fl fosize09 list-form-name">负责人</label>
+														<input type="text" class="mui-input-clear colgrey fosize09 fl reg-input" name=""  value="23.00">					
+													</li>
+													<li class="mui-table-view-cell padd0">
+														<label class="fl fosize09 list-form-name">手机号</label>
+														<input type="text" class="mui-input-clear colgrey fosize09 fl reg-input" name=""  value="23.00">					
+													</li>
+												</ul>
+												<div class="mui-button-row">
+													<button type="button" class="mui-btn mui-btn-primary warn-btn regu-chang-btn" >控制</button>
+												</div>
+											</div>
+										</div>
+										<div class="mui-card-footer  execu-title fosize09 ">
+											<span class="fl colju change">修改信息</span>
+											<span class="fr colju cancel">取消关联</span>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</form>
+				</div>
+				<div id="item2" class="mui-control-content">
+					<form action="" method="">
+						<div class="module">
+							<p class="amblist col333">通知方式</p>
+							<ul class="device-ul">
+								<li class="mui-card bor-radius5">
+									<div class="mui-card-content">
+										<div class="mui-card-content-inner">
+											<ul class="mui-table-view">
+												<li class="mui-table-view-cell padd0">
+													<span class="fl fosize09 list-form-name">微信通知</span>
+													<div class="mui-switch mui-switch-blue mui-switch-mini">
+														<div class="mui-switch-handle"></div>
+													</div>
+												</li>
+												<li class="mui-table-view-cell padd0">
+													<span class="fl fosize09 list-form-name">短信通知</span>
+													<div class="mui-switch mui-switch-blue mui-switch-mini mui-active">
+														<div class="mui-switch-handle"></div>
+													</div>
+												</li>
+											</ul>
+											
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="module">
+							<p class="amblist col333">通知类别</p>
+							<ul class="device-ul">
+								<li class="mui-card bor-radius5">
+									<div class="mui-card-content">
+										<div class="mui-card-content-inner">
+											<ul class="mui-table-view">
+												<li class="mui-table-view-cell padd0">
+													<span class="fl fosize09 list-form-name">参数预警</span>
+													<div class="mui-switch mui-switch-blue mui-switch-mini">
+														<div class="mui-switch-handle"></div>
+													</div>
+												</li>
+												<li class="mui-table-view-cell padd0">
+													<span class="fl fosize09 list-form-name">操作通知</span>
+													<div class="mui-switch mui-switch-blue mui-switch-mini mui-active">
+														<div class="mui-switch-handle"></div>
+													</div>
+												</li>
+												<li class="mui-table-view-cell padd0">
+													<span class="fl fosize09 list-form-name">离线通知</span>
+													<div class="mui-switch mui-switch-blue mui-switch-mini mui-active">
+														<div class="mui-switch-handle"></div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="module">
+							<p class="amblist col333">环境参数正常范围(不在范围则预警通知)</p>
+							<ul class="device-ul">
+								<li class="mui-card bor-radius5">
+									<div class="mui-card-content">
+										<div class="mui-card-content-inner">
+											<ul class="mui-table-view">
+												<li class="mui-table-view-cell padd0 w50 fl">
+													<label class="fl fosize09 list-form-name w40">温度下限</label>
+													<input type="text" class="mui-input-clear colgrey fosize09 fl reg-input-ban" name=""  value="23.00">					
+												</li>
+												<li class="mui-table-view-cell padd0  w50">
+													<label class="fl fosize09 list-form-name w40">温度上限</label>
+													<input type="text" class="mui-input-clear colgrey fosize09 fl reg-input-ban" name=""  value="23.00">					
+												</li>
+												<li class="mui-table-view-cell padd0  w50 fl">
+													<label class="fl fosize09 list-form-name w40">湿度下限</label>
+													<input type="text" class="mui-input-clear colgrey fosize09 fl reg-input-ban" name=""  value="23.00">					
+												</li>
+												<li class="mui-table-view-cell padd0  w50">
+													<label class="fl fosize09 list-form-name w40">湿度上限</label>
+													<input type="text" class="mui-input-clear colgrey fosize09 fl reg-input-ban" name=""  value="23.00">					
+												</li>
+												<li class="mui-table-view-cell padd0  w50 fl">
+													<label class="fl fosize09 list-form-name w40">光照下限</label>
+													<input type="text" class="mui-input-clear colgrey fosize09 fl reg-input-ban" name=""  value="23.00">					
+												</li>
+												<li class="mui-table-view-cell padd0  w50 add-last-bor">
+													<label class="fl fosize09 list-form-name w40">光照上限</label>
+													<input type="text" class="mui-input-clear colgrey fosize09 fl reg-input-ban" name=""  value="23.00">					
+												</li>
+											</ul>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="module">
+							<p class="amblist col333">灌溉时，灌溉参数正常范围(不在范围则预警通知)</p>
+							<ul class="device-ul">
+								<li class="mui-card bor-radius5">
+									<div class="mui-card-content">
+										<div class="mui-card-content-inner">
+											<ul class="mui-table-view">
+												<li class="mui-table-view-cell padd0">
+													<label class="fl fosize09 list-form-name">瞬时流量下限</label>
+													<input type="text" class="mui-input-clear colgrey fosize09 fl reg-input" name=""  value="23.00">					
+												</li>
+												<li class="mui-table-view-cell padd0">
+													<label class="fl fosize09 list-form-name">瞬时流量上限</label>
+													<input type="text" class="mui-input-clear colgrey fosize09 fl reg-input" name=""  value="23.00">					
+												</li>
+												<li class="mui-table-view-cell padd0">
+													<label class="fl fosize09 list-form-name">压力下限</label>
+													<input type="text" class="mui-input-clear colgrey fosize09 fl reg-input" name=""  value="23.00">					
+												</li>
+												<li class="mui-table-view-cell padd0">
+													<label class="fl fosize09 list-form-name">压力上限</label>
+													<input type="text" class="mui-input-clear colgrey fosize09 fl reg-input" name=""  value="23.00">					
+												</li>
+											</ul>
+											<div class="mui-button-row">
+												<button type="button" class="mui-btn mui-btn-primary warn-btn regu-yu-btn" >保存设置</button>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</form>
+				</div>
+			</div>
+			
+			
+			
+			
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init({
+				swipeBack: true ,//启用右滑关闭功能
+			});
+			(function($) {
+				$('#scroll').scroll({
+					indicators: true //是否显示滚动条
+				});
+				var segmentedControl = document.getElementById('segmentedControl');
+				
+				
+			})(mui);
+			
+			// 跳转控制页
+			mui(".mui-button-row").on("tap",".regu-chang-btn",function(){
+				mui.openWindow({
+					url: '../control/control.html', 
+					id:'info'
+				});
+			});
+			
+			
+			// 取消关联弹框
+			mui(".mui-card-footer").on("tap",".cancel",function(){
+				mui.confirm('是否取消关联','请确认',['否','是'],function (e) {
+					if (e.index == 1) {
+						mui.toast('已取消关联');
+						mui.openWindow({
+							url: 'regulatorList.html', 
+							id:'info'
+						});
+					} else {
+						
+					}
+				},'div')
+			});
+			
+			// 修改信息弹框
+			mui(".mui-card-footer").on("tap",".change",function(){
+				mui.confirm('是否修改信息','请确认',['否','是'],function (e) {
+					if (e.index == 1) {
+						mui.toast('已修改');
+						mui.openWindow({
+							url: 'regulatorList.html', 
+							id:'info'
+						});
+					} else {
+						
+					}
+				},'div')
+			});
+			
+			
+			// 保存设置弹框
+			mui(".mui-button-row").on("tap",".regu-yu-btn",function(){
+				mui.confirm('是否保存设置','请确认',['否','是'],function (e) {
+					if (e.index == 1) {
+						mui.toast('保存成功');
+						mui.openWindow({
+							url: 'regulatorList.html', 
+							id:'info'
+						});
+					} else {
+						
+					}
+				},'div')
+			});
+			
+			mui('.mui-content .mui-switch').each(function() { //循环所有toggle
+				//toggle.classList.contains('mui-active') 可识别该toggle的开关状态
+				// this.parentNode.querySelector('span').innerText = '状态：' + (this.classList.contains('mui-active') ? 'true' : 'false');
+				/**
+				 * toggle 事件监听
+				 */
+				this.addEventListener('toggle', function(event) {
+					//event.detail.isActive 可直接获取当前状态
+					// this.parentNode.querySelector('span').innerText = '状态：' + (event.detail.isActive ? 'true' : 'false');
+				});
+			});
+			
+		</script>
+	</body>
+
+</html>

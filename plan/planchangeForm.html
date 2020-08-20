@@ -1,0 +1,873 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>自动控制</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../font_icon/iconfont.css" rel="stylesheet" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link href="../css/app.css" rel="stylesheet" />
+		<link href="../css/mui.picker.css" rel="stylesheet" />
+		<link href="../css/mui.poppicker.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.picker.min.css" />
+		<style>
+			.mui-btn {
+				font-size: 16px;
+				padding: 8px;
+				margin: 3px;
+			}
+			h5.mui-content-padded {
+				margin-left: 3px;
+				margin-top: 20px !important;
+			}
+			h5.mui-content-padded:first-child {
+				margin-top: 12px !important;
+			}
+			.ui-alert {
+				text-align: center;
+				padding: 20px 10px;
+				font-size: 16px;
+			}
+			#alert-content {
+				width: 0px;
+				height: 0px;
+				position: fixed;
+				top: 70%;
+				left: 50%;
+			}
+			/*移除底部或顶部三角,需要在删除此代码*/
+			.mui-popover .mui-popover-arrow:after {
+				width: 0px;
+			}
+			
+		</style>
+	</head>
+		
+	<body>
+			<header id="header" class="mui-bar mui-bar-nav backwhite shadow0">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left col333"></a>
+				<h1 class="mui-title col333">修改方案</h1>
+			</header>
+			
+			
+			<div class="mui-content">
+				
+				<div class="my-device">
+					
+					<form class="timing" method="post" onsubmit="return verification()">
+						<div class="module">
+							<p class="amblist col333">方案名称</p>
+							<ul class="device-ul">
+								<li class="mui-card bor-radius5">
+									<div class="mui-card-content">
+										<div class="mui-card-content-inner">
+											<ul class="mui-table-view">
+												<li class="mui-table-view-cell padd0" id="type-fangan-li">
+													<label class="fl fosize1 list-form-name">当前方案</label>
+													
+													<!-- <a class="mui-icon mui-icon-arrowright form-icon colgrey fr" style="line-height:60px !important;"></a> -->
+													<input type="text" readonly="readonly" class="mui-input-clear colgrey fosize09 fl share-input" name=""  value="日间方案"  id='type-fangan'>
+												</li>
+												
+											</ul>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="module">
+							<p class="amblist col333">当前状态</p>
+							<ul class="device-ul">
+								<li class="mui-card bor-radius5">
+									<div class="mui-card-content">
+										<div class="mui-card-content-inner">
+											<ul class="mui-table-view">
+												<li class="mui-table-view-cell padd0" id="type-status-li">
+													<label class="fl fosize1 list-form-name">当前状态</label>
+													
+													<a class="mui-icon mui-icon-arrowright form-icon colgrey fr" style="line-height:60px !important;"></a>
+													<input type="text" class="mui-input-clear colgrey fosize09 fl share-input" name=""  value="高频"  id='type-status'>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- 高频 -->
+						<div class="module form-high">
+							<p class="amblist col333">时间周期设置</p>
+							<ul class="device-ul">
+								<li class="mui-card bor-radius5">
+									<div class="mui-card-header">时间周期</div>
+									<div class="mui-card-content">
+										<div class="mui-card-content-inner">
+											<ul class="mui-table-view">
+												<li class="mui-table-view-cell padd0" id="timing-name-li-high">
+													<label class="fl fosize09 list-form-name">时段</label>
+													<!-- <a class="mui-icon mui-icon-arrowright form-icon colgrey fr" style="line-height:60px !important;"></a> -->
+													<input type="text" readonly="readonly" class="v_empty_high mui-input-clear colgrey fosize09 fl share-input" name="timing-name"  value="时段1"  id='timing-name-high'>
+												</li>
+												<li class="mui-table-view-cell padd0" id="timing-startday-li-high" data-options='{"type":"time"}'>
+													<label class="fl fosize09 list-form-name">开启时间</label>
+													<a class="mui-icon mui-icon-arrowright form-icon colgrey fr" style="line-height:60px !important;"></a>
+													<input type="text" readonly="readonly" class="v_empty_high mui-input-clear colgrey fosize09 fl share-input" name="timing-startday-high"  value=""  id='timing-startday-high'>
+												</li>
+												<li class="mui-table-view-cell padd0" id="timing-endday-li-high" data-options='{"type":"time"}'>
+													<label class="fl fosize09 list-form-name">关闭时间</label>
+													<a class="mui-icon mui-icon-arrowright form-icon colgrey fr" style="line-height:60px !important;"></a>
+													<input type="text"  readonly="readonly" class="v_empty_high mui-input-clear colgrey fosize09 fl share-input" name="timing-endday-high"  value=""  id='timing-endday-high'>
+												</li>
+												<li class="mui-table-view-cell padd0" id="timing-guangai-li-high">
+													<label class="fl fosize09 list-form-name">灌溉(分)</label>
+													<a class="mui-icon mui-icon-arrowright form-icon colgrey fr" style="line-height:60px !important;"></a>
+													<input type="text" readonly="readonly" class="v_empty mui-input-clear colgrey fosize09 fl share-input" name="timing-guangai-high"  value=""  id='timing-guangai-high'>
+												</li>
+												<li class="mui-table-view-cell padd0" id="timing-jiange-li-high">
+													<label class="fl fosize09 list-form-name">间隔(分)</label>
+													<a class="mui-icon mui-icon-arrowright form-icon colgrey fr" style="line-height:60px !important;"></a>
+													<input type="text" readonly="readonly" class="v_empty mui-input-clear colgrey fosize09 fl share-input" name="timing-jiange-high"  value=""  id='timing-jiange-high'>
+												</li>
+											</ul>
+											<!-- <div class="mui-button-row">
+												<button type="submit" class="mui-btn mui-btn-primary warn-btn" >添加</button>
+											</div> -->
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- 结束 -->
+						
+						<!-- 定时 -->
+							<div class="module form-timing">
+								<p class="amblist col333">时间周期设置</p>
+								<ul class="device-ul">
+									<li class="mui-card bor-radius5">
+										<div class="mui-card-header">时间周期设置</div>
+										<div class="mui-card-content">
+											<div class="mui-card-content-inner">
+												<ul class="mui-table-view">
+													<!-- <li class="mui-table-view-cell padd0" id="timing-name-li">
+														<label class="fl fosize09 list-form-name">设备</label>
+														<a class="mui-icon mui-icon-arrowright form-icon colgrey fr" style="line-height:60px !important;"></a>
+														<input type="text" class="v_empty mui-input-clear colgrey fosize09 fl share-input" name="timing-name"  value=""  id='timing-name'>
+													</li> -->
+													<li class="mui-table-view-cell padd0" id="timing-week-li">
+														<label class="fl fosize09 list-form-name">周期</label>
+														<a class="mui-icon mui-icon-arrowright form-icon colgrey fr" style="line-height:60px !important;"></a>
+														<input type="text" readonly="readonly" class="v_empty mui-input-clear colgrey fosize09 fl share-input" name="timing-week"  value="每天"  id='timing-week'>
+													</li>
+													<li class="mui-table-view-cell padd0" id="timing-day-li">
+														<label class="fl fosize09 list-form-name">每周</label>
+														<a class="mui-icon mui-icon-arrowright form-icon colgrey fr" style="line-height:60px !important;"></a>
+														<input type="text" readonly="readonly" class="v_empty mui-input-clear colgrey fosize09 fl share-input" name="timing-day"  value=""  id='timing-day'>
+													</li>
+													<li class="mui-table-view-cell padd0" id="timing-startday-li" data-options='{"type":"date"}'>
+														<label class="fl fosize09 list-form-name">开启日期</label>
+														<a class="mui-icon mui-icon-arrowright form-icon colgrey fr" style="line-height:60px !important;"></a>
+														<input type="text" readonly="readonly" class="v_empty mui-input-clear colgrey fosize09 fl share-input" name="timing-startday"  value=""  id='timing-startday'>
+													</li>
+													<li class="mui-table-view-cell padd0" id="timing-endday-li" data-options='{"type":"date"}'>
+														<label class="fl fosize09 list-form-name">关闭日期</label>
+														<a class="mui-icon mui-icon-arrowright form-icon colgrey fr" style="line-height:60px !important;"></a>
+														<input type="text" readonly="readonly" class="v_empty mui-input-clear colgrey fosize09 fl share-input" name="timing-endday"  value=""  id='timing-endday'>
+													</li>
+													<li class="mui-table-view-cell padd0" id="timing-start-li" data-options='{"type":"time"}'>
+														<label class="fl fosize09 list-form-name">开启时间</label>
+														<a class="mui-icon mui-icon-arrowright form-icon colgrey fr" style="line-height:60px !important;"></a>
+														<input type="text" readonly="readonly" class="v_empty mui-input-clear colgrey fosize09 fl share-input" name="timing-start"  value=""  id='timing-start'>
+													</li>
+													<li class="mui-table-view-cell padd0" id="timing-end-li" data-options='{"type":"time"}'>
+														<label class="fl fosize09 list-form-name">关闭时间</label>
+														<a class="mui-icon mui-icon-arrowright form-icon colgrey fr" style="line-height:60px !important;"></a>
+														<input type="text" readonly="readonly" class="v_empty mui-input-clear colgrey fosize09 fl share-input" name="timing-end"  value=""  id='timing-end'>
+													</li>
+													<li class="mui-table-view-cell padd0" id="timing-guangai-li">
+														<label class="fl fosize09 list-form-name">灌溉时长(分)</label>
+														<a class="mui-icon mui-icon-arrowright form-icon colgrey fr" style="line-height:60px !important;"></a>
+														<input type="text" readonly="readonly" class="v_empty mui-input-clear colgrey fosize09 fl share-input" name="timing-guangai"  value=""  id='timing-guangai'>
+													</li>
+													<!-- <li class="mui-table-view-cell padd0" id="timing-guangai-li">
+														<label class="fl fosize09 list-form-name">灌溉时长(分)</label>
+														<input type="text" class="v_empty mui-input-clear colgrey fosize09 fl reg-input" name="timing-guangai"  value="" id="timing-guangai">					
+													</li> -->
+												</ul>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						<!-- 结束 -->
+						
+						<div class="module">
+							<ul class="device-ul">
+								<li class="mui-card bor-radius5">
+									<div class="mui-card-content">
+										<div class="mui-card-content-inner">
+											<div class="mui-button-row">
+												<!-- <button type="button" class="mui-btn mui-btn-primary warn-btn" >确认</button> -->
+												<button type="submit" class="mui-btn mui-btn-primary warn-btn" >修改</button>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						
+					
+					</form>
+					
+				</div>
+				
+				
+			</div>
+			
+			
+			
+			
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.view.js "></script>
+		<script src="../js/mui.picker.js"></script>
+		<script src="../js/mui.picker.min.js"></script>
+		<script src="../js/mui.poppicker.js"></script>
+		<script src="../js/city.data.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript">
+			mui.init();
+			mui('.mui-scroll-wrapper').scroll();
+			
+			mui(".mui-card").on("tap",".high-detail",function(){
+				mui.openWindow({
+					url: 'highDetail.html', 
+					id:'change'
+				});
+			});
+			
+			// 删除弹框
+			mui(".mui-card-footer").on("tap",".delete",function(){
+				mui.confirm('是否删除','请确认',['否','是'],function (e) {
+					if (e.index == 1) {
+						mui.toast('已删除');
+						// mui.openWindow({
+						// 	url: 'shareList.html', 
+						// 	id:'info'
+						// });
+					} else {
+						
+					}
+				},'div')
+			});
+			
+			
+				
+						
+			(function($, doc) {
+				$.init();
+				$.ready(function() {
+					//高频和定时表单 显示隐藏
+					if(document.getElementById("type-status").value == '高频'){
+						document.getElementsByClassName('form-high')[0].classList.remove("mui-hidden");
+						document.getElementsByClassName('form-timing')[0].classList.add("mui-hidden");
+					}else if(document.getElementById("type-status").value == '定时'){
+						document.getElementsByClassName('form-high')[0].classList.add("mui-hidden");
+						document.getElementsByClassName('form-timing')[0].classList.remove("mui-hidden");
+					};
+					//定时条件筛选
+					var timing_day_classList = document.getElementById('timing-day-li').classList
+					var timing_startday_classList = document.getElementById('timing-startday-li').classList
+					var timing_endday_classList = document.getElementById('timing-endday-li').classList
+					var timing_guangai_classList = document.getElementById('timing-guangai-li').classList
+					var timing_end_classList = document.getElementById('timing-end-li').classList
+					
+					var timing_day_input = $('#timing-day-li')[0].children[2].classList;
+					var timing_startday_input = $('#timing-startday-li')[0].children[2].classList;
+					var timing_endday_input = $('#timing-endday-li')[0].children[2].classList;
+					var timing_guangai_input = $('#timing-guangai-li')[0].children[1].classList;
+					var timing_end_input = $('#timing-end-li')[0].children[2].classList;
+					/**
+					 * 获取对象属性的值
+					 * 主要用于过滤三级联动中，可能出现的最低级的数据不存在的情况，实际开发中需要注意这一点；
+					 * @param {Object} obj 对象
+					 * @param {String} param 属性名
+					 */
+					var _getParam = function(obj, param) {
+						return obj[param] || '';
+					};
+					
+					//选择模式
+					var typeStatus = new $.PopPicker();
+					typeStatus.setData([{
+						value: 'dingshi',
+						text: '高频'
+					}, {
+						value: 'gaopin',
+						text: '定时'
+					}]);
+					var showtypeStatus = doc.getElementById('type-status-li');
+					var usertypeStatus = doc.getElementById('type-status');
+					showtypeStatus.addEventListener('tap', function(event) {
+						typeStatus.show(function(items) {
+							//数据为items[0]
+							// usertypeStatus.innerText = JSON.stringify(items[0]);
+							//显示文本
+							usertypeStatus.value = items[0].text;
+							
+							if(usertypeStatus.value == '高频'){
+								$('.form-high')[0].classList.remove("mui-hidden");
+								$('.form-timing')[0].classList.add("mui-hidden");
+							}else if(usertypeStatus.value == '定时'){
+								$('.form-high')[0].classList.add("mui-hidden");
+								$('.form-timing')[0].classList.remove("mui-hidden");
+							}
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+					//选择分钟 灌溉 间隔
+					var guanGai = new $.PopPicker();
+					guanGai.setData([{value: '0分',text: '0分'},{value: '1分',text: '1分'},{value: '2分',text: '2分'},{value: '3分',text: '3分'},{value: '4分',text: '4分'},{value: '5分',text: '5分'},{value: '6分',text: '6分'},{value: '7分',text: '7分'},{value: '8分',text: '8分'},{value: '9分',text: '9分'},
+					{value: '10分',text: '10分'},{value: '11分',text: '11分'},{value: '12分',text: '12分'},{value: '13分',text: '13分'},{value: '14分',text: '14分'},{value: '15分',text: '15分'},{value: '16分',text: '16分'},{value: '17分',text: '17分'},{value: '18分',text: '18分'},{value: '19分',text: '19分'},
+					{value: '20分',text: '20分'},{value: '21分',text: '21分'},{value: '22分',text: '22分'},{value: '23分',text: '23分'},{value: '24分',text: '24分'},{value: '25分',text: '25分'},{value: '26分',text: '26分'},{value: '27分',text: '27分'},{value: '28分',text: '28分'},{value: '29分',text: '29分'},
+					{value: '30分',text: '30分'},{value: '31分',text: '31分'},{value: '32分',text: '32分'},{value: '33分',text: '33分'},{value: '34分',text: '34分'},{value: '35分',text: '35分'},{value: '36分',text: '36分'},{value: '37分',text: '37分'},{value: '38分',text: '38分'},{value: '39分',text: '39分'},
+					{value: '40分',text: '40分'},{value: '41分',text: '41分'},{value: '42分',text: '42分'},{value: '43分',text: '43分'},{value: '44分',text: '44分'},{value: '45分',text: '45分'},{value: '46分',text: '46分'},{value: '47分',text: '47分'},{value: '48分',text: '48分'},{value: '49分',text: '49分'},
+					{value: '50分',text: '50分'},{value: '51分',text: '51分'},{value: '52分',text: '52分'},{value: '53分',text: '53分'},{value: '54分',text: '54分'},{value: '55分',text: '55分'},{value: '56分',text: '56分'},{value: '57分',text: '57分'},{value: '58分',text: '58分'},{value: '59分',text: '59分'},
+					{value: '60分',text: '60分'}
+					]);
+					var showguanGai = doc.getElementById('timing-guangai-li');
+					var userguanGai = doc.getElementById('timing-guangai');
+					showguanGai.addEventListener('tap', function(event) {
+						guanGai.show(function(items) {
+							//数据为items[0]
+							// userguanGai.innerText = JSON.stringify(items[0]);
+							//显示文本
+							userguanGai.value = items[0].text;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+					var showguanGaihigh = doc.getElementById('timing-guangai-li-high');
+					var userguanGaihigh = doc.getElementById('timing-guangai-high');
+					showguanGaihigh.addEventListener('tap', function(event) {
+						guanGai.show(function(items) {
+							//数据为items[0]
+							// userguanGaihigh.innerText = JSON.stringify(items[0]);
+							//显示文本
+							userguanGaihigh.value = items[0].text;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+					var showjiange = doc.getElementById('timing-jiange-li-high');
+					var userjiange = doc.getElementById('timing-jiange-high');
+					showjiange.addEventListener('tap', function(event) {
+						guanGai.show(function(items) {
+							//数据为items[0]
+							// userjiange.innerText = JSON.stringify(items[0]);
+							//显示文本
+							userjiange.value = items[0].text;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+					
+					
+			// 高频
+					//选择设备
+					// var timingName = new $.PopPicker();
+					// timingName.setData([{
+					// 	value: 'dingshi',
+					// 	text: '设备1'
+					// }, {
+					// 	value: 'gaopin',
+					// 	text: '设备2'
+					// }]);
+					// var showtimingName = doc.getElementById('timing-name-li-high');
+					// var usertimingName = doc.getElementById('timing-name-high');
+					// showtimingName.addEventListener('tap', function(event) {
+					// 	timingName.show(function(items) {
+					// 		//数据为items[0]
+					// 		// usertimingName.innerText = JSON.stringify(items[0]);
+					// 		//显示文本
+					// 		usertimingName.value = items[0].text;
+					// 		//返回 false 可以阻止选择框的关闭
+					// 		//return false;
+					// 	});
+					// }, false);
+					
+					
+					
+					// 开始日期
+					var startdayhigh = $('#timing-startday-high')[0];
+					var startdayhighText = $('#timing-startday-li-high');
+					startdayhighText.each(function(i, btn) {
+						btn.addEventListener('tap', function() {
+							var _self = this;
+							if(_self.picker) {
+								_self.picker.show(function (rs) {
+									// startdayhigh.value = '选择结果: ' + rs.text;
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							} else {
+								var optionsJson = this.getAttribute('data-options') || '{}';
+								var options = JSON.parse(optionsJson);
+								var id = this.getAttribute('id');
+								
+								_self.picker = new $.DtPicker(options);
+								_self.picker.show(function(rs) {
+									
+									startdayhigh.value = rs.text;
+									
+									/*
+									 * 释放组件资源，释放后将将不能再操作组件
+									 */
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							}
+							
+						}, false);
+					});
+					
+					// 关闭日期
+					var enddayhigh = $('#timing-endday-high')[0];
+					var enddayhighText = $('#timing-endday-li-high');
+					enddayhighText.each(function(i, btn) {
+						btn.addEventListener('tap', function() {
+							var _self = this;
+							if(_self.picker) {
+								_self.picker.show(function (rs) {
+									// enddayhigh.value = '选择结果: ' + rs.text;
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							} else {
+								var optionsJson = this.getAttribute('data-options') || '{}';
+								var options = JSON.parse(optionsJson);
+								var id = this.getAttribute('id');
+								
+								_self.picker = new $.DtPicker(options);
+								_self.picker.show(function(rs) {
+									
+									enddayhigh.value = rs.text;
+									
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							}
+							
+						}, false);
+					});
+					
+					// 开启时间
+					var start = $('#timing-start-high')[0];
+					var startText = $('#timing-start-li-high');
+					startText.each(function(i, btn) {
+						btn.addEventListener('tap', function() {
+							var _self = this;
+							if(_self.picker) {
+								_self.picker.show(function (rs) {
+									// start.value = '选择结果: ' + rs.text;
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							} else {
+								var optionsJson = this.getAttribute('data-options') || '{}';
+								var options = JSON.parse(optionsJson);
+								var id = this.getAttribute('id');
+								
+								_self.picker = new $.DtPicker(options);
+								_self.picker.show(function(rs) {
+									
+									start.value = rs.text;
+									
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							}
+							
+						}, false);
+					});
+					
+					// 关闭时间
+					var end = $('#timing-end-high')[0];
+					var endText = $('#timing-end-li-high');
+					endText.each(function(i, btn) {
+						btn.addEventListener('tap', function() {
+							var _self = this;
+							if(_self.picker) {
+								_self.picker.show(function (rs) {
+									// end.value = '选择结果: ' + rs.text;
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							} else {
+								var optionsJson = this.getAttribute('data-options') || '{}';
+								var options = JSON.parse(optionsJson);
+								var id = this.getAttribute('id');
+								
+								_self.picker = new $.DtPicker(options);
+								_self.picker.show(function(rs) {
+									
+									end.value = rs.text;
+									
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							}
+						}, false);
+					});
+			// 结束
+			//定时
+					//选择设备
+					// var timingName = new $.PopPicker();
+					// timingName.setData([{
+					// 	value: 'dingshi',
+					// 	text: '设备1'
+					// }, {
+					// 	value: 'gaopin',
+					// 	text: '设备2'
+					// }]);
+					// var showtimingName = doc.getElementById('timing-name-li');
+					// var usertimingName = doc.getElementById('timing-name');
+					// showtimingName.addEventListener('tap', function(event) {
+					// 	timingName.show(function(items) {
+					// 		//数据为items[0]
+					// 		// usertimingName.innerText = JSON.stringify(items[0]);
+					// 		//显示文本
+					// 		usertimingName.value = items[0].text;
+					// 		//返回 false 可以阻止选择框的关闭
+					// 		//return false;
+					// 	});
+					// }, false);
+					
+					//选择周期
+					var timingWeek = new $.PopPicker();
+					timingWeek.setData([{
+						value: 'dingshi',
+						text: '每天'
+					}, {
+						value: 'gaopin',
+						text: '每周'
+					}, {
+						value: 'gaopin',
+						text: '单次'
+					}]);
+					var showtimingWeek = doc.getElementById('timing-week-li');
+					var usertimingWeek = doc.getElementById('timing-week');
+					// usertimingWeek.value = '每天';
+					
+					//默认显示每天表单
+					timing_day_classList.add('mui-hidden');
+					timing_startday_classList.add('mui-hidden');
+					timing_endday_classList.add('mui-hidden');
+					timing_guangai_classList.add('mui-hidden');
+					
+					timing_day_input.remove('v_empty');
+					timing_startday_input.remove('v_empty');
+					timing_endday_input.remove('v_empty');
+					timing_guangai_input.remove('v_empty');
+					
+					
+					showtimingWeek.addEventListener('tap', function(event) {
+						timingWeek.show(function(items) {
+							//数据为items[0]
+							// usertimingWeek.innerText = JSON.stringify(items[0]);
+							//显示文本
+							usertimingWeek.value = items[0].text;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+							//判断相应表单显示隐藏
+							if(usertimingWeek.value == '每天'){
+								timing_day_classList.add('mui-hidden');
+								timing_startday_classList.add('mui-hidden');
+								timing_endday_classList.add('mui-hidden');
+								timing_guangai_classList.add('mui-hidden');
+								timing_end_classList.remove('mui-hidden');
+								
+								timing_day_input.remove('v_empty');
+								timing_startday_input.remove('v_empty');
+								timing_endday_input.remove('v_empty');
+								timing_guangai_input.remove('v_empty');
+								timing_end_input.add('v_empty');
+								
+							}else if(usertimingWeek.value == '每周'){
+								timing_day_classList.remove('mui-hidden');
+								timing_startday_classList.add('mui-hidden');
+								timing_endday_classList.add('mui-hidden');
+								timing_guangai_classList.add('mui-hidden');
+								timing_end_classList.remove('mui-hidden');
+								
+								timing_day_input.add('v_empty');
+								timing_startday_input.remove('v_empty');
+								timing_endday_input.remove('v_empty');
+								timing_guangai_input.remove('v_empty');
+								timing_end_input.add('v_empty');
+							}else{
+								timing_day_classList.add('mui-hidden');
+								timing_startday_classList.remove('mui-hidden');
+								timing_endday_classList.add('mui-hidden');
+								timing_guangai_classList.remove('mui-hidden');
+								timing_end_classList.add('mui-hidden');
+								
+								timing_day_input.remove('v_empty');
+								timing_startday_input.add('v_empty');
+								timing_endday_input.remove('v_empty');
+								timing_guangai_input.add('v_empty');
+								timing_end_input.remove('v_empty');
+							}
+						});
+					}, false);
+					
+					
+					//选择每周天数
+					var timingDay = new $.PopPicker();
+					timingDay.setData([{
+						value: 'dingshi',
+						text: '周一'
+					}, {
+						value: 'gaopin',
+						text: '周二'
+					}, {
+						value: 'gaopin',
+						text: '周三'
+					}, {
+						value: 'gaopin',
+						text: '周四'
+					}, {
+						value: 'gaopin',
+						text: '周五'
+					}, {
+						value: 'gaopin',
+						text: '周六'
+					}, {
+						value: 'gaopin',
+						text: '周日'
+					}]);
+					var showtimingDay = doc.getElementById('timing-day-li');
+					var usertimingDay = doc.getElementById('timing-day');
+					showtimingDay.addEventListener('tap', function(event) {
+						timingDay.show(function(items) {
+							//数据为items[0]
+							// usertimingDay.innerText = JSON.stringify(items[0]);
+							//显示文本
+							usertimingDay.value = items[0].text;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+					
+					// 开始日期
+					var startday = $('#timing-startday')[0];
+					var startdayText = $('#timing-startday-li');
+					startdayText.each(function(i, btn) {
+						btn.addEventListener('tap', function() {
+							var _self = this;
+							if(_self.picker) {
+								_self.picker.show(function (rs) {
+									// startday.value = '选择结果: ' + rs.text;
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							} else {
+								var optionsJson = this.getAttribute('data-options') || '{}';
+								var options = JSON.parse(optionsJson);
+								var id = this.getAttribute('id');
+								
+								_self.picker = new $.DtPicker(options);
+								_self.picker.show(function(rs) {
+									
+									startday.value = rs.text;
+									
+									/*
+									 * 释放组件资源，释放后将将不能再操作组件
+									 */
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							}
+							
+						}, false);
+					});
+					
+					// 关闭日期
+					var endday = $('#timing-endday')[0];
+					var enddayText = $('#timing-endday-li');
+					enddayText.each(function(i, btn) {
+						btn.addEventListener('tap', function() {
+							var _self = this;
+							if(_self.picker) {
+								_self.picker.show(function (rs) {
+									// endday.value = '选择结果: ' + rs.text;
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							} else {
+								var optionsJson = this.getAttribute('data-options') || '{}';
+								var options = JSON.parse(optionsJson);
+								var id = this.getAttribute('id');
+								
+								_self.picker = new $.DtPicker(options);
+								_self.picker.show(function(rs) {
+									
+									endday.value = rs.text;
+									
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							}
+							
+						}, false);
+					});
+					
+					// 开启时间
+					var start = $('#timing-start')[0];
+					var startText = $('#timing-start-li');
+					startText.each(function(i, btn) {
+						btn.addEventListener('tap', function() {
+							var _self = this;
+							if(_self.picker) {
+								_self.picker.show(function (rs) {
+									// start.value = '选择结果: ' + rs.text;
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							} else {
+								var optionsJson = this.getAttribute('data-options') || '{}';
+								var options = JSON.parse(optionsJson);
+								var id = this.getAttribute('id');
+								
+								_self.picker = new $.DtPicker(options);
+								_self.picker.show(function(rs) {
+									
+									start.value = rs.text;
+									
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							}
+							
+						}, false);
+					});
+					
+					// 关闭时间
+					var end = $('#timing-end')[0];
+					var endText = $('#timing-end-li');
+					endText.each(function(i, btn) {
+						btn.addEventListener('tap', function() {
+							var _self = this;
+							if(_self.picker) {
+								_self.picker.show(function (rs) {
+									// end.value = '选择结果: ' + rs.text;
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							} else {
+								var optionsJson = this.getAttribute('data-options') || '{}';
+								var options = JSON.parse(optionsJson);
+								var id = this.getAttribute('id');
+								
+								_self.picker = new $.DtPicker(options);
+								_self.picker.show(function(rs) {
+									
+									end.value = rs.text;
+									
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							}
+							
+						}, false);
+					});
+			//结束
+			
+			
+				});
+				
+			})(mui, document);
+
+			//表单验证
+			function getTime(date_str) {
+				return !date_str?new Date().getTime():new Date(date_str.replace(/-/g,'/')).getTime();
+			}
+			function is_empty_high() {
+				var is_sub = false;
+				var input = document.querySelectorAll('.v_empty_high');
+				input.forEach(function (item,i) {
+					if(item.value===''){
+						is_sub=true;
+					}
+				});
+				return is_sub
+			}
+			function is_empty() {
+				var is_sub = false;
+				var input = document.querySelectorAll('.v_empty');
+				input.forEach(function (item,i) {
+					if(item.value===''){
+						is_sub=true;
+					}
+				});
+				return is_sub
+			}
+			function verification() {
+				//高频和定时表单 验证
+				if(document.getElementById("type-status").value == '高频'){
+					var start_date = document.getElementById('timing-startday-high').value;
+					var end_date = document.getElementById('timing-endday-high').value;
+					if(is_empty_high()){
+						mui.toast('不能为空');
+						return false
+					}
+					if(getTime(start_date)>getTime(end_date)){
+						mui.toast('开启时间不能大于关闭时间');
+						return false
+					}
+				}else if(document.getElementById("type-status").value == '定时'){
+					var start_date = document.getElementById('timing-startday').value;
+					var end_date = document.getElementById('timing-endday').value;
+					var start_time = document.getElementById('timing-start').value;
+					var end_time = document.getElementById('timing-end').value;
+					if(is_empty()){
+						mui.toast('不能为空');
+						return false
+					}
+					// if(getTime(start_date)<getTime()){
+					// 	mui.toast('开始日期不能小于当前日期');
+					// 	return false
+					// }
+					if(getTime(start_date)>getTime(end_date)){
+						mui.toast('开启日期不能大于关闭日期');
+						return false
+					}
+					if(Number(start_time.replace(/:/g,''))>Number(end_time.replace(/:/g,''))){
+						mui.toast('开启时间不能大于关闭时间');
+						return false
+					}
+				};
+				// var start_date = document.getElementById('timing-startday-high').value;
+				// var end_date = document.getElementById('timing-endday-high').value;
+				// if(is_empty()){
+				// 	mui.toast('不能为空');
+				// 	return false
+				// }
+				// if(getTime(start_date)>getTime(end_date)){
+				// 	mui.toast('开启时间不能大于关闭时间');
+				// 	return false
+				// }
+				// return true
+			}
+			// 结束
+			 
+			
+			
+		</script>
+	</body>
+
+</html>

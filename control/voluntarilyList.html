@@ -1,0 +1,253 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>自动控制</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../font_icon/iconfont.css" rel="stylesheet" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link href="../css/app.css" rel="stylesheet" />
+		<link href="../css/mui.picker.css" rel="stylesheet" />
+		<link href="../css/mui.poppicker.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.picker.min.css" />
+		<style>
+			.mui-btn {
+				font-size: 16px;
+				padding: 8px;
+				margin: 3px;
+			}
+			h5.mui-content-padded {
+				margin-left: 3px;
+				margin-top: 20px !important;
+			}
+			h5.mui-content-padded:first-child {
+				margin-top: 12px !important;
+			}
+			.ui-alert {
+				text-align: center;
+				padding: 20px 10px;
+				font-size: 16px;
+			}
+		</style>
+	</head>
+		
+	<body>
+		
+			<header id="header" class="mui-bar mui-bar-nav backblue">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell colwhite con-li fl" id="hand">手动</li>
+					<li class="mui-table-view-cell colwhite con-li fl con-active" id="voluntarily">自动</li>
+				</ul>
+			</header>
+			<nav class="mui-bar mui-bar-tab">
+				<a class="mui-tab-item" data-id="status" id="status">
+					<span class="icon iconfont icon-iconfkzt nav-icon"></span>
+					<span class="mui-tab-label fosize08">状态</span>
+				</a>
+				<a class="mui-tab-item mui-active" data-id="control" id="control">
+					<span class="icon iconfont icon-kongzhi1 nav-icon"></span>
+					<span class="mui-tab-label fosize08">控制</span>
+				</a>
+				<a class="mui-tab-item" data-id="intellect" id="intellect">
+					<span class="icon iconfont icon-tianchongxing- nav-icon"></span>
+					<span class="mui-tab-label fosize08">智能</span>
+				</a>
+				<a class="mui-tab-item" data-id="myself" id="myself">
+					<span class="icon iconfont icon-wode nav-icon"></span>
+					<span class="mui-tab-label fosize08">我的</span>
+				</a>
+			</nav>
+			
+			<div class="mui-content">
+				
+				<div class="my-device">
+					<ul class="device-ul">
+						<li class="mui-card bor-radius5">
+							<div class="mui-card-content">
+								<div class="mui-card-content-inner porelative">
+									<div>
+										<span class="fosize1 mr10">A1电磁阀</span>
+										<span class="fosize07 mr10 vol-square colwhite backred">离线</span>
+										<span class="fosize07 mr10 vol-square colwhite backblue fr">日间方案</span>
+										<span class="fosize07 mr10 vol-square colwhite backlv vol-zhuangtai fr">定时</span>
+									</div>
+									<div class="disnone dingshi">
+										<div class="mt10 ding-li">
+											<p class="mb0">循环模式:<span class="ml5 vol-moshi">每天</span></p>
+											<p class="mb0 ding-guan disnone">日期:<span class="ml5">2020-08-09</span></p>
+											<p class="mb0">开启:<span class="ml5">8:00</span></p>
+											<p class="mb0 ding-close disnone">关闭:<span class="ml5">8:00</span></p>
+											<p class="mb0 ding-guan disnone">灌溉时长(分):<span class="ml5">8:00</span></p>
+										</div>
+										<div class="mt10 ding-li">
+											<p class="mb0">循环模式:<span class="ml5 vol-moshi">单次</span></p>
+											<p class="mb0 ding-guan disnone">日期:<span class="ml5">2020-08-09</span></p>
+											<p class="mb0">开启:<span class="ml5">8:00</span></p>
+											<p class="mb0 ding-close disnone">关闭:<span class="ml5">8:00</span></p>
+											<p class="mb0 ding-guan disnone">灌溉时长(分):<span class="ml5">8:00</span></p>
+										</div>
+										<div class="mt10 ding-li">
+											<p class="mb0">循环模式:<span class="ml5 vol-moshi">每周一</span></p>
+											<p class="mb0 ding-guan disnone">日期:<span class="ml5">2020-08-09</span></p>
+											<p class="mb0">开启:<span class="ml5">8:00</span></p>
+											<p class="mb0 ding-close disnone">关闭:<span class="ml5">8:00</span></p>
+											<p class="mb0 ding-guan disnone">灌溉时长(分):<span class="ml5">8:00</span></p>
+										</div>
+									</div>
+									<div class="disnone gaopin">
+										<div class="mt10 w50">
+											<p class="mb0">时段1:<span class="ml5">8:00-18:00</span></p>
+											<p class="mb0">开启(分):<span class="ml5">2</span></p>
+											<p class="mb0">关闭(分):<span class="ml5">5</span></p>
+										</div>
+										<div class="mt10 w50">
+											<p class="mb0">时段2:<span class="ml5">8:00-18:00</span></p>
+											<p class="mb0">开启(分):<span class="ml5">2</span></p>
+											<p class="mb0">关闭(分):<span class="ml5">5</span></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						
+						<li class="mui-card bor-radius5">
+							<div class="mui-card-content">
+								<div class="mui-card-content-inner porelative">
+									<div>
+										<span class="fosize1 mr10">A1电磁阀</span>
+										<span class="fosize07 mr10 vol-square colwhite backred">离线</span>
+										<span class="fosize07 mr10 vol-square colwhite backblue fr">日间方案</span>
+										<span class="fosize07 mr10 vol-square colwhite backlv vol-zhuangtai fr">高频</span>
+									</div>
+									<div class="disnone dingshi">
+										<div class="mt10 ding-li">
+											<p class="mb0">循环模式:<span class="ml5 vol-moshi">每天</span></p>
+											<p class="mb0 ding-guan disnone">日期:<span class="ml5">2020-08-09</span></p>
+											<p class="mb0">开启:<span class="ml5">8:00</span></p>
+											<p class="mb0 ding-close disnone">关闭:<span class="ml5">8:00</span></p>
+											<p class="mb0 ding-guan disnone">灌溉时长(分):<span class="ml5">8:00</span></p>
+										</div>
+										<div class="mt10 ding-li">
+											<p class="mb0">循环模式:<span class="ml5 vol-moshi">单次</span></p>
+											<p class="mb0 ding-guan disnone">日期:<span class="ml5">2020-08-09</span></p>
+											<p class="mb0">开启:<span class="ml5">8:00</span></p>
+											<p class="mb0 ding-close disnone">关闭:<span class="ml5">8:00</span></p>
+											<p class="mb0 ding-guan disnone">灌溉时长(分):<span class="ml5">8:00</span></p>
+										</div>
+										<div class="mt10 ding-li">
+											<p class="mb0">循环模式:<span class="ml5 vol-moshi">每周一</span></p>
+											<p class="mb0 ding-guan disnone">日期:<span class="ml5">2020-08-09</span></p>
+											<p class="mb0">开启:<span class="ml5">8:00</span></p>
+											<p class="mb0 ding-close disnone">关闭:<span class="ml5">8:00</span></p>
+											<p class="mb0 ding-guan disnone">灌溉时长(分):<span class="ml5">8:00</span></p>
+										</div>
+									</div>
+									<div class="disnone gaopin">
+										<div class="mt10 w50">
+											<p class="mb0">时段1:<span class="ml5">8:00-18:00</span></p>
+											<p class="mb0">开启(分):<span class="ml5">2</span></p>
+											<p class="mb0">关闭(分):<span class="ml5">5</span></p>
+										</div>
+										<div class="mt10 w50">
+											<p class="mb0">时段2:<span class="ml5">8:00-18:00</span></p>
+											<p class="mb0">开启(分):<span class="ml5">2</span></p>
+											<p class="mb0">关闭(分):<span class="ml5">5</span></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			
+			
+			
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.picker.js"></script>
+		<script src="../js/mui.picker.min.js"></script>
+		<script src="../js/mui.poppicker.js"></script>
+		<script src="../js/city.data.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery-1.11.1.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			//打开新页面
+			document.getElementById('myself').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../myself/myself.html', 
+				id:'info'
+			  });
+			});
+			document.getElementById('intellect').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../intellect/intellect.html', 
+				id:'info'
+			  });
+			});
+			document.getElementById('control').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../control/control.html', 
+				id:'info'
+			  });
+			});
+			document.getElementById('status').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../index/index.html', 
+				id:'info'
+			  });
+			});
+			document.getElementById('voluntarily').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../control/voluntarilyList.html', 
+				id:'info'
+			  });
+			});
+			document.getElementById('hand').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../control/control.html', 
+				id:'info'
+			  });
+			});
+			
+			mui(".device-ul").on("tap",".mui-card",function(){
+				mui.openWindow({
+					url: 'volunForm.html', 
+					id:''
+				});
+			});
+			
+			$(document).ready(function(){
+				//循环判断
+				$(".mui-card").each(function(){
+					if($(this).find(".vol-zhuangtai").html() == '定时'){
+						$(this).find(".dingshi").removeClass("disnone");
+					}else if($(this).find(".vol-zhuangtai").html() == '高频'){
+						$(this).find(".gaopin").removeClass("disnone");
+					}
+				 });
+				 $(".ding-li").each(function(){
+				 	if($(this).find(".vol-moshi").html() == '单次'){
+				 		$(this).find(".ding-close").addClass("disnone");
+						$(this).find(".ding-guan").removeClass("disnone");
+				 	}else{
+				 		$(this).find(".ding-close").removeClass("disnone");
+						$(this).find(".ding-guan").addClass("disnone");
+				 	}
+				  });
+				 
+			})
+			
+			
+					
+				
+			
+		</script>
+	</body>
+
+</html>

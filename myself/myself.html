@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>我的</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../font_icon/iconfont.css" rel="stylesheet" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link href="../css/app.css" rel="stylesheet" />
+		<style>
+		</style>
+	</head>
+		
+	<body>
+		
+			<!-- <header id="header" class="mui-bar mui-bar-nav backblue">
+				<h1 class="mui-title colwhite">我的</h1>
+			</header> -->
+			<nav class="mui-bar mui-bar-tab">
+				<a class="mui-tab-item" data-id="status" id="status">
+					<span class="icon iconfont icon-iconfkzt nav-icon"></span>
+					<span class="mui-tab-label fosize08">状态</span>
+				</a>
+				<a class="mui-tab-item" data-id="control" id="control">
+					<span class="icon iconfont icon-kongzhi1 nav-icon"></span>
+					<span class="mui-tab-label fosize08">控制</span>
+				</a>
+				<a class="mui-tab-item" data-id="intellect" id="intellect">
+					<span class="icon iconfont icon-tianchongxing- nav-icon"></span>
+					<span class="mui-tab-label fosize08">智能</span>
+				</a>
+				<a class="mui-tab-item  mui-active" data-id="myself" id="myself">
+					<span class="icon iconfont icon-wode nav-icon"></span>
+					<span class="mui-tab-label fosize08">我的</span>
+				</a>
+			</nav>
+			
+			<div class="mui-content">
+				<div class="myback">
+					<div>
+						<img class="imgmyself mb10" src="../images/shuijiao.jpg"/>
+						<p class="myname colwhite fosize09">用户名</p>
+						<!-- <p class="myshebei colwhite">设备名</p> -->
+					</div>
+				</div>
+				<div class="my-device">
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell" id="myInfo">
+								<span class="icon iconfont icon-ziyuan1 fosize14"></span>
+								<span class="fosize09 ml5">我的信息</span>
+								<a class="mui-icon mui-icon-forward mui-pull-right colgrey"></a>
+							</li>
+							<li class="mui-table-view-cell" id="shareList">
+								<span class="icon iconfont icon-fenxiang fosize14"></span>
+								<span class="fosize09 ml5">分享管理</span>
+								<a class="mui-icon mui-icon-forward mui-pull-right colgrey"></a>
+							</li>
+							<li class="mui-table-view-cell" id="planList">
+								<span class="icon iconfont icon-fangan fosize14"></span>
+								<span class="fosize09 ml5">方案设置</span>
+								<a class="mui-icon mui-icon-forward mui-pull-right colgrey"></a>
+							</li>
+							<li class="mui-table-view-cell" id="regulatorList">
+								<span class="icon iconfont icon-shebei3 fosize14"></span>
+								<span class="fosize09 ml5">设备管理</span>
+								<a class="mui-icon mui-icon-forward mui-pull-right colgrey"></a>
+							</li>
+							<li class="mui-table-view-cell" id="notice">
+								<span class="icon iconfont icon-tongzhi1 fosize14"></span>
+								<span class="fosize09 ml5">通知管理</span>
+								<a class="mui-icon mui-icon-forward mui-pull-right colgrey"></a>
+							</li>
+							<!-- <li class="mui-table-view-cell" id="regulatorList">
+								<span class="icon iconfont icon-guanli fosize14"></span>
+								<span class="fosize09 ml5">设备设置</span>
+								<a class="mui-icon mui-icon-forward mui-pull-right colgrey"></a>
+							</li> -->
+							<!-- <li class="mui-table-view-cell" id="setupList">
+								<span class="icon iconfont icon-shezhi2 fosize14"></span>
+								<span class="fosize09 ml5">设置</span>
+								<a class="mui-icon mui-icon-forward mui-pull-right colgrey"></a>
+							</li> -->
+						</ul>
+				</div>
+				
+			</div>
+			
+			
+			
+			
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			//打开新页面
+			document.getElementById('myself').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../myself/myself.html', 
+				id:'info'
+			  });
+			});
+			document.getElementById('intellect').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../intellect/intellect.html', 
+				id:'info'
+			  });
+			});
+			document.getElementById('control').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../control/control.html', 
+				id:'info'
+			  });
+			});
+			document.getElementById('status').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../index/index.html', 
+				id:'info'
+			  });
+			});
+			document.getElementById('shareList').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../share/shareList.html', 
+				id:'info'
+			  });
+			});
+			document.getElementById('myInfo').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: 'myInfo.html', 
+				id:'info'
+			  });
+			});
+			// document.getElementById('setupList').addEventListener('tap', function() {
+			//   mui.openWindow({
+			// 	url: '../setup/setupList.html', 
+			// 	id:'info'
+			//   });
+			// });
+			// document.getElementById('deviceList').addEventListener('tap', function() {
+			//   mui.openWindow({
+			// 	url: '../device/deviceList.html', 
+			// 	id:'info'
+			//   });
+			// });
+			// document.getElementById('regulatorList').addEventListener('tap', function() {
+			//   mui.openWindow({
+			// 	url: '../regulator/regulatorList.html', 
+			// 	id:'info'
+			//   });
+			// });
+			document.getElementById('planList').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../plan/planList.html', 
+				id:'info'
+			  });
+			});
+			document.getElementById('regulatorList').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../regulator/regulatorList.html', 
+				id:'info'
+			  });
+			});
+			document.getElementById('notice').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../setup/notice.html', 
+				id:'info'
+			  });
+			});
+		</script>
+	</body>
+
+</html>

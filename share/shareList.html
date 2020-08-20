@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>分享管理</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../font_icon/iconfont.css" rel="stylesheet" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link href="../css/app.css" rel="stylesheet" />
+		<style>
+			#alert-content {
+				width: 0px;
+				height: 0px;
+				position: fixed;
+				top: 70%;
+				left: 50%;
+			}
+			/*移除底部或顶部三角,需要在删除此代码*/
+			.mui-popover .mui-popover-arrow:after {
+				width: 0px;
+			}
+
+		</style>
+	</head>
+		
+	<body>
+		
+			<header id="header" class="mui-bar mui-bar-nav backwhite shadow0">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left col333"></a>
+				<h1 class="mui-title col333">分享管理</h1>
+				<!-- <button class="mui-btn mui-btn-link mui-pull-right colblue share-add">添加分享</button> -->
+			</header>
+			
+			<div class="mui-content">
+				<div class="execu-tab backwhite">
+					<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
+						<a class="mui-control-item mui-active" href="#item1">我的分享</a>
+						<a class="mui-control-item" href="#item2">分享给我的</a>
+					</div>
+				</div>
+				<div id="item1" class="mui-control-content mui-active">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell mui-media share-list-see">
+								<div class="mui-media-body">
+									<!-- <div class="fl">
+										<img class="mui-media-object mui-pull-left system-img" src="../images/shuijiao.jpg">
+									</div> -->
+									<p class="fl icon-back icon-img-share backlv">
+										<span class="icon iconfont icon-fenxiang icon-color"></span>
+									</p>
+									<div>
+										<p class='mui-ellipsis log-content fosize09'>
+											<span class="col333 fosize1">设备1</span>
+											<a class="mui-icon mui-icon-forward mui-pull-right colgrey fr"></a>
+											<span class="colgrey fr">07-24 23:29</span>
+										</p>
+										<!-- <p class="colgrey fosize09">分享场景:设备1</p> -->
+										<p class="log-name fosize09">分享给:张猪猪</p>
+										<span class="colgrey fr fosize09 mr10">一天有效</span>
+									</div>
+								</div>
+						</li>
+						<li class="mui-table-view-cell mui-media share-list-see">
+								<div class="mui-media-body">
+									<!-- <div class="fl">
+										<img class="mui-media-object mui-pull-left system-img" src="../images/shuijiao.jpg">
+									</div> -->
+									<p class="fl icon-back icon-img-share backlv">
+										<span class="icon iconfont icon-fenxiang icon-color"></span>
+									</p>
+									<div>
+										<p class='mui-ellipsis log-content fosize09'>
+											<span class="col333 fosize1">设备1</span>
+											<a class="mui-icon mui-icon-forward mui-pull-right colgrey fr"></a>
+											<span class="colgrey fr">07-24 23:29</span>
+										</p>
+										<!-- <p class="colgrey fosize09">分享场景:设备1</p> -->
+										<p class="log-name fosize09">分享给:张猪猪</p>
+										<span class="colgrey fr fosize09 mr10">一天有效</span>
+									</div>
+								</div>
+						</li>
+						<li class="mui-table-view-cell mui-media share-list-see">
+								<div class="mui-media-body">
+									<!-- <div class="fl">
+										<img class="mui-media-object mui-pull-left system-img" src="../images/shuijiao.jpg">
+									</div> -->
+									<p class="fl icon-back icon-img-share backlv">
+										<span class="icon iconfont icon-fenxiang icon-color"></span>
+									</p>
+									<div>
+										<p class='mui-ellipsis log-content fosize09'>
+											<span class="col333 fosize1">设备1</span>
+											<a class="mui-icon mui-icon-forward mui-pull-right colgrey fr"></a>
+											<span class="colgrey fr">07-24 23:29</span>
+										</p>
+										<!-- <p class="colgrey fosize09">分享场景:设备1</p> -->
+										<p class="log-name fosize09">分享给:张猪猪</p>
+										<span class="colgrey fr fosize09 mr10">一天有效</span>
+									</div>
+								</div>
+						</li>
+					</ul>
+				</div>
+				<div id="item2" class="mui-control-content">
+					<ul class="mui-table-view device-ul">
+						<li class="mui-table-view-cell">
+								<div class="mui-media-body">
+									<p class="fl icon-back icon-img-share backju">
+										<span class="icon iconfont icon-fenxiang icon-color"></span>
+									</p>
+									<div>
+										<p class='mui-ellipsis log-content fosize09'>
+											<span class="col333 fosize1">设备1</span>
+											<a class="mui-icon mui-icon-forward mui-pull-right colgrey fr"></a>
+											<span class="fr period colju">未到期</span>
+										</p>
+										<p class="log-name fosize09">分享者:张猪猪</p>
+										
+										<span class="colgrey fr fosize09 mr10">一天有效</span>
+									</div>
+								</div>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+								<div class="mui-media-body">
+									<p class="fl icon-back icon-img-share backju">
+										<span class="icon iconfont icon-fenxiang icon-color"></span>
+									</p>
+									<div>
+										<p class='mui-ellipsis log-content fosize09'>
+											<span class="col333 fosize1">设备1</span>
+											<a class="mui-icon mui-icon-forward mui-pull-right colgrey fr"></a>
+											<span class="fr period colju">未到期</span>
+										</p>
+										<p class="log-name fosize09">分享者:张猪猪</p>
+										
+										<span class="colgrey fr fosize09 mr10">一天有效</span>
+									</div>
+								</div>
+						</li>
+					</ul>
+					<p class="mt10"></p>
+					<ul class="mui-table-view device-ul">
+						<li class="mui-table-view-cell mui-media  already">
+							
+								<div class="mui-media-body">
+									<p class="fl icon-back icon-img-share backju">
+										<span class="icon iconfont icon-fenxiang icon-color"></span>
+									</p>
+									<div>
+										<p class='mui-ellipsis log-content fosize09'>
+											<span class="col333 fosize1">设备1</span>
+											<a class="mui-icon mui-icon-forward mui-pull-right colgrey fr"></a>
+											<span class="fr period  colgrey">已到期</span>
+										</p>
+										<p class="log-name fosize09">分享者:张猪猪</p>
+										<span class="colgrey fr fosize09 mr10">一天有效</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media  already">
+							
+								<div class="mui-media-body">
+									<p class="fl icon-back icon-img-share backju">
+										<span class="icon iconfont icon-fenxiang icon-color"></span>
+									</p>
+									<div>
+										<p class='mui-ellipsis log-content fosize09'>
+											<span class="col333 fosize1">设备1</span>
+											<a class="mui-icon mui-icon-forward mui-pull-right colgrey fr"></a>
+											<span class="fr period  colgrey">已到期</span>
+										</p>
+										<p class="log-name fosize09">分享者:张猪猪</p>
+										<span class="colgrey fr fosize09 mr10">一天有效</span>
+									</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+					
+				</div>
+				
+			</div>
+			
+			
+			
+		<!-- <script src="../js/mui.min.js"></script> -->
+		<script src="../js/mui.min.js "></script>
+		<script src="../js/mui.view.js "></script>
+		<script type="text/javascript">
+			mui.init();
+			mui('.mui-scroll-wrapper').scroll();
+			mui(".mui-table-view").on("tap",".share-list-see",function(){
+				mui.openWindow({
+					url: 'shareDetail.html', 
+					id:''
+				});
+			});
+			// mui(".mui-bar").on("tap",".share-add",function(){
+			// 	mui.openWindow({
+			// 		url: 'shareNew.html', 
+			// 		id:''
+			// 	});
+			// });
+			//已到期再次申请
+			mui(".device-ul").on("tap",".already",function(){
+				mui.confirm('是否再次申请分享','请确认',['否','是'],function (e) {
+					if (e.index == 1) {
+						mui.toast('已申请');
+						
+					} else {
+						
+					}
+				},'div')
+			});
+			
+		</script>
+	</body>
+
+</html>

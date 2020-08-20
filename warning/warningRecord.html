@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>预警记录</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../font_icon/iconfont.css" rel="stylesheet" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link href="../css/app.css" rel="stylesheet" />
+		<style>
+			#alert-content {
+				width: 0px;
+				height: 0px;
+				position: fixed;
+				top: 70%;
+				left: 50%;
+			}
+			/*移除底部或顶部三角,需要在删除此代码*/
+			.mui-popover .mui-popover-arrow:after {
+				width: 0px;
+			}
+
+		</style>
+	</head>
+		
+	<body>
+		
+			<header id="header" class="mui-bar mui-bar-nav backwhite shadow0">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left col333"></a>
+				<h1 class="mui-title col333">预警记录</h1>
+			</header>
+			
+			<div class="mui-content">
+				<div class="my-device">
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell mui-media sys-alert">
+								<a href="javascript:;">
+									<div class="mui-media-body">
+										<!-- <div class="fl">
+											<img class="mui-media-object mui-pull-left system-img" src="../images/shuijiao.jpg">
+										</div> -->
+										<p class="fl icon-back icon-img-share backju">
+											<span class="icon iconfont icon-yujing icon-color"></span>
+										</p>
+										<div>
+											<p class='mui-ellipsis log-content fosize09'>
+												<span>当前光照不正常光照预警当前光照不正常光照预警当前光照不正常光照预警当前光照不正常光照预警</span>
+											</p>
+											<span class="log-name fosize09">设备2光照预警</span>
+											<span class="log-time fr fosize09">2020-07-24 23:29</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							
+							
+						</ul>
+				</div>
+				
+			</div>
+			<!-- 弹出框 -->
+			<div id="alert-content" class="alert-content"></div>
+			<div id="popover" class="mui-popover sys-popover" style="height:330px;">
+			   <div class="mui-popover-arrow"></div>
+				<div class="sys-pop-title">设备2光照预警</div>
+				<div class="sys-pop-content">
+					<div class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<div>
+							当前光照不正常光照预警当前光照不正常光照预警当前光照不正常光照预警当前光照不正常光照预警
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="sys-pop-close">
+				<button type="button" class="mui-btn mui-btn-primary sys-pop-btn" >我知道了</button>
+				</div>
+				<p class="sys-pop-time">2020-07-24 23:29</p>
+			</div>
+			<!-- 结束 -->
+			
+			
+			
+		<!-- <script src="../js/mui.min.js"></script> -->
+		<script src="../js/mui.min.js "></script>
+		<script src="../js/mui.view.js "></script>
+		<script type="text/javascript">
+			mui.init();
+			mui('.mui-scroll-wrapper').scroll();
+			// 弹出框
+			//绑定mui-table-view的子元素sys-alert
+			mui(".mui-table-view").on("tap",".sys-alert",function(){
+				mui("#popover").popover('toggle', document.getElementById("alert-content"));
+				 //当前对象直接就是--->this
+// 				var targetUrl = this.target;
+// 				console.log("你要跳转的地址是："+targetUrl);
+// 				window.location.href=targetUrl;
+
+			});
+			mui(".sys-pop-close").on("tap",".sys-pop-btn",function(){
+				mui("#popover").popover('toggle', document.getElementById("alert-content"));
+			});
+			
+			// 询问弹框
+			// mui.confirm('message','title',['取消','确认'],function (e) {
+			// 	e.index
+			// },'div')
+
+		</script>
+	</body>
+
+</html>

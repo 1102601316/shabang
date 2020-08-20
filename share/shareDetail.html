@@ -1,0 +1,255 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>分享详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link href="../css/app.css" rel="stylesheet" />
+		<link href="../css/mui.picker.css" rel="stylesheet" />
+		<link href="../css/mui.poppicker.css" rel="stylesheet" />
+		<style>
+			.mui-btn {
+				font-size: 16px;
+				padding: 8px;
+				margin: 3px;
+			}
+			h5.mui-content-padded {
+				margin-left: 3px;
+				margin-top: 20px !important;
+			}
+			h5.mui-content-padded:first-child {
+				margin-top: 12px !important;
+			}
+			.ui-alert {
+				text-align: center;
+				padding: 20px 10px;
+				font-size: 16px;
+			}
+			.mui-switch:before{
+				content:'停用';
+				top:0px;
+			}
+			.mui-switch.mui-active:before{
+				content:'启用';
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+			<header id="header" class="mui-bar mui-bar-nav backwhite shadow0">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left col333"></a>
+				<h1 class="mui-title col333">我的分享</h1>
+			</header>
+			
+			<div class="mui-content">
+				<div  class="">
+					<form action="" method="">
+						<div class="module">
+							<p class="amblist col333">分享信息</p>
+							<ul class="device-ul">
+								<li class="mui-card bor-radius5">
+									<div class="mui-card-content">
+										<div class="mui-card-content-inner">
+											<ul class="mui-table-view">
+												<li class="mui-table-view-cell padd0" id="share-name-li">
+													<label class="fl fosize09 list-form-name">有效期</label>
+													
+													<a class="mui-icon mui-icon-arrowright form-icon colgrey fr" style="line-height:60px !important;"></a>
+													<input type="text" class="mui-input-clear colgrey fosize09 fl share-input" name=""  value="一小时有效"  id='share-name'>
+												</li>
+												<li class="mui-table-view-cell padd0">
+													<label class="fl fosize09 list-form-name">分享给</label>
+													<input type="text" class="mui-input-clear colgrey fosize09 fl reg-input" name=""  value="23.00">					
+												</li>
+												<!-- <li class="mui-table-view-cell padd0">
+													<label class="fl fosize09 list-form-name">状态</label>
+													<input type="text" class="mui-input-clear colgrey fosize09 fl reg-input" name=""  value="启用">					
+												</li> -->
+												<li class="mui-table-view-cell padd0">
+													<span class="fl fosize09 list-form-name">状态</span>
+													<div class="mui-switch mui-switch-blue">
+														<div class="mui-switch-handle"></div>
+													</div>
+												</li>
+												
+											</ul>
+											<div class="mui-button-row">
+												<button type="button" class="mui-btn mui-btn-primary warn-btn share-primary  w45" >更新</button>
+												<button type="button" class="mui-btn mui-btn-danger warn-btn share-romove  w45" >删除</button>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="module">
+							<p class="amblist col333">分享场景</p>
+							<ul class="device-ul">
+								<li class="mui-card bor-radius5">
+									<div class="mui-card-content">
+										<div class="mui-card-content-inner">
+											<ul class="mui-table-view">
+												<li class="mui-table-view-cell padd0">
+													<span class="fl fosize09 list-form-name">设备1</span>
+													<div class="mui-switch mui-switch-blue mui-active mui-disabled">
+														<div class="mui-switch-handle"></div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="module">
+							<p class="amblist col333">分享人员</p>
+							<ul class="device-ul">
+								<li class="mui-card bor-radius5">
+									<div class="mui-card-content">
+										<div class="mui-card-content-inner">
+											<ul class="mui-table-view">
+												<li class="mui-table-view-cell padd0">
+													<label class="fl fosize09 list-form-name">用户名</label>
+													<input type="text" class="mui-input-clear colgrey fosize09 fl reg-input" name=""  value="张猪猪">					
+												</li>
+												<li class="mui-table-view-cell padd0">
+													<label class="fl fosize09 list-form-name">真实姓名</label>
+													<input type="text" class="mui-input-clear colgrey fosize09 fl reg-input" name=""  value="张猪猪">					
+												</li>
+												<li class="mui-table-view-cell padd0">
+													<label class="fl fosize09 list-form-name">联系电话</label>
+													<input type="text" class="mui-input-clear colgrey fosize09 fl reg-input" name=""  value="18763748533">					
+												</li>
+												<li class="mui-table-view-cell padd0">
+													<span class="fl fosize09 list-form-name">状态</span>
+													<div class="mui-switch mui-switch-blue mui-disabled">
+														<div class="mui-switch-handle"></div>
+													</div>
+												</li>
+												
+											</ul>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						
+						<div class="module">
+							<p class="amblist col333">分享二维码，长按发送给朋友</p>
+							<ul class="device-ul">
+								<li class="mui-card bor-radius5">
+									<div class="mui-card-content">
+										<div class="mui-card-content-inner">
+											<ul class="mui-table-view">
+												<li class="mui-table-view-cell padd0">
+													<img src="../images/ercode.png" class="er-code">					
+												</li>
+											</ul>
+											
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</form>
+				</div>
+			</div>
+			
+			
+			
+			
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.picker.js"></script>
+		<script src="../js/mui.picker.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			
+			
+			
+			// 取消关联弹框
+			mui(".mui-button-row").on("tap",".share-primary",function(){
+				mui.confirm('是否更新','请确认',['否','是'],function (e) {
+					if (e.index == 1) {
+						mui.toast('已更新');
+						mui.openWindow({
+							url: 'shareList.html', 
+							id:'info'
+						});
+					} else {
+						
+					}
+				},'div')
+			});
+			
+			// 修改信息弹框
+			mui(".mui-button-row").on("tap",".share-romove",function(){
+				mui.confirm('是否删除','请确认',['否','是'],function (e) {
+					if (e.index == 1) {
+						mui.toast('已删除');
+						mui.openWindow({
+							url: 'shareList.html', 
+							id:'info'
+						});
+					} else {
+						
+					}
+				},'div')
+			});
+			
+			(function($, doc) {
+				$.init();
+				$.ready(function() {
+					/**
+					 * 获取对象属性的值
+					 * 主要用于过滤三级联动中，可能出现的最低级的数据不存在的情况，实际开发中需要注意这一点；
+					 * @param {Object} obj 对象
+					 * @param {String} param 属性名
+					 */
+					var _getParam = function(obj, param) {
+						return obj[param] || '';
+					};
+					
+					//选择每周天数
+					var shareName = new $.PopPicker();
+					shareName.setData([{
+						value: 'dingshi',
+						text: '一小时有效'
+					}, {
+						value: 'gaopin',
+						text: '一天有效'
+					}, {
+						value: 'gaopin',
+						text: '一周有效'
+					}, {
+						value: 'gaopin',
+						text: '一个月有效'
+					}, {
+						value: 'gaopin',
+						text: '永久有效'
+					}]);
+					var showshareName = doc.getElementById('share-name-li');
+					var usershareName = doc.getElementById('share-name');
+					showshareName.addEventListener('tap', function(event) {
+						shareName.show(function(items) {
+							//数据为items[0]
+							// usershareName.innerText = JSON.stringify(items[0]);
+							//显示文本
+							usershareName.value = items[0].text;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+				});
+				})(mui, document);
+			
+			
+		</script>
+	</body>
+
+</html>

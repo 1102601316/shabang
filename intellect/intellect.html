@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>智能</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../font_icon/iconfont.css" rel="stylesheet" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link href="../css/app.css" rel="stylesheet" />
+		<style>
+		</style>
+	</head>
+		
+	<body>
+		
+			<header id="header" class="mui-bar mui-bar-nav backblue">
+				<!-- <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left colwhite"></a> -->
+				<h1 class="mui-title colwhite">智能</h1>
+			</header>
+			<nav class="mui-bar mui-bar-tab">
+				<a class="mui-tab-item" data-id="status" id="status">
+					<span class="icon iconfont icon-iconfkzt nav-icon"></span>
+					<span class="mui-tab-label fosize08">状态</span>
+				</a>
+				<a class="mui-tab-item" data-id="control" id="control">
+					<span class="icon iconfont icon-kongzhi1 nav-icon"></span>
+					<span class="mui-tab-label fosize08">控制</span>
+				</a>
+				<a class="mui-tab-item mui-active" data-id="intellect" id="intellect">
+					<span class="icon iconfont icon-tianchongxing- nav-icon"></span>
+					<span class="mui-tab-label fosize08">智能</span>
+				</a>
+				<a class="mui-tab-item" data-id="myself" id="myself">
+					<span class="icon iconfont icon-wode nav-icon"></span>
+					<span class="mui-tab-label fosize08">我的</span>
+				</a>
+			</nav>
+			
+			<div class="mui-content">
+				<div class="my-device">
+						<p class="mb10"></p>
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell" id="inte-ambient">
+								<span class="icon iconfont icon-huanjing fosize14"></span>
+								<span class="fosize09 ml5">环境数据</span>
+								<a class="mui-icon mui-icon-forward mui-pull-right colgrey"></a>
+							</li>
+							<li class="mui-table-view-cell" id="irrigateList">
+								<span class="icon iconfont icon-tongji fosize14"></span>
+								<span class="fosize09 ml5">灌溉统计</span>
+								<a class="mui-icon mui-icon-forward mui-pull-right colgrey"></a>
+							</li>
+							
+						</ul>
+						<p class="mb10"></p>
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell"  id="automateList">
+								<span class="icon iconfont icon-zidonghuaxueyuan fosize14"></span>
+								<span class="fosize09 ml5">自动化</span>
+								<a class="mui-icon mui-icon-forward mui-pull-right colgrey"></a>
+							</li>
+							<li class="mui-table-view-cell"  id="execution">
+								<span class="icon iconfont icon-jihuarenwu fosize14"></span>
+								<span class="fosize09 ml5">执行计划</span>
+								<a class="mui-icon mui-icon-forward mui-pull-right colgrey"></a>
+							</li>
+							<li class="mui-table-view-cell"   id="warningList">
+								<span class="icon iconfont icon-yujing fosize14"></span>
+								<span class="fosize09 ml5">设备预警</span>
+								<a class="mui-icon mui-icon-forward mui-pull-right colgrey"></a>
+							</li>
+							<li class="mui-table-view-cell" id="repair">
+								<span class="icon iconfont icon-baoxiu fosize14"></span>
+								<span class="fosize09 ml5">一键报修</span>
+								<a class="mui-icon mui-icon-forward mui-pull-right colgrey"></a>
+							</li>
+						</ul>
+						<p class="mb10"></p>
+						<ul class="mui-table-view">
+						<!-- 	<li class="mui-table-view-cell" id="executionRecord">
+								<span class="icon iconfont icon-jihua fosize14"></span>
+								<span class="fosize09 ml5">执行记录</span>
+								<a class="mui-icon mui-icon-forward mui-pull-right colgrey"></a>
+							</li>
+							<li class="mui-table-view-cell" id="warningRecord">
+								<span class="icon iconfont icon-jilu1 fosize14"></span>
+								<span class="fosize09 ml5">预警记录</span>
+								<a class="mui-icon mui-icon-forward mui-pull-right colgrey"></a>
+							</li> -->
+							<li class="mui-table-view-cell" id="system">
+								<span class="icon iconfont icon-tongzhi fosize14"></span>
+								<span class="fosize09 ml5">系统通知</span>
+								<a class="mui-icon mui-icon-forward mui-pull-right colgrey"></a>
+							</li>
+						</ul>
+				</div>
+				
+			</div>
+			
+			
+			
+			
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			//打开新页面
+			document.getElementById('myself').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../myself/myself.html', 
+				id:'info'
+			  });
+			});
+			document.getElementById('intellect').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../intellect/intellect.html', 
+				id:'info'
+			  });
+			});
+			document.getElementById('control').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../control/control.html', 
+				id:'info'
+			  });
+			});
+			document.getElementById('status').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../index/index.html', 
+				id:'info'
+			  });
+			});
+			
+			document.getElementById('inte-ambient').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../ambientStatistics/ambientList.html', 
+				id:'info'
+			  });
+			});
+			// document.getElementById('executionRecord').addEventListener('tap', function() {
+			//   mui.openWindow({
+			// 	url: '../execution/executionRecord.html', 
+			// 	id:'info'
+			//   });
+			// });
+			document.getElementById('execution').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../execution/execution.html', 
+				id:'info'
+			  });
+			});
+			document.getElementById('system').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../intellect/system.html', 
+				id:'info'
+			  });
+			});
+			// document.getElementById('warningRecord').addEventListener('tap', function() {
+			//   mui.openWindow({
+			// 	url: '../warning/warningRecord.html', 
+			// 	id:'info'
+			//   });
+			// });
+			document.getElementById('warningList').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../warning/warningList.html', 
+				id:'info'
+			  });
+			});
+			document.getElementById('irrigateList').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../irrigationStatistics/irrigateList.html', 
+				id:'info'
+			  });
+			});
+			
+			document.getElementById('repair').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../repair/repair.html', 
+				id:'info'
+			  });
+			});
+			document.getElementById('automateList').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../automate/automateList.html', 
+				id:'info'
+			  });
+			});
+			
+			
+			
+		</script>
+	</body>
+
+</html>

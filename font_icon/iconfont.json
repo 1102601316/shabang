@@ -1,0 +1,331 @@
+{
+  "id": "284062",
+  "name": "2",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "10307217",
+      "name": "自动化学院",
+      "font_class": "zidonghuaxueyuan",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "6953117",
+      "name": "过滤器01",
+      "font_class": "thin-_filter_fun",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "3282374",
+      "name": "设备",
+      "font_class": "shebei3",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    },
+    {
+      "icon_id": "8652825",
+      "name": "通知",
+      "font_class": "tongzhi1",
+      "unicode": "e64b",
+      "unicode_decimal": 58955
+    },
+    {
+      "icon_id": "10199169",
+      "name": "方案",
+      "font_class": "fangan",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "3984575",
+      "name": "水泵",
+      "font_class": "shuibeng",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "5996705",
+      "name": "风",
+      "font_class": "wind",
+      "unicode": "e6eb",
+      "unicode_decimal": 59115
+    },
+    {
+      "icon_id": "7335633",
+      "name": "阀门",
+      "font_class": "famen",
+      "unicode": "eb47",
+      "unicode_decimal": 60231
+    },
+    {
+      "icon_id": "15986405",
+      "name": "棉被",
+      "font_class": "mianbei",
+      "unicode": "e80d",
+      "unicode_decimal": 59405
+    },
+    {
+      "icon_id": "5383656",
+      "name": "设置",
+      "font_class": "shezhi2",
+      "unicode": "e781",
+      "unicode_decimal": 59265
+    },
+    {
+      "icon_id": "1368717",
+      "name": "开启",
+      "font_class": "open",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "7570901",
+      "name": "手机",
+      "font_class": "shouji",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "9962819",
+      "name": "小麦经验灌溉参数",
+      "font_class": "xiaomaijingyanguangaicanshu",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "308177",
+      "name": "记录",
+      "font_class": "jilu",
+      "unicode": "e646",
+      "unicode_decimal": 58950
+    },
+    {
+      "icon_id": "1001058",
+      "name": "状态",
+      "font_class": "iconfkzt",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "1026284",
+      "name": "通知",
+      "font_class": "tongzhi",
+      "unicode": "e639",
+      "unicode_decimal": 58937
+    },
+    {
+      "icon_id": "1279035",
+      "name": "环境",
+      "font_class": "huanjing",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "1687154",
+      "name": "我的",
+      "font_class": "ziyuan1",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "2546697",
+      "name": "预警",
+      "font_class": "yujing",
+      "unicode": "e6a1",
+      "unicode_decimal": 59041
+    },
+    {
+      "icon_id": "3900085",
+      "name": "时间",
+      "font_class": "shijian",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "4236632",
+      "name": "湿度",
+      "font_class": "shidu",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "5218152",
+      "name": "表",
+      "font_class": "biao",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "5383814",
+      "name": "设备",
+      "font_class": "huabanfuben",
+      "unicode": "e656",
+      "unicode_decimal": 58966
+    },
+    {
+      "icon_id": "5766791",
+      "name": "管理",
+      "font_class": "guanli",
+      "unicode": "e6a3",
+      "unicode_decimal": 59043
+    },
+    {
+      "icon_id": "6255839",
+      "name": "流量",
+      "font_class": "liuliang1",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "6352445",
+      "name": "报修",
+      "font_class": "baoxiu",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "6366906",
+      "name": "设备",
+      "font_class": "shebei",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "6446145",
+      "name": "智能",
+      "font_class": "tianchongxing-",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    },
+    {
+      "icon_id": "7092380",
+      "name": "批量设置状态",
+      "font_class": "piliangshezhizhuangtai",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
+      "icon_id": "7461493",
+      "name": "设备",
+      "font_class": "shebei1",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "7843366",
+      "name": "我的",
+      "font_class": "wode",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "8797968",
+      "name": "分享",
+      "font_class": "fenxiang",
+      "unicode": "e7cd",
+      "unicode_decimal": 59341
+    },
+    {
+      "icon_id": "8966763",
+      "name": "时钟",
+      "font_class": "shizhong",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "9012808",
+      "name": "计划",
+      "font_class": "jihua",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "9572495",
+      "name": "温度",
+      "font_class": "IOTtubiao_huabanfuben",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "9743230",
+      "name": "表盘",
+      "font_class": "biaopan",
+      "unicode": "e658",
+      "unicode_decimal": 58968
+    },
+    {
+      "icon_id": "11121417",
+      "name": "计划任务",
+      "font_class": "jihuarenwu",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "11752869",
+      "name": "记录",
+      "font_class": "jilu1",
+      "unicode": "e6ba",
+      "unicode_decimal": 59066
+    },
+    {
+      "icon_id": "11992121",
+      "name": "设置测试时间",
+      "font_class": "shezhiceshishijian",
+      "unicode": "e67a",
+      "unicode_decimal": 59002
+    },
+    {
+      "icon_id": "12598991",
+      "name": "统计",
+      "font_class": "tongji",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "13638706",
+      "name": "压力",
+      "font_class": "yali",
+      "unicode": "e657",
+      "unicode_decimal": 58967
+    },
+    {
+      "icon_id": "13638743",
+      "name": "温度",
+      "font_class": "wendu",
+      "unicode": "e660",
+      "unicode_decimal": 58976
+    },
+    {
+      "icon_id": "14301851",
+      "name": "光照",
+      "font_class": "guangzhao",
+      "unicode": "e673",
+      "unicode_decimal": 58995
+    },
+    {
+      "icon_id": "14472515",
+      "name": "定时",
+      "font_class": "dingshi",
+      "unicode": "e647",
+      "unicode_decimal": 58951
+    },
+    {
+      "icon_id": "15282761",
+      "name": "控制",
+      "font_class": "kongzhi1",
+      "unicode": "e6d5",
+      "unicode_decimal": 59093
+    },
+    {
+      "icon_id": "9557",
+      "name": "设置",
+      "font_class": "shezhi",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>一键报修</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../font_icon/iconfont.css" rel="stylesheet" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link href="../css/app.css" rel="stylesheet" />
+		<link href="../css/mui.picker.css" rel="stylesheet" />
+		<link href="../css/mui.poppicker.css" rel="stylesheet" />
+		<style>
+			.mui-btn {
+				font-size: 16px;
+				padding: 8px;
+				margin: 3px;
+			}
+			.mui-btn-blue, .mui-btn-primary, input[type=submit]{
+				border:#c8c7cc solid 1px;
+			}
+			h5.mui-content-padded {
+				margin-left: 3px;
+				margin-top: 20px !important;
+			}
+			h5.mui-content-padded:first-child {
+				margin-top: 12px !important;
+			}
+			.ui-alert {
+				text-align: center;
+				padding: 20px 10px;
+				font-size: 16px;
+			}
+			.data-range {
+			    display: flex;
+			    /* justify-content: space-around; */
+			    flex-wrap: wrap;
+			    /* padding: 0 16px; */
+			}
+			
+			.data-range .range-item {
+			    margin: 10px 4px;
+				font-size:0.9rem;
+				color: #333;
+				width:110px;
+				/* padding: 8px 4px; */
+			}
+			
+			.data-range .range-item.active {
+			    border:solid 1px #007aff;
+			    /* color: #fff; */
+			}
+		</style>
+	</head>
+		
+	<body>
+		
+			<header id="header" class="mui-bar mui-bar-nav backwhite shadow0">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left col333"></a>
+				<h1 class="mui-title col333">一键报修</h1>
+				<button class="mui-btn mui-btn-link mui-pull-right col333" id="see">记录</button>
+			</header>
+			
+			<div class="mui-content">
+				<div class="module">
+					<form action="" method="post" onsubmit="return verification()">
+						<ul class="mui-table-view  porelative backwhite">
+							<li class="repa-li">
+								<div class="data-range">
+									<a class="mui-btn mui-btn-primary mui-btn-outlined range-item bor-radius20 active">
+										水泵故障
+									</a>
+									<a class="mui-btn mui-btn-primary mui-btn-outlined bor-radius20 range-item">
+										压力异常
+									</a>
+									<a class="mui-btn mui-btn-primary mui-btn-outlined bor-radius20 range-item">
+										流量异常
+									</a>
+									<a class="mui-btn mui-btn-primary mui-btn-outlined bor-radius20 range-item">
+										阀门故障
+									</a>
+									<a class="mui-btn mui-btn-primary mui-btn-outlined bor-radius20 range-item">
+										过滤系统故障
+									</a>
+									<a class="mui-btn mui-btn-primary mui-btn-outlined bor-radius20 range-item">
+										控制系统异常
+									</a>
+									<a class="mui-btn mui-btn-primary mui-btn-outlined bor-radius20 range-item">
+										管道漏水
+									</a>
+									<a class="mui-btn mui-btn-primary mui-btn-outlined bor-radius20 range-item">
+										其他
+									</a>
+									<input type="text" class="v_empty mui-input-clear colgrey fosize09 fl reg-input disnone"  id="repa-title" name="repa-title" value="123">	
+								</div>
+							</li>
+							<li class="repa-li">
+								<textarea class="v_empty mui-input-clear colgrey fosize09 repa-textarea" id="repa-textarea">请描述您的问题</textarea>					
+							</li>
+							<li class="mui-table-view-cell padd0 mr10" id="repa-chang-li">
+								<span class="mui-icon mui-icon-map fl list-name colju mr5"></span>
+								<input type="text" class="v_empty mui-input-clear colgrey fosize09 fl reg-input"  id="repa-chang" name="repa-chang" value="请选择场景">					
+							</li>
+							<li class="mui-table-view-cell padd0 mr10">
+								<span class="icon iconfont icon-shouji  fl list-name collv mr5 fosize14"></span>
+								<input type="text" class="v_empty mui-input-clear colgrey fosize09 fl reg-input" id="repa-phone" name="repa-phone"  value="请输入您的电话">					
+							</li>
+							<li class="mui-table-view-cell padd0 mr10">
+								<div class="mui-button-row mtb20">
+									<button type="submit" class="mui-btn mui-btn-primary warn-btn regu-chang-btn" >一键报修</button>
+								</div>
+							</li>
+						</ul>
+						<!-- <div class="mui-button-row">
+							<button type="button" class="mui-btn mui-btn-primary warn-btn regu-chang-btn" >控制</button>
+						</div> -->
+					</form>
+				</div>
+					
+			</div>
+			
+			
+			
+			
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.picker.js"></script>
+		<script src="../js/mui.picker.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			console.log(document.getElementById('repa-textarea').value);
+			document.getElementById('see').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: 'repairList.html', 
+				id:'info'
+			  });
+			});
+			
+			
+			// 保存设置弹框
+			mui(".mui-button-row").on("tap",".regu-yu-btn",function(){
+				mui.confirm('是否保存设置','请确认',['否','是'],function (e) {
+					if (e.index == 1) {
+						mui.toast('保存成功');
+						mui.openWindow({
+							url: 'regulatorList.html', 
+							id:'info'
+						});
+					} else {
+						
+					}
+				},'div')
+			});
+			
+			function siblings(ele, fun) {
+			    var p = ele.parentNode.children;
+			    for (var i = 0, pl = p.length; i < pl; i++) {
+			        if (p[i] !== ele) fun(p[i], i);
+			    }
+			}
+			
+			(function($, doc) {
+				$.init();
+				//选择标题
+				$('.data-range').on('tap', '.range-item', function () {
+				    this.classList.add('active');
+				    siblings(this, function (sibling) {
+				        sibling.classList.remove('active')
+				    })
+				})
+				$.ready(function() {
+					var _getParam = function(obj, param) {
+						return obj[param] || '';
+					};
+					
+					//选择设备
+					var content = new $.PopPicker();
+					content.setData([{
+						value: 'dingshi',
+						text: '设备1'
+					}, {
+						value: 'gaopin',
+						text: '设备2'
+					}]);
+					var showcontent = doc.getElementById('repa-chang-li');
+					var usercontent = doc.getElementById('repa-chang');
+					showcontent.addEventListener('tap', function(event) {
+						content.show(function(items) {
+							//数据为items[0]
+							// usercontent.innerText = JSON.stringify(items[0]);
+							//显示文本
+							usercontent.value = items[0].text;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+					
+				});
+			})(mui, document);
+			
+			// 表单验证
+			function is_empty() {
+				var is_sub = false;
+				var input = document.querySelectorAll('.v_empty');
+				input.forEach(function (item,i) {
+					if(item.value===''){
+						is_sub=true;
+					}
+				});
+				return is_sub
+			}
+			function verification() {
+				var repa_textarea = document.getElementById('repa-textarea').value;
+				var repa_title = document.getElementById('repa-title').value;
+				var repa_chang = document.getElementById('repa-chang').value;
+				var repa_phone = document.getElementById('repa-phone').value;
+				if(is_empty()){
+					mui.toast('不能为空');
+					return false
+				}
+				
+				return true
+			}
+			
+			
+		</script>
+	</body>
+
+</html>

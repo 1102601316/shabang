@@ -1,0 +1,797 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>方案设置</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../font_icon/iconfont.css" rel="stylesheet" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link href="../css/app.css" rel="stylesheet" />
+		<link href="../css/mui.picker.css" rel="stylesheet" />
+		<link href="../css/mui.poppicker.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.picker.min.css" />
+		<style>
+			.mui-btn {
+				font-size: 16px;
+				padding: 8px;
+				margin: 3px;
+			}
+			h5.mui-content-padded {
+				margin-left: 3px;
+				margin-top: 20px !important;
+			}
+			h5.mui-content-padded:first-child {
+				margin-top: 12px !important;
+			}
+			.ui-alert {
+				text-align: center;
+				padding: 20px 10px;
+				font-size: 16px;
+			}
+			
+		</style>
+	</head>
+		
+	<body>
+			<header id="header" class="mui-bar mui-bar-nav backwhite shadow0">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left col333"></a>
+				<h1 class="mui-title col333">白天方案</h1>
+				<button class="mui-btn mui-btn-link mui-pull-right colblue plan-add" id="high-preserve">修改名称</button>
+			</header>
+			
+			
+			<div class="mui-content">
+				
+				<div class="my-device">
+					
+					<form class="timing" method="post" onsubmit="return verification()">
+						<div class="module">
+							<p class="amblist col333">当前方案</p>
+							<ul class="device-ul">
+								<li class="mui-card bor-radius5">
+									<div class="mui-card-content">
+										<div class="mui-card-content-inner">
+											<ul class="mui-table-view">
+												<li class="mui-table-view-cell padd0" id="type-fangan-li">
+													<label class="fl fosize09 list-form-name">当前方案</label>
+													
+													<!-- <a class="mui-icon mui-icon-arrowright form-icon colgrey fr" style="line-height:60px !important;"></a> -->
+													<input type="text" readonly="readonly" class="mui-input-clear colgrey fosize09 fl share-input" name=""  value="日间方案"  id='type-fangan'>
+												</li>
+												
+											</ul>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						
+						<div class="module">
+							<p class="amblist col333">灌溉模式</p>
+							<ul class="device-ul">
+								<li class="mui-card bor-radius5">
+									
+									<div class="mui-card-content">
+										<div class="mui-card-content-inner">
+											<ul class="mui-table-view">
+												<li class="mui-table-view-cell padd0" id="type-status-li">
+													<label class="fl fosize09 list-form-name">灌溉模式</label>
+													
+													<!-- <a class="mui-icon mui-icon-arrowright form-icon colgrey fr" style="line-height:60px !important;"></a> -->
+													<input type="text" readonly="readonly" class="mui-input-clear colgrey fosize09 fl share-input" name=""  value="高频"  id='type-status'>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						
+						<div class="module">
+							<p class="amblist col333">方案详情
+								<!-- <span class="fr colju" id="high-preserve">修改名称</span> -->
+							</p>
+							<ul class="device-ul">
+								<li class="mui-card">
+									<div class="mui-card-header execu-title fosize09 ">
+										<!-- <a  class="mui-icon mui-icon-settings fosize1 fl colblue"> -->
+											<span class="colblue ml5">时段1</span>
+										<!-- </a> -->
+										<span class="fr execu-change">修改</span>
+									</div>
+									<div class="mui-card-content">
+										<div class="mui-card-content-inner">
+											<p class="porelative">
+												<span  class="fl">开启时间: 00:00</span>
+												
+												<a class="mui-icon mui-icon-arrowright colgrey fr"></a>
+												<span  class="fr">关闭时间: 00:00</span>
+											</p>
+											<p class="porelative">
+												<span class="fl">灌溉时间:20</span>
+												<a class="mui-icon mui-icon-arrowright colgrey fr"></a>
+												<span class="fr">间隔时间:20</span>
+												
+											</p>
+										</div>
+									</div>
+									<div class="mui-card-footer  execu-title fosize09 ">
+											<span class="fl"></span>
+											<span class="fr execu-jilu colju delete">删除</span>
+									</div>
+								</li>
+								<li class="mui-card">
+									<div class="mui-card-header execu-title fosize09 ">
+										<!-- <a  class="mui-icon mui-icon-settings fosize1 fl colblue"> -->
+											<span class="colblue ml5">时段2</span>
+										<!-- </a> -->
+										<span class="fr execu-change">修改</span>
+									</div>
+									<div class="mui-card-content">
+										<div class="mui-card-content-inner">
+											<p class="porelative">
+												<span  class="fl">开启时间: 00:00</span>
+												<span class="fr">灌溉时间:20</span>
+											</p>
+											
+											<p class="porelative">
+												<span  class="fl">关闭时间: 00:00</span>
+												<span class="fr">间隔时间:20</span>
+												
+											</p>
+										</div>
+									</div>
+									<div class="mui-card-footer  execu-title fosize09 ">
+											<span class="fl"></span>
+											<span class="fr execu-jilu colju delete">删除</span>
+									</div>
+								</li>
+							</ul>
+						</div>
+					
+					</form>
+					
+				</div>
+			</div>
+			
+			
+			
+			
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.view.js "></script>
+		<script src="../js/mui.picker.js"></script>
+		<script src="../js/mui.picker.min.js"></script>
+		<script src="../js/mui.poppicker.js"></script>
+		<script src="../js/city.data.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript">
+			mui.init();
+			mui('.mui-scroll-wrapper').scroll();
+			
+			// mui(".mui-card").on("tap",".high-detail",function(){
+			// 	mui.openWindow({
+			// 		url: 'highDetail.html', 
+			// 		id:'change'
+			// 	});
+			// });
+			mui(".mui-card-header").on("tap",".execu-change",function(){
+				mui.openWindow({
+					url: 'planchangeForm.html', 
+					id:'change'
+				});
+			});
+			
+			
+			// 删除弹框
+			mui(".mui-card-footer").on("tap",".delete",function(){
+				mui.confirm('是否删除','请确认',['否','是'],function (e) {
+					if (e.index == 1) {
+						mui.toast('已删除');
+						// mui.openWindow({
+						// 	url: 'shareList.html', 
+						// 	id:'info'
+						// });
+					} else {
+						
+					}
+				},'div')
+			});
+			
+			//保存模式
+			document.getElementById("high-preserve").addEventListener('tap', function(e) {
+				e.detail.gesture.preventDefault(); //修复iOS 8.x平台存在的bug，使用plus.nativeUI.prompt会造成输入法闪一下又没了
+				var btnArray = ['取消', '修改'];
+				mui.prompt('', '模式名称', '请输入方案名', btnArray, function(e) {
+					if (e.index == 1) {
+						console.log(e.value);//输入框的值
+						mui.toast('已保存');
+					} else {
+						 
+					}
+				})
+			});
+				
+						
+			(function($, doc) {
+				$.init();
+				$.ready(function() {
+					//高频和定时表单 显示隐藏
+					if(document.getElementById("type-status").value == '高频'){
+						document.getElementsByClassName('form-high')[0].classList.remove("mui-hidden");
+						document.getElementsByClassName('form-timing')[0].classList.add("mui-hidden");
+					}else if(document.getElementById("type-status").value == '定时'){
+						document.getElementsByClassName('form-high')[0].classList.add("mui-hidden");
+						document.getElementsByClassName('form-timing')[0].classList.remove("mui-hidden");
+					};
+					//定时条件筛选
+					var timing_day_classList = document.getElementById('timing-day-li').classList
+					var timing_startday_classList = document.getElementById('timing-startday-li').classList
+					var timing_endday_classList = document.getElementById('timing-endday-li').classList
+					var timing_guangai_classList = document.getElementById('timing-guangai-li').classList
+					var timing_end_classList = document.getElementById('timing-end-li').classList
+					
+					var timing_day_input = $('#timing-day-li')[0].children[2].classList;
+					var timing_startday_input = $('#timing-startday-li')[0].children[2].classList;
+					var timing_endday_input = $('#timing-endday-li')[0].children[2].classList;
+					var timing_guangai_input = $('#timing-guangai-li')[0].children[1].classList;
+					var timing_end_input = $('#timing-end-li')[0].children[2].classList;
+					/**
+					 * 获取对象属性的值
+					 * 主要用于过滤三级联动中，可能出现的最低级的数据不存在的情况，实际开发中需要注意这一点；
+					 * @param {Object} obj 对象
+					 * @param {String} param 属性名
+					 */
+					var _getParam = function(obj, param) {
+						return obj[param] || '';
+					};
+					
+					//选择模式
+					var typeStatus = new $.PopPicker();
+					typeStatus.setData([{
+						value: 'dingshi',
+						text: '高频'
+					}, {
+						value: 'gaopin',
+						text: '定时'
+					}]);
+					var showtypeStatus = doc.getElementById('type-status-li');
+					var usertypeStatus = doc.getElementById('type-status');
+					showtypeStatus.addEventListener('tap', function(event) {
+						typeStatus.show(function(items) {
+							//数据为items[0]
+							// usertypeStatus.innerText = JSON.stringify(items[0]);
+							//显示文本
+							usertypeStatus.value = items[0].text;
+							
+							if(usertypeStatus.value == '高频'){
+								$('.form-high')[0].classList.remove("mui-hidden");
+								$('.form-timing')[0].classList.add("mui-hidden");
+							}else if(usertypeStatus.value == '定时'){
+								$('.form-high')[0].classList.add("mui-hidden");
+								$('.form-timing')[0].classList.remove("mui-hidden");
+							}
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+					
+					//选择模式
+					var typeFangan = new $.PopPicker();
+					typeFangan.setData([{
+						value: 'dingshi',
+						text: '无'
+					}, {
+						value: 'gaopin',
+						text: '日间方案'
+					}]);
+					var showtypeFangan = doc.getElementById('type-fangan-li');
+					var usertypeFangan = doc.getElementById('type-fangan');
+					showtypeFangan.addEventListener('tap', function(event) {
+						typeFangan.show(function(items) {
+							//数据为items[0]
+							// usertypeFangan.innerText = JSON.stringify(items[0]);
+							//显示文本
+							usertypeFangan.value = items[0].text;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+			// 高频
+					//选择设备
+					// var timingName = new $.PopPicker();
+					// timingName.setData([{
+					// 	value: 'dingshi',
+					// 	text: '设备1'
+					// }, {
+					// 	value: 'gaopin',
+					// 	text: '设备2'
+					// }]);
+					// var showtimingName = doc.getElementById('timing-name-li-high');
+					// var usertimingName = doc.getElementById('timing-name-high');
+					// showtimingName.addEventListener('tap', function(event) {
+					// 	timingName.show(function(items) {
+					// 		//数据为items[0]
+					// 		// usertimingName.innerText = JSON.stringify(items[0]);
+					// 		//显示文本
+					// 		usertimingName.value = items[0].text;
+					// 		//返回 false 可以阻止选择框的关闭
+					// 		//return false;
+					// 	});
+					// }, false);
+					
+					
+					
+					// 开始日期
+					var startdayhigh = $('#timing-startday-high')[0];
+					var startdayhighText = $('#timing-startday-li-high');
+					startdayhighText.each(function(i, btn) {
+						btn.addEventListener('tap', function() {
+							var _self = this;
+							if(_self.picker) {
+								_self.picker.show(function (rs) {
+									// startdayhigh.value = '选择结果: ' + rs.text;
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							} else {
+								var optionsJson = this.getAttribute('data-options') || '{}';
+								var options = JSON.parse(optionsJson);
+								var id = this.getAttribute('id');
+								
+								_self.picker = new $.DtPicker(options);
+								_self.picker.show(function(rs) {
+									
+									startdayhigh.value = rs.text;
+									
+									/*
+									 * 释放组件资源，释放后将将不能再操作组件
+									 */
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							}
+							
+						}, false);
+					});
+					
+					// 关闭日期
+					var enddayhigh = $('#timing-endday-high')[0];
+					var enddayhighText = $('#timing-endday-li-high');
+					enddayhighText.each(function(i, btn) {
+						btn.addEventListener('tap', function() {
+							var _self = this;
+							if(_self.picker) {
+								_self.picker.show(function (rs) {
+									// enddayhigh.value = '选择结果: ' + rs.text;
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							} else {
+								var optionsJson = this.getAttribute('data-options') || '{}';
+								var options = JSON.parse(optionsJson);
+								var id = this.getAttribute('id');
+								
+								_self.picker = new $.DtPicker(options);
+								_self.picker.show(function(rs) {
+									
+									enddayhigh.value = rs.text;
+									
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							}
+							
+						}, false);
+					});
+					
+					// 开启时间
+					var start = $('#timing-start-high')[0];
+					var startText = $('#timing-start-li-high');
+					startText.each(function(i, btn) {
+						btn.addEventListener('tap', function() {
+							var _self = this;
+							if(_self.picker) {
+								_self.picker.show(function (rs) {
+									// start.value = '选择结果: ' + rs.text;
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							} else {
+								var optionsJson = this.getAttribute('data-options') || '{}';
+								var options = JSON.parse(optionsJson);
+								var id = this.getAttribute('id');
+								
+								_self.picker = new $.DtPicker(options);
+								_self.picker.show(function(rs) {
+									
+									start.value = rs.text;
+									
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							}
+							
+						}, false);
+					});
+					
+					// 关闭时间
+					var end = $('#timing-end-high')[0];
+					var endText = $('#timing-end-li-high');
+					endText.each(function(i, btn) {
+						btn.addEventListener('tap', function() {
+							var _self = this;
+							if(_self.picker) {
+								_self.picker.show(function (rs) {
+									// end.value = '选择结果: ' + rs.text;
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							} else {
+								var optionsJson = this.getAttribute('data-options') || '{}';
+								var options = JSON.parse(optionsJson);
+								var id = this.getAttribute('id');
+								
+								_self.picker = new $.DtPicker(options);
+								_self.picker.show(function(rs) {
+									
+									end.value = rs.text;
+									
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							}
+						}, false);
+					});
+			// 结束
+			//定时
+					//选择设备
+					// var timingName = new $.PopPicker();
+					// timingName.setData([{
+					// 	value: 'dingshi',
+					// 	text: '设备1'
+					// }, {
+					// 	value: 'gaopin',
+					// 	text: '设备2'
+					// }]);
+					// var showtimingName = doc.getElementById('timing-name-li');
+					// var usertimingName = doc.getElementById('timing-name');
+					// showtimingName.addEventListener('tap', function(event) {
+					// 	timingName.show(function(items) {
+					// 		//数据为items[0]
+					// 		// usertimingName.innerText = JSON.stringify(items[0]);
+					// 		//显示文本
+					// 		usertimingName.value = items[0].text;
+					// 		//返回 false 可以阻止选择框的关闭
+					// 		//return false;
+					// 	});
+					// }, false);
+					
+					//选择周期
+					var timingWeek = new $.PopPicker();
+					timingWeek.setData([{
+						value: 'dingshi',
+						text: '每天'
+					}, {
+						value: 'gaopin',
+						text: '每周'
+					}, {
+						value: 'gaopin',
+						text: '单次'
+					}]);
+					var showtimingWeek = doc.getElementById('timing-week-li');
+					var usertimingWeek = doc.getElementById('timing-week');
+					// usertimingWeek.value = '每天';
+					
+					//默认显示每天表单
+					timing_day_classList.add('mui-hidden');
+					timing_startday_classList.add('mui-hidden');
+					timing_endday_classList.add('mui-hidden');
+					timing_guangai_classList.add('mui-hidden');
+					
+					timing_day_input.remove('v_empty');
+					timing_startday_input.remove('v_empty');
+					timing_endday_input.remove('v_empty');
+					timing_guangai_input.remove('v_empty');
+					
+					
+					showtimingWeek.addEventListener('tap', function(event) {
+						timingWeek.show(function(items) {
+							//数据为items[0]
+							// usertimingWeek.innerText = JSON.stringify(items[0]);
+							//显示文本
+							usertimingWeek.value = items[0].text;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+							//判断相应表单显示隐藏
+							if(usertimingWeek.value == '每天'){
+								timing_day_classList.add('mui-hidden');
+								timing_startday_classList.add('mui-hidden');
+								timing_endday_classList.add('mui-hidden');
+								timing_guangai_classList.add('mui-hidden');
+								timing_end_classList.remove('mui-hidden');
+								
+								timing_day_input.remove('v_empty');
+								timing_startday_input.remove('v_empty');
+								timing_endday_input.remove('v_empty');
+								timing_guangai_input.remove('v_empty');
+								timing_end_input.add('v_empty');
+								
+							}else if(usertimingWeek.value == '每周'){
+								timing_day_classList.remove('mui-hidden');
+								timing_startday_classList.add('mui-hidden');
+								timing_endday_classList.add('mui-hidden');
+								timing_guangai_classList.add('mui-hidden');
+								timing_end_classList.remove('mui-hidden');
+								
+								timing_day_input.add('v_empty');
+								timing_startday_input.remove('v_empty');
+								timing_endday_input.remove('v_empty');
+								timing_guangai_input.remove('v_empty');
+								timing_end_input.add('v_empty');
+							}else{
+								timing_day_classList.add('mui-hidden');
+								timing_startday_classList.remove('mui-hidden');
+								timing_endday_classList.add('mui-hidden');
+								timing_guangai_classList.remove('mui-hidden');
+								timing_end_classList.add('mui-hidden');
+								
+								timing_day_input.remove('v_empty');
+								timing_startday_input.add('v_empty');
+								timing_endday_input.remove('v_empty');
+								timing_guangai_input.add('v_empty');
+								timing_end_input.remove('v_empty');
+							}
+						});
+					}, false);
+					
+					
+					//选择每周天数
+					var timingDay = new $.PopPicker();
+					timingDay.setData([{
+						value: 'dingshi',
+						text: '周一'
+					}, {
+						value: 'gaopin',
+						text: '周二'
+					}, {
+						value: 'gaopin',
+						text: '周三'
+					}, {
+						value: 'gaopin',
+						text: '周四'
+					}, {
+						value: 'gaopin',
+						text: '周五'
+					}, {
+						value: 'gaopin',
+						text: '周六'
+					}, {
+						value: 'gaopin',
+						text: '周日'
+					}]);
+					var showtimingDay = doc.getElementById('timing-day-li');
+					var usertimingDay = doc.getElementById('timing-day');
+					showtimingDay.addEventListener('tap', function(event) {
+						timingDay.show(function(items) {
+							//数据为items[0]
+							// usertimingDay.innerText = JSON.stringify(items[0]);
+							//显示文本
+							usertimingDay.value = items[0].text;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+					
+					// 开始日期
+					var startday = $('#timing-startday')[0];
+					var startdayText = $('#timing-startday-li');
+					startdayText.each(function(i, btn) {
+						btn.addEventListener('tap', function() {
+							var _self = this;
+							if(_self.picker) {
+								_self.picker.show(function (rs) {
+									// startday.value = '选择结果: ' + rs.text;
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							} else {
+								var optionsJson = this.getAttribute('data-options') || '{}';
+								var options = JSON.parse(optionsJson);
+								var id = this.getAttribute('id');
+								
+								_self.picker = new $.DtPicker(options);
+								_self.picker.show(function(rs) {
+									
+									startday.value = rs.text;
+									
+									/*
+									 * 释放组件资源，释放后将将不能再操作组件
+									 */
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							}
+							
+						}, false);
+					});
+					
+					// 关闭日期
+					var endday = $('#timing-endday')[0];
+					var enddayText = $('#timing-endday-li');
+					enddayText.each(function(i, btn) {
+						btn.addEventListener('tap', function() {
+							var _self = this;
+							if(_self.picker) {
+								_self.picker.show(function (rs) {
+									// endday.value = '选择结果: ' + rs.text;
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							} else {
+								var optionsJson = this.getAttribute('data-options') || '{}';
+								var options = JSON.parse(optionsJson);
+								var id = this.getAttribute('id');
+								
+								_self.picker = new $.DtPicker(options);
+								_self.picker.show(function(rs) {
+									
+									endday.value = rs.text;
+									
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							}
+							
+						}, false);
+					});
+					
+					// 开启时间
+					var start = $('#timing-start')[0];
+					var startText = $('#timing-start-li');
+					startText.each(function(i, btn) {
+						btn.addEventListener('tap', function() {
+							var _self = this;
+							if(_self.picker) {
+								_self.picker.show(function (rs) {
+									// start.value = '选择结果: ' + rs.text;
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							} else {
+								var optionsJson = this.getAttribute('data-options') || '{}';
+								var options = JSON.parse(optionsJson);
+								var id = this.getAttribute('id');
+								
+								_self.picker = new $.DtPicker(options);
+								_self.picker.show(function(rs) {
+									
+									start.value = rs.text;
+									
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							}
+							
+						}, false);
+					});
+					
+					// 关闭时间
+					var end = $('#timing-end')[0];
+					var endText = $('#timing-end-li');
+					endText.each(function(i, btn) {
+						btn.addEventListener('tap', function() {
+							var _self = this;
+							if(_self.picker) {
+								_self.picker.show(function (rs) {
+									// end.value = '选择结果: ' + rs.text;
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							} else {
+								var optionsJson = this.getAttribute('data-options') || '{}';
+								var options = JSON.parse(optionsJson);
+								var id = this.getAttribute('id');
+								
+								_self.picker = new $.DtPicker(options);
+								_self.picker.show(function(rs) {
+									
+									end.value = rs.text;
+									
+									_self.picker.dispose();
+									_self.picker = null;
+								});
+							}
+							
+						}, false);
+					});
+			//结束
+			
+			
+				});
+				
+			})(mui, document);
+
+			//表单验证
+			function getTime(date_str) {
+				return !date_str?new Date().getTime():new Date(date_str.replace(/-/g,'/')).getTime();
+			}
+			function is_empty_high() {
+				var is_sub = false;
+				var input = document.querySelectorAll('.v_empty_high');
+				input.forEach(function (item,i) {
+					if(item.value===''){
+						is_sub=true;
+					}
+				});
+				return is_sub
+			}
+			function is_empty() {
+				var is_sub = false;
+				var input = document.querySelectorAll('.v_empty');
+				input.forEach(function (item,i) {
+					if(item.value===''){
+						is_sub=true;
+					}
+				});
+				return is_sub
+			}
+			function verification() {
+				//高频和定时表单 验证
+				if(document.getElementById("type-status").value == '高频'){
+					var start_date = document.getElementById('timing-startday-high').value;
+					var end_date = document.getElementById('timing-endday-high').value;
+					if(is_empty_high()){
+						mui.toast('不能为空');
+						return false
+					}
+					if(getTime(start_date)>getTime(end_date)){
+						mui.toast('开启时间不能大于关闭时间');
+						return false
+					}
+				}else if(document.getElementById("type-status").value == '定时'){
+					var start_date = document.getElementById('timing-startday').value;
+					var end_date = document.getElementById('timing-endday').value;
+					var start_time = document.getElementById('timing-start').value;
+					var end_time = document.getElementById('timing-end').value;
+					if(is_empty()){
+						mui.toast('不能为空');
+						return false
+					}
+					// if(getTime(start_date)<getTime()){
+					// 	mui.toast('开始日期不能小于当前日期');
+					// 	return false
+					// }
+					if(getTime(start_date)>getTime(end_date)){
+						mui.toast('开启日期不能大于关闭日期');
+						return false
+					}
+					if(Number(start_time.replace(/:/g,''))>Number(end_time.replace(/:/g,''))){
+						mui.toast('开启时间不能大于关闭时间');
+						return false
+					}
+				};
+				// var start_date = document.getElementById('timing-startday-high').value;
+				// var end_date = document.getElementById('timing-endday-high').value;
+				// if(is_empty()){
+				// 	mui.toast('不能为空');
+				// 	return false
+				// }
+				// if(getTime(start_date)>getTime(end_date)){
+				// 	mui.toast('开启时间不能大于关闭时间');
+				// 	return false
+				// }
+				// return true
+			}
+			// 结束
+			 
+			
+			
+		</script>
+	</body>
+
+</html>

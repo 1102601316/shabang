@@ -1,0 +1,1296 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>自动化详情</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../css/icons-extra.css"/>
+    <link href="../css/app.css" rel="stylesheet"/>
+    <link href="../css/mui.picker.css" rel="stylesheet"/>
+    <link href="../css/mui.poppicker.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../css/mui.picker.min.css"/>
+    <style>
+        /* body{
+            touch-action: none;
+        } */
+        .mui-navbar .mui-btn-nav {
+            touch-action: none;
+        }
+
+        .mui-btn {
+            font-size: 16px;
+            padding: 8px;
+            margin: 3px;
+        }
+
+        h5.mui-content-padded {
+            margin-left: 3px;
+            margin-top: 20px !important;
+        }
+
+        h5.mui-content-padded:first-child {
+            margin-top: 12px !important;
+        }
+
+        .ui-alert {
+            text-align: center;
+            padding: 20px 10px;
+            font-size: 16px;
+        }
+
+        .mui-switch:before {
+            content: '停用';
+            top: 0px;
+        }
+
+        .mui-switch.mui-active:before {
+            content: '启用';
+        }
+
+
+        .mui-views,
+        .mui-view,
+        .mui-pages,
+        .mui-page,
+        .mui-page-content {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #efeff4;
+        }
+
+        .mui-pages {
+            top: 46px;
+            height: auto;
+        }
+
+        .mui-scroll-wrapper,
+        .mui-scroll {
+            background-color: #efeff4;
+        }
+
+        .mui-page.mui-transitioning {
+            -webkit-transition: -webkit-transform 300ms ease;
+            transition: transform 300ms ease;
+        }
+
+        .mui-page-left {
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        .mui-ios .mui-page-left {
+            -webkit-transform: translate3d(-20%, 0, 0);
+            transform: translate3d(-20%, 0, 0);
+        }
+
+        .mui-navbar {
+            position: fixed;
+            right: 0;
+            left: 0;
+            z-index: 10;
+            height: 44px;
+            background-color: #f7f7f8;
+        }
+
+        .mui-navbar .mui-bar {
+            position: absolute;
+            background: transparent;
+            text-align: center;
+        }
+
+        .mui-android .mui-navbar-inner.mui-navbar-left {
+            opacity: 0;
+        }
+
+        .mui-ios .mui-navbar-left .mui-left,
+        .mui-ios .mui-navbar-left .mui-center,
+        .mui-ios .mui-navbar-left .mui-right {
+            opacity: 0;
+        }
+
+        .mui-navbar .mui-btn-nav {
+            -webkit-transition: none;
+            transition: none;
+            -webkit-transition-duration: .0s;
+            transition-duration: .0s;
+        }
+
+        .mui-navbar .mui-bar .mui-title {
+            display: inline-block;
+            width: auto;
+        }
+
+        .mui-page-shadow {
+            position: absolute;
+            right: 100%;
+            top: 0;
+            width: 16px;
+            height: 100%;
+            z-index: -1;
+            content: '';
+        }
+
+        .mui-page-shadow {
+            background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .01) 50%, rgba(0, 0, 0, .2) 100%);
+            background: linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .01) 50%, rgba(0, 0, 0, .2) 100%);
+        }
+
+        .mui-navbar-inner.mui-transitioning,
+        .mui-navbar-inner .mui-transitioning {
+            -webkit-transition: opacity 300ms ease, -webkit-transform 300ms ease;
+            transition: opacity 300ms ease, transform 300ms ease;
+        }
+
+        .mui-page {
+            display: none;
+        }
+
+        .mui-pages .mui-page {
+            display: block;
+        }
+
+        .mui-page .mui-table-view:first-child {
+            margin-top: 15px;
+        }
+
+        .mui-page .mui-table-view:last-child {
+            margin-bottom: 30px;
+        }
+
+        .mui-table-view {
+            margin-top: 20px;
+        }
+
+        .mui-table-view span.mui-pull-right {
+            color: #999;
+        }
+
+        .mui-table-view-divider {
+            background-color: #efeff4;
+            font-size: 14px;
+        }
+
+        .mui-table-view-divider:before,
+        .mui-table-view-divider:after {
+            height: 0;
+        }
+
+        .head {
+            height: 40px;
+        }
+
+        #head {
+            line-height: 40px;
+        }
+
+        .head-img {
+            width: 40px;
+            height: 40px;
+        }
+
+        #head-img1 {
+            position: absolute;
+            bottom: 10px;
+            right: 40px;
+            width: 40px;
+            height: 40px;
+        }
+
+        .update {
+            font-style: normal;
+            color: #999999;
+            margin-right: -25px;
+            font-size: 15px
+        }
+
+        .mui-fullscreen {
+            position: fixed;
+            z-index: 20;
+            background-color: #000;
+        }
+
+        .mui-ios .mui-navbar .mui-bar .mui-title {
+            position: static;
+        }
+
+        /*问题反馈在setting页面单独的css*/
+        #feedback .mui-popover {
+            position: fixed;
+        }
+
+        #feedback .mui-table-view:last-child {
+            margin-bottom: 0px;
+        }
+
+        #feedback .mui-table-view:first-child {
+            margin-top: 0px;
+        }
+
+        .mui-plus.mui-plus-stream .mui-stream-hidden {
+            display: none !important;
+        }
+
+        /*问题反馈在setting页面单独的css==end*/
+        mui-icon {
+            font-size: 14px;
+            color: #007aff;
+            margin-left: -15px;
+            padding-right: 10px;
+        }
+
+        .mui-radio label {
+            line-height: 2.5rem;
+            margin-left: 0.5rem;
+            width: 30%;
+            color: #333;
+            float: left;
+            padding-right: 0px;
+        }
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="../css/feedback.css"/>
+</head>
+<body class="mui-fullscreen">
+<!--页面主结构开始-->
+<div id="app" class="mui-views">
+    <div class="mui-view">
+        <div class="mui-navbar">
+        </div>
+        <div class="mui-pages">
+        </div>
+    </div>
+</div>
+
+<!--单页面开始-->
+<div id="setting" class="mui-page">
+    <!--页面标题栏开始-->
+    <div class="mui-navbar-inner mui-bar mui-bar-nav backwhite shadow0">
+        <button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+            <span class="mui-icon mui-icon-left-nav col333"></span>
+        </button>
+        <h1 class="mui-center mui-title">自动化</h1>
+        <a class="mui-right mui-btn-link mui-pull-right col333" href="javascript:;">保存</a>
+    </div>
+    <!--页面标题栏结束-->
+    <div class="mui-page-content">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <form action="" method="">
+                    <div class="module">
+                        <p class="amblist col333">自动化设置</p>
+                        <ul class="device-ul">
+                            <li class="mui-card bor-radius5">
+                                <div class="mui-card-content">
+                                    <div class="mui-card-content-inner">
+                                        <ul class="mui-table-view">
+                                            <li class="mui-table-view-cell padd0">
+                                                <label class="fl fosize09 list-form-name">自动化名称</label>
+                                                <input type="text" class="mui-input-clear colgrey fosize09 fl reg-input"
+                                                       name="" value="23.00">
+                                            </li>
+                                            <li class="mui-table-view-cell padd0">
+                                                <span class="fl fosize09 list-form-name">是否启用</span>
+                                                <div class="mui-switch mui-switch-blue">
+                                                    <div class="mui-switch-handle"></div>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="module">
+                        <p class="amblist col333">时间设置</p>
+                        <ul class="device-ul">
+                            <li class="mui-card bor-radius5">
+                                <div class="mui-card-content">
+                                    <div class="mui-card-content-inner">
+                                        <ul class="mui-table-view">
+                                            <li class="mui-table-view-cell padd0" id="">
+                                                <a href="#auto-time" class="mui-navigate-right" style="margin:0;">
+                                                    <label class="fl fosize09 list-form-name">自动化周期</label>
+
+                                                    <!-- <a class="mui-icon mui-icon-arrowright form-icon colgrey fr" style="line-height:60px !important;"></a> -->
+                                                    <input readonly="readonly" type="text"
+                                                           class="mui-input-clear colgrey fosize09 fl share-input zhouqi"
+                                                           name="" value="">
+                                                </a>
+                                            </li>
+                                            <li class="mui-table-view-cell padd0">
+                                                <p class="fosize09 mt10 ml5">预计未来5次检测时间:</p>
+                                                <p class="fosize09 mt10 ml5">02-03 03:03,03-03 03:03,03-03 03:03,03-03
+                                                    03:03,03-03 03:03</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="module">
+                        <p class="amblist col333">条件设置</p>
+                        <ul class="device-ul">
+                            <li class="mui-card bor-radius5">
+                                <div class="mui-card-header">如果</div>
+                                <div class="mui-card-content">
+                                    <div class="mui-card-content-inner">
+                                        <ul class="mui-table-view select-trem">
+                                            <!-- <li class="mui-table-view-cell padd0" id="">
+                                                <a href="javascript:;" class="mui-navigate-right" style="margin:0;" >
+                                                <label class="fl fosize09 list-form-name">温度</label>
+                                                <input type="text" class="mui-input-clear colgrey fosize09 fl share-input" name=""  value="一小时有效">
+                                                </a>
+                                            </li> -->
+                                        </ul>
+                                        <div class="mui-button-row">
+                                            <a href="#term" class="mui-btn mui-btn-primary warn-btn"
+                                               style="line-height:40px;">添加</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="module">
+                        <p class="amblist col333">结果设置</p>
+                        <ul class="device-ul">
+                            <li class="mui-card bor-radius5">
+                                <div class="mui-card-header">就</div>
+                                <div class="mui-card-content">
+                                    <div class="mui-card-content-inner">
+                                        <ul class="mui-table-view">
+                                            <li class="mui-table-view-cell padd0" id="">
+                                                <a href="javascript:;" class="mui-navigate-right" style="margin:0;">
+                                                    <label class="fl fosize09 list-form-name">轮灌程序</label>
+
+                                                    <!-- <a class="mui-icon mui-icon-arrowright form-icon colgrey fr" style="line-height:60px !important;"></a> -->
+                                                    <input type="text"
+                                                           class="mui-input-clear colgrey fosize09 fl share-input"
+                                                           name="" value="一小时有效">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="mui-button-row">
+                                            <a href="#result" class="mui-btn mui-btn-primary warn-btn"
+                                               style="line-height:40px;">添加</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--单页面结束-->
+<div id="auto-time" class="mui-page">
+    <!--页面标题栏开始-->
+    <div class="mui-navbar-inner mui-bar mui-bar-nav backwhite shadow0">
+        <button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+            <span class="mui-icon mui-icon-left-nav col333"></span>
+        </button>
+        <h1 class="mui-center mui-title">自动化周期</h1>
+        <a class="mui-right mui-btn-link mui-pull-right col333 time-link" href="javascript:;">下一步</a>
+    </div>
+    <!--页面标题栏结束-->
+    <div class="mui-page-content">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <form action="" method="">
+                    <div class="module">
+                        <p class="amblist col333">时间设置</p>
+                        <ul class="device-ul">
+                            <li class="mui-card bor-radius5">
+                                <div class="mui-card-content">
+                                    <div class="mui-card-content-inner">
+                                        <ul class="mui-table-view">
+                                            <li class="mui-table-view-cell padd0 mui-radio">
+                                                <!-- <a href="#setting" style="margin:0"> -->
+                                                <label class="fl fosize09 list-form-name">实时</label>
+                                                <input name="radiotime" type="radio" value="setting">
+                                                <!-- </a> -->
+                                            </li>
+                                            <li class="mui-table-view-cell padd0 mui-radio">
+                                                <!-- <a href="#minute" style="margin:0"> -->
+                                                <label class="fl fosize09 list-form-name">每时</label>
+                                                <input name="radiotime" type="radio" value="minute">
+                                                <!-- </a> -->
+                                            </li>
+                                            <li class="mui-table-view-cell padd0 mui-radio">
+                                                <label class="fl fosize09 list-form-name">每日</label>
+                                                <input name="radiotime" type="radio" value="hour">
+                                                <!-- <input type="text" class="mui-input-clear colgrey fosize09 fl reg-input" name=""  value="23.00">					 -->
+                                            </li>
+                                            <li class="mui-table-view-cell padd0 mui-radio">
+                                                <label class="fl fosize09 list-form-name">每周</label>
+                                                <input name="radiotime" type="radio" value="week">
+                                                <!-- <input type="text" class="mui-input-clear colgrey fosize09 fl reg-input" name=""  value="23.00">					 -->
+                                            </li>
+                                            <li class="mui-table-view-cell padd0 mui-radio">
+                                                <label class="fl fosize09 list-form-name">每月</label>
+                                                <input name="radiotime" type="radio" value="day">
+                                                <!-- <input type="text" class="mui-input-clear colgrey fosize09 fl reg-input" name=""  value="23.00">					 -->
+                                            </li>
+                                            <li class="mui-table-view-cell padd0 mui-radio">
+                                                <label class="fl fosize09 list-form-name">每年</label>
+                                                <input name="radiotime" type="radio" value="month">
+                                                <!-- <input type="text" class="mui-input-clear colgrey fosize09 fl reg-input" name=""  value="23.00">					 -->
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 分钟 -->
+<div id="minute" class="mui-page">
+    <!--页面标题栏开始-->
+    <div class="mui-navbar-inner mui-bar mui-bar-nav backwhite shadow0">
+        <button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+            <span class="mui-icon mui-icon-left-nav col333"></span>
+        </button>
+        <h1 class="mui-center mui-title">自动化周期</h1>
+        <a href="#setting" class="mui-right mui-btn-link mui-pull-right col333 munite-next">下一步</a>
+    </div>
+    <!--页面标题栏结束-->
+    <div class="mui-page-content">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <form action="" method="">
+                    <div class="module">
+                        <p class="amblist col333">时间设置</p>
+                        <ul class="device-ul">
+                            <li class="mui-card bor-radius5">
+                                <div class="mui-card-content">
+                                    <div class="mui-card-content-inner">
+                                        <ul class="mui-table-view muntine-radio">
+                                            <!-- <li class="mui-table-view-cell padd0 mui-radio">
+                                                <a href="#setting" style="margin:0">
+                                                    <label class="fl fosize09 list-form-name">0分</label>
+                                                    <input name="radio2" type="radio">
+                                                </a>
+                                            </li> -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 结束 -->
+<!-- 小时 -->
+<div id="hour" class="mui-page">
+    <!--页面标题栏开始-->
+    <div class="mui-navbar-inner mui-bar mui-bar-nav backwhite shadow0">
+        <button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+            <span class="mui-icon mui-icon-left-nav col333"></span>
+        </button>
+        <h1 class="mui-center mui-title">自动化周期</h1>
+        <a href="#minute" class="mui-right mui-btn-link mui-pull-right col333">下一步</a>
+    </div>
+    <!--页面标题栏结束-->
+    <div class="mui-page-content">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <form action="" method="">
+                    <div class="module">
+                        <p class="amblist col333">时间设置</p>
+                        <ul class="device-ul">
+                            <li class="mui-card bor-radius5">
+                                <div class="mui-card-content">
+                                    <div class="mui-card-content-inner">
+                                        <ul class="mui-table-view hour-radio">
+                                            <!-- <li class="mui-table-view-cell padd0 mui-radio">
+                                                <a href="#setting" style="margin:0">
+                                                    <label class="fl fosize09 list-form-name">0分</label>
+                                                    <input name="radio2" type="radio">
+                                                </a>
+                                            </li> -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 结束 -->
+<!-- 日 -->
+<div id="day" class="mui-page">
+    <!--页面标题栏开始-->
+    <div class="mui-navbar-inner mui-bar mui-bar-nav backwhite shadow0">
+        <button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+            <span class="mui-icon mui-icon-left-nav col333"></span>
+        </button>
+        <h1 class="mui-center mui-title">自动化周期</h1>
+        <a href="#hour" class="mui-right mui-btn-link mui-pull-right col333">下一步</a>
+    </div>
+    <!--页面标题栏结束-->
+    <div class="mui-page-content">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <form action="" method="">
+                    <div class="module">
+                        <p class="amblist col333">时间设置</p>
+                        <ul class="device-ul">
+                            <li class="mui-card bor-radius5">
+                                <div class="mui-card-content">
+                                    <div class="mui-card-content-inner">
+                                        <ul class="mui-table-view day-radio">
+                                            <!-- <li class="mui-table-view-cell padd0 mui-radio">
+                                                <a href="#setting" style="margin:0">
+                                                    <label class="fl fosize09 list-form-name">0分</label>
+                                                    <input name="radio2" type="radio">
+                                                </a>
+                                            </li> -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 结束 -->
+<!-- 周 -->
+<div id="week" class="mui-page">
+    <!--页面标题栏开始-->
+    <div class="mui-navbar-inner mui-bar mui-bar-nav backwhite shadow0">
+        <button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+            <span class="mui-icon mui-icon-left-nav col333"></span>
+        </button>
+        <h1 class="mui-center mui-title">自动化周期</h1>
+        <a href="#hour" class="mui-right mui-btn-link mui-pull-right col333">下一步</a>
+    </div>
+    <!--页面标题栏结束-->
+    <div class="mui-page-content">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <form action="" method="">
+                    <div class="module">
+                        <p class="amblist col333">时间设置</p>
+                        <ul class="device-ul">
+                            <li class="mui-card bor-radius5">
+                                <div class="mui-card-content">
+                                    <div class="mui-card-content-inner">
+                                        <ul class="mui-table-view week-radio">
+                                            <!-- <li class="mui-table-view-cell padd0 mui-radio">
+                                                <a href="#setting" style="margin:0">
+                                                    <label class="fl fosize09 list-form-name">0分</label>
+                                                    <input name="radio2" type="radio">
+                                                </a>
+                                            </li> -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 结束 -->
+<!-- 月 -->
+<div id="month" class="mui-page">
+    <!--页面标题栏开始-->
+    <div class="mui-navbar-inner mui-bar mui-bar-nav backwhite shadow0">
+        <button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+            <span class="mui-icon mui-icon-left-nav col333"></span>
+        </button>
+        <h1 class="mui-center mui-title">自动化周期</h1>
+        <a href="#day" class="mui-right mui-btn-link mui-pull-right col333">下一步</a>
+    </div>
+    <!--页面标题栏结束-->
+    <div class="mui-page-content">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <form action="" method="">
+                    <div class="module">
+                        <p class="amblist col333">时间设置</p>
+                        <ul class="device-ul">
+                            <li class="mui-card bor-radius5">
+                                <div class="mui-card-content">
+                                    <div class="mui-card-content-inner">
+                                        <ul class="mui-table-view month-radio">
+                                            <!-- <li class="mui-table-view-cell padd0 mui-radio">
+                                                <a href="#setting" style="margin:0">
+                                                    <label class="fl fosize09 list-form-name">0分</label>
+                                                    <input name="radio2" type="radio">
+                                                </a>
+                                            </li> -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 结束 -->
+<!-- 条件添加 -->
+<div id="term" class="mui-page">
+    <!--页面标题栏开始-->
+    <div class="mui-navbar-inner mui-bar mui-bar-nav backwhite shadow0">
+        <button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+            <span class="mui-icon mui-icon-left-nav col333"></span>
+        </button>
+        <h1 class="mui-center mui-title">条件添加</h1>
+        <!-- <a href="#day" class="mui-right mui-btn-link mui-pull-right col333">下一步</a> -->
+    </div>
+    <!--页面标题栏结束-->
+    <div class="mui-page-content">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <form action="" method="">
+                    <div class="module">
+                        <p class="amblist col333">请选择传感器</p>
+                        <ul class="device-ul">
+                            <li class="mui-card bor-radius5">
+                                <div class="mui-card-content">
+                                    <div class="mui-card-content-inner">
+                                        <ul class="mui-table-view check-term">
+                                            <li class="mui-table-view-cell" data-type="all">
+                                                <a href="#all-all" class="fl duigou-a">
+                                                    <label class="fl fosize09">总流量</label>
+                                                    <p class="duigou-p dui-all"><span
+                                                            class="mui-icon mui-icon-checkmarkempty"></span></p>
+                                                </a>
+                                            </li>
+                                            <li class="mui-table-view-cell" data-type="liu">
+                                                <a href="#all-all" class="fl duigou-a">
+                                                    <label class="fl fosize09">流量表</label>
+                                                    <p class="duigou-p dui-liu"><span
+                                                            class="mui-icon mui-icon-checkmarkempty"></span></p>
+                                                </a>
+                                            </li>
+                                            <li class="mui-table-view-cell" data-type="biao">
+                                                <a href="#all-all" class="fl duigou-a">
+                                                    <label class="fl fosize09">压力表</label>
+                                                    <p class="duigou-p dui-biao"><span
+                                                            class="mui-icon mui-icon-checkmarkempty"></span></p>
+                                                </a>
+                                            </li>
+                                            <li class="mui-table-view-cell" data-type="wen">
+                                                <a href="#all-all" class="fl duigou-a">
+                                                    <label class="fl fosize09">温度</label>
+                                                    <p class="duigou-p dui-wen"><span
+                                                            class="mui-icon mui-icon-checkmarkempty"></span></p>
+                                                </a>
+                                            </li>
+                                            <li class="mui-table-view-cell" data-type="shi">
+                                                <a href="#all-all" class="fl duigou-a">
+                                                    <label class="fl fosize09">湿度</label>
+                                                    <p class="duigou-p dui-shi"><span
+                                                            class="mui-icon mui-icon-checkmarkempty"></span></p>
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                        <div class="mui-button-row">
+                                            <a href="#setting" class="mui-btn mui-btn-primary warn-btn trem-finish"
+                                               style="line-height:40px;">完成</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- 上滑框 总流量 -->
+    <div id="all-all" class="mui-popover mui-popover-action mui-popover-bottom" style="height:210px">
+        <ul class="mui-table-view setting-pop">
+            <li class="mui-table-view-cell backwhite">
+                <a href="#all-all" class=" mui-icon mui-icon-left-nav mui-pull-left col333"></a>
+                <h1 class=" mui-title col333"
+                    style="line-height:25px;position: static;display: inline-block;width: auto;margin: 0;">总流量</h1>
+                <a class=" mui-pull-right col333 finish-all" style="display:inline">完成</a>
+            </li>
+            <li class="mui-table-view-cell padd0 backwhite bijiao-li">
+                <a href="javascript:;" class="mui-navigate-right" style="margin:0;">
+                    <label class="fl fosize09 list-form-name">比较规则</label>
+                    <input readonly="readonly" type="text"
+                           class="mui-input-clear colgrey fosize09 fl share-input input-select" name="" value="">
+                </a>
+            </li>
+            <li class="mui-table-view-cell padd0 backwhite">
+                <a href="javascript:;" class="mui-navigate-right" style="margin:0;">
+                    <label class="fl fosize09 list-form-name">设定值</label>
+                    <input type="text" class="mui-input-clear colgrey fosize09 fl share-input input-text" name=""
+                           value="">
+                    <span>m³</span>
+                </a>
+            </li>
+            <li class="mui-table-view-cell padd0 backwhite">
+                <span class="fl fosize09 list-form-name">关闭条件</span>
+                <div class="mui-switch mui-switch-blue close-all">
+                    <div class="mui-switch-handle"></div>
+                </div>
+            </li>
+            <li class="mui-table-view-cell padd0 backwhite" style="height:30px">
+
+            </li>
+        </ul>
+    </div>
+    <!-- 结束 -->
+</div>
+<!-- 结束 -->
+<!-- 结果 -->
+<div id="result" class="mui-page">
+    <!--页面标题栏开始-->
+    <div class="mui-navbar-inner mui-bar mui-bar-nav backwhite shadow0">
+        <button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+            <span class="mui-icon mui-icon-left-nav col333"></span>
+        </button>
+        <h1 class="mui-center mui-title">结果添加</h1>
+        <!-- <a href="#day" class="mui-right mui-btn-link mui-pull-right col333">下一步</a> -->
+    </div>
+    <!--页面标题栏结束-->
+    <div class="mui-page-content">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <div class="execu-tab backwhite">
+                    <div id="segmentedControl"
+                         class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
+                        <a class="mui-control-item mui-active" href="#item1">设备</a>
+                        <a class="mui-control-item" href="#item2">推送</a>
+                    </div>
+                </div>
+                <div id="item1" class="mui-control-content mui-active">
+                    <form action="" method="">
+                        <div class="module">
+                            <p class="amblist col333">请选择设备</p>
+                            <ul class="device-ul">
+                                <li class="mui-card bor-radius5">
+                                    <div class="mui-card-content">
+                                        <div class="mui-card-content-inner">
+                                            <ul class="mui-table-view check-result">
+                                                <!-- <li class="mui-table-view-cell" data-type="all">
+                                                    <a href="#result-all" class="fl duigou-a">
+                                                        <label class="fl fosize09">设备1</label>
+                                                        <p class="duigou-p dui-all"><span class="mui-icon mui-icon-checkmarkempty"></span></p>
+                                                    </a>
+                                                </li> -->
+                                            </ul>
+                                            <div class="mui-button-row">
+                                                <a href="#setting" class="mui-btn mui-btn-primary warn-btn result-finish"
+                                                   style="line-height:40px;">完成</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+                <div id="item2" class="mui-control-content">
+                    <form action="" method="">
+                        <div class="module">
+                            <p class="amblist col333">推送设置</p>
+                            <ul class="device-ul">
+                                <li class="mui-card bor-radius5">
+                                    <div class="mui-card-content">
+                                        <div class="mui-card-content-inner">
+                                            <ul class="mui-table-view">
+                                                <li class="mui-table-view-cell padd0">
+                                                    <a href="#tuisong" class="mui-navigate-right" style="margin:0;">
+                                                        <label class="fl fosize09 list-form-name">信息推送</label>
+                                                        <input readonly="readonly" type="text"
+                                                               class="mui-input-clear colgrey fosize09 fl share-input"
+                                                               name="tuixin" value="">
+                                                    </a>
+                                                </li>
+                                                <li class="mui-table-view-cell padd0" id="">
+                                                    <label class="fl fosize09 list-form-name">信息自定义</label>
+                                                    <input type="text"
+                                                           class="mui-input-clear colgrey fosize09 fl share-input"
+                                                           name="tuizi" value="">
+                                                </li>
+                                            </ul>
+                                            <div class="mui-button-row">
+                                                <a href="#setting" class="mui-btn mui-btn-primary warn-btn"
+                                                   style="line-height:40px;">完成</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+
+			</div>
+        </div>
+    </div>
+    <!-- 上滑框 结果设备设置 -->
+    <div id="result-all" class="mui-popover mui-popover-action mui-popover-bottom" style="height:180px">
+        <ul class="mui-table-view setting-result">
+            <li class="mui-table-view-cell backwhite">
+                <a href="#result-all" class=" mui-icon mui-icon-left-nav mui-pull-left col333"></a>
+                <h1 class=" mui-title col333"
+                    style="line-height:25px;position: static;display: inline-block;width: auto;margin: 0;">设备名</h1>
+                <a href="#result-all" class=" mui-pull-right col333 finish-result" style="display:inline">完成</a>
+            </li>
+            <li class="mui-table-view-cell padd0 backwhite mui-radio">
+                <label class="fl fosize09 list-form-name">打开</label>
+                <input name="resultradio" type="radio" value='1'>
+            </li>
+            <li class="mui-table-view-cell padd0 backwhite mui-radio">
+                <label class="fl fosize09 list-form-name">关闭</label>
+                <input name="resultradio" type="radio" value='2'>
+            </li>
+            <li class="mui-table-view-cell padd0 backwhite mui-radio">
+                <label class="fl fosize09 list-form-name">关闭结果</label>
+                <input name="resultradio" type="radio" value='3' checked="checked">
+            </li>
+            <li class="mui-table-view-cell padd0 backwhite" style="height:30px">
+
+            </li>
+        </ul>
+    </div>
+    <!-- 结束 -->
+    <!-- 上滑框 结果推送设置 -->
+    <div id="tuisong" class="mui-popover mui-popover-action mui-popover-bottom" style="height:240px">
+        <ul class="mui-table-view setting-result">
+            <li class="mui-table-view-cell backwhite">
+                <a href="#tuisong" class=" mui-icon mui-icon-left-nav mui-pull-left col333"></a>
+                <h1 class=" mui-title col333"
+                    style="line-height:25px;position: static;display: inline-block;width: auto;margin: 0;">设备名</h1>
+                <a href="#tuisong" class=" mui-pull-right col333 finish-tui" style="display:inline">完成</a>
+            </li>
+            <li class="mui-table-view-cell padd0 backwhite mui-radio">
+                <label class="fl fosize09 list-form-name">错误推送</label>
+                <input name="tuiradio" type="radio" value='错误推送'>
+            </li>
+            <li class="mui-table-view-cell padd0 backwhite mui-radio">
+                <label class="fl fosize09 list-form-name">警告推送</label>
+                <input name="tuiradio" type="radio" value='警告推送'>
+            </li>
+            <li class="mui-table-view-cell padd0 backwhite mui-radio">
+                <label class="fl fosize09 list-form-name">信息推送</label>
+                <input name="tuiradio" type="radio" value='信息推送'>
+            </li>
+            <li class="mui-table-view-cell padd0 backwhite mui-radio">
+                <label class="fl fosize09 list-form-name">关闭推送</label>
+                <input name="tuiradio" type="radio" value='关闭推送' checked="checked">
+            </li>
+            <li class="mui-table-view-cell padd0 backwhite" style="height:30px">
+
+            </li>
+        </ul>
+    </div>
+    <!-- 结束 -->
+</div>
+<!-- 结束 -->
+
+<script src="../js/mui.min.js"></script>
+<script src="../js/mui.picker.js"></script>
+<script src="../js/mui.picker.min.js"></script>
+<script src="../js/mui.poppicker.js"></script>
+<script src="../js/mui.view.js "></script>
+<!-- <script src='../js/feedback.js'></script> -->
+<script src="../js/jquery-1.11.1.js"></script>
+<script type="text/javascript">
+    mui.init({
+        swipeBack: true //启用右滑关闭功能
+    });
+    //初始化单页view
+    var viewApi = mui('#app').view({
+        defaultPage: '#setting'
+    });
+    //初始化单页的区域滚动
+    mui('.mui-scroll-wrapper').scroll();
+
+    mui('body').on('shown', '.mui-popover', function (e) {
+        //console.log('shown', e.detail.id);//detail为当前popover元素
+    });
+    mui('body').on('hidden', '.mui-popover', function (e) {
+        //console.log('hidden', e.detail.id);//detail为当前popover元素
+    });
+    //上滑框点击事件
+    // // var info = document.getElementById("info");
+    // mui('body').on('tap', '.mui-popover-action li>a', function() {
+    // 	var a = this,
+    // 		parent;
+    // 	//根据点击按钮，反推当前是哪个actionsheet
+    // 	for (parent = a.parentNode; parent != document.body; parent = parent.parentNode) {
+    // 		if (parent.classList.contains('mui-popover-action')) {
+    // 			break;
+    // 		}
+    // 	}
+    // 	//关闭actionsheet
+    // 	mui('#' + parent.id).popover('toggle');
+    // 	// info.innerHTML = "你刚点击了\"" + a.innerHTML + "\"按钮";
+    // })
+
+    var trem_split = ''; //获取选中的条件值
+    var trem_name = '';//获取选中的名称
+    var trem_arr = [
+        {name: '总流量'},
+        {name: '流量表'},
+        {name: '压力表'},
+        {name: '温度'},
+        {name: '湿度'},
+    ];
+    var result_arr =  [];
+
+
+    $(document).ready(function () {
+        // 改变对勾样式 条件选择
+        function changeClass(thisTap, change) {
+            var has_add = $(thisTap).parents(".mui-table-view").find(".close-all");
+            var has_select = $(thisTap).parents(".mui-table-view").find(".input-select").val();
+            var has_text = $(thisTap).parents(".mui-table-view").find(".input-text").val();
+            var has_name = $(thisTap).prev(".mui-title").html();
+
+            if (has_add.hasClass("mui-active")) { //开启状态,传值
+                $('.dui-' + change).removeClass("dui-blue");
+                mui('#all-all').popover('hide');
+            } else {//关闭状态,不传值
+                if (has_select.trim() && has_text.trim()) {
+                    $('.dui-' + change).addClass("dui-blue");
+                    trem_split = has_select + has_text;
+                    trem_name = has_name;
+                    trem_arr.forEach(function (item, i) {
+                        if (item.name == has_name) {
+                            item.text = trem_split;
+                        }
+                    })
+                    mui('#all-all').popover('hide');
+                    console.log(trem_arr)
+                } else {
+					mui.toast('不能为空')
+                }
+
+            }
+        }
+
+        //条件添加列表
+        // var tremHtml = '';
+        // $.each(trem_arr,function(index,value){
+        // 	tremHtml += '<li class="mui-table-view-cell" data-type=" ' + all + '">'+
+        // 					'<a href="#all-all" class="fl duigou-a">'+
+        // 						'<label class="fl fosize09">' + value + '</label>'+
+        // 						'<p class="duigou-p dui-all"><span class="mui-icon mui-icon-checkmarkempty"></span></p>'+
+        // 					'</a>'+
+        // 				'</li>';
+        // });
+        // $(".check-term").html(tremHtml);
+        //结果添加列表
+        var resultEach = [{name: '设备1', type: 'one',status:1}, {name: '设备2', type: 'two',status:2}, {name: '设备3', type: 'three',status:3},]
+        var resultHtml = '';
+        $.each(resultEach, function (index, value) {
+            // $(".muntine-radio").find("label").html(value);
+            resultHtml += '<li class="mui-table-view-cell" data-type="'+value.type+'" data-status="' + value.status + '">' +
+                '<a href="#result-all" class="fl duigou-a">' +
+                '<label class="fl fosize09">' + value.name + '</label>' +
+                '<p class="duigou-p '+(value.status==1||value.status==2?'dui-blue':'')+' dui-' + value.type + '"><span class="mui-icon mui-icon-checkmarkempty"></span></p>' +
+                '</a>' +
+                '</li>';
+        });
+        $(".check-result").html(resultHtml);
+        //结果上滑框循环出现
+        var resultchecked = '';//获取已经选中的设备结果值
+        $(".check-result li").on('tap', function () {
+            let name = $(this).find('label').html();
+            let _this = this;
+            $('#result-all').find('.mui-title').html(name);
+			$(".finish-result").data('type',$(this).data('type'));
+            $('[name=resultradio]').each(function (i,item) {
+				if($(item).val()==$(_this).data('status')){
+					$(item).prop('checked','checked');
+				}
+			})
+            // $(this).attr('href','')
+        });
+
+        //条件上滑框循环出现
+        $(".check-term li").on('tap', function () {
+            let name = $(this).find('label').html();
+            $('#all-all').find('.mui-title').html(name);
+            $('.setting-pop input').val('')
+            $(".finish-all").data('type', $(this).data('type'));
+            $(this).attr('href', '')
+        });
+
+
+        //结果添加
+        //关闭结果上滑框
+        $(".finish-result").on('tap', function (e) {
+            e.preventDefault();
+			var resultname = $(this).parents('.setting-result').find('.mui-title').html();
+			var resulttext = '';
+            resultchecked = $("input[name='resultradio']:checked").val();
+            var resulttype = $(this).data('type'); //获取data-type值
+
+			$('.dui-' + resulttype).parents('li').data('status',resultchecked);
+			console.log($('.dui-' + resulttype).data('status'))
+            if (resultchecked == '1') {
+				$('.dui-' + resulttype).addClass("dui-blue");
+				resulttext = '打开'
+            } else if(resultchecked == '2') {
+                $('.dui-' + resulttype).addClass("dui-blue");
+				resulttext = '关闭'
+            }else{
+				$('.dui-' + resulttype).removeClass("dui-blue");
+			}
+        })
+
+        //关闭推送上滑框
+        $(".finish-tui").on('tap', function (e) {
+            e.preventDefault();
+            var tuichecked = $("input[name='tuiradio']:checked").val();
+            $("input[name='tuixin']").val(tuichecked);
+        })
+
+        //关闭条件上滑框
+        $(".finish-all").on('tap', function (e) {
+            e.preventDefault();
+            changeClass(this, $(this).data('type'))
+        })
+
+        //条件选则完成
+        $(".trem-finish").on('tap', function () {
+            var select_tremHtml = '';
+            $.each(trem_arr, function (index, value) { //已添加条件结果列表
+                if (value.text) {
+                    select_tremHtml += '<li class="mui-table-view-cell padd0">' +
+                        '<a href="javascript:;" class="mui-navigate-right" style="margin:0;" >' +
+                        '<label class="fl fosize09 list-form-name">' + value.name + '</label>' +
+                        '<input readonly="readonly" type="text" class="mui-input-clear colgrey fosize09 fl share-input" name=""  value=" ' + value.text + ' ">' +
+                        '</a>' +
+                        '</li>';
+                }
+            });
+            $(".select-trem").html(select_tremHtml);
+        })
+
+		//结果选则完成
+		$(".result-finish").on('tap', function () {
+		    console.log(result_arr)
+			var select_resultHtml = '';
+			$.each(result_arr, function (index, value) { //已添加条件结果列表
+				if (value.text) {
+					select_resultHtml += '<li class="mui-table-view-cell padd0">' +
+							'<a href="javascript:;" class="mui-navigate-right" style="margin:0;" >' +
+							'<label class="fl fosize09 list-form-name">' + value.name + '</label>' +
+							'<input readonly="readonly" type="text" class="mui-input-clear colgrey fosize09 fl share-input" name=""  value=" ' + value.text + ' ">' +
+							'</a>' +
+							'</li>';
+				}
+			});
+			$(".select-trem").html(select_resultHtml);
+		})
+
+        //分
+        var minuteEach = ['0分', '1分', '2分', '3分', '4分', '5分', '6分', '7分', '8分', '9分', '10分', '11分', '12分', '13分', '14分', '15分', '16分', '17分', '18分', '19分', '20分', '21分', '22分',];
+        var minuteHtml = '';
+        $.each(minuteEach, function (index, value) {
+            // $(".muntine-radio").find("label").html(value);
+            minuteHtml += '<li class="mui-table-view-cell padd0 mui-radio">' +
+                '<a href="javascript:;" style="margin:0">' +
+                '<label class="fl fosize09 list-form-name">' + value + '</label>' +
+                '<input name="radiominute" type="radio" value=" ' + value + ' ">' +
+                '</a>' +
+                '</li>';
+        });
+        $(".muntine-radio").html(minuteHtml);
+        //小时
+        var hourEach = ['0时', '1时', '2时', '3时', '4时', '5时', '6时', '7时', '8时', '9时', '10时', '11时', '12时', '13时', '14时', '15时', '16时', '17时', '18时', '19时', '20时', '21时', '22时', '23时'];
+        var hourHtml = '';
+        $.each(hourEach, function (index, value) {
+            // $(".muntine-radio").find("label").html(value);
+            hourHtml += '<li class="mui-table-view-cell padd0 mui-radio">' +
+                '<a href="javascript:;" style="margin:0">' +
+                '<label class="fl fosize09 list-form-name">' + value + '</label>' +
+                '<input name="radiohour" type="radio" value=" ' + value + ' ">' +
+                '</a>' +
+                '</li>';
+        });
+        $(".hour-radio").html(hourHtml);
+        //日
+        var dayEach = ['1日', '2日', '3日', '4日', '5日', '6日', '7日', '8日', '9日', '10日', '11日', '12日', '13日', '14日', '15日', '16日', '17日', '18日', '19日', '20日', '21日', '22日', '23日', '24日', '25日', '26日', '27日', '28日', '29日', '30日', '31日'];
+        var dayHtml = '';
+        $.each(dayEach, function (index, value) {
+            // $(".muntine-radio").find("label").html(value);
+            dayHtml += '<li class="mui-table-view-cell padd0 mui-radio">' +
+                '<a href="javascript:;" style="margin:0">' +
+                '<label class="fl fosize09 list-form-name">' + value + '</label>' +
+                '<input name="radioday" type="radio" value=" ' + value + ' ">' +
+                '</a>' +
+                '</li>';
+        });
+        $(".day-radio").html(dayHtml);
+        //周
+        var weekEach = ['周一', '周二', '周三', '周四', '周五', '周六', '周日'];
+        var weekHtml = '';
+        $.each(weekEach, function (index, value) {
+            // $(".muntine-radio").find("label").html(value);
+            weekHtml += '<li class="mui-table-view-cell padd0 mui-radio">' +
+                '<a href="javascript:;" style="margin:0">' +
+                '<label class="fl fosize09 list-form-name">' + value + '</label>' +
+                '<input name="radioweek" type="radio" value=" ' + value + ' ">' +
+                '</a>' +
+                '</li>';
+        });
+        $(".week-radio").html(weekHtml);
+        //月
+        var monthEach = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
+        var monthHtml = '';
+        $.each(monthEach, function (index, value) {
+            // $(".muntine-radio").find("label").html(value);
+            monthHtml += '<li class="mui-table-view-cell padd0 mui-radio">' +
+                '<a href="javascript:;" style="margin:0">' +
+                '<label class="fl fosize09 list-form-name">' + value + '</label>' +
+                '<input name="radiomonth" type="radio" value=" ' + value + ' ">' +
+                '</a>' +
+                '</li>';
+        });
+        $(".month-radio").html(monthHtml);
+
+        //不同选项跳不同页面
+        var alltime = '';
+        var radiotime = '';
+        var radiomonth = '';
+        var radioweek = '';
+        var radioday = '';
+        var radiohour = '';
+        var radiominute = '';
+        $("input[name='radiotime']").click(function () {
+            radiotime = $(this).prev().html();
+            var timeValue = $(this).val();
+            var time_link = $('.time-link');
+            console.log(radiotime);
+            time_link.attr("href", "#" + timeValue);
+        })
+        $('.time-link').on('tap', function () {
+            if ($("input[name='radiotime']").val() == 'setting') {
+                alltime = radiotime;
+                $(".zhouqi").val(alltime);
+                $("input[type='radio']").removeAttr('checked');
+            }
+        })
+        //获取单选选中值
+        $("input[name='radiomonth']").click(function () {
+            radiomonth = $(this).val();
+        })
+        $("input[name='radioweek']").click(function () {
+            radioweek = $(this).val();
+        })
+        $("input[name='radioday']").click(function () {
+            radioday = $(this).val();
+        })
+        $("input[name='radiohour']").click(function () {
+            radiohour = $(this).val();
+        })
+        $("input[name='radiominute']").click(function () {
+            radiominute = $(this).val();
+        })
+        //清空单选
+        $(".munite-next").on('tap', function () {
+            alltime = radiotime + radiomonth + radioweek + radioday + radiohour + radiominute;
+            $(".zhouqi").val(alltime);
+            $("input[type='radio']").removeAttr('checked');
+        })
+
+
+    });
+
+    (function ($, doc) {
+        $.init();
+        $.ready(function () {
+            function popPicker_show(ele, data, fun) {
+                data.show(function (items) {
+                    //数据为items[0]
+                    // userguanGai.innerText = JSON.stringify(items[0]);
+                    //显示文本
+                    jQuery(ele).find('input').val(items[0].text);
+                    fun ? fun(items[0].text) : '';
+                    //返回 false 可以阻止选择框的关闭
+                    //return false;
+                });
+            }
+
+            //选择分钟 灌溉 间隔
+            var selectTerm = new $.PopPicker();
+            selectTerm.setData([{
+                value: '等于(=)',
+                text: '等于(=)'
+            }, {
+                value: '不等于(!=)',
+                text: '不等于(!=)'
+            }, {
+                value: '小于(<)',
+                text: '小于(<)'
+            }, {
+                value: '小于等于(<=)',
+                text: '小于等于(<=)'
+            }, {
+                value: '大于(>)',
+                text: '大于(>)'
+            }, {
+                value: '大于等于(>=)',
+                text: '大于等于(>=)'
+            }]);
+            $(document).on('tap', '.bijiao-li', function () {
+                popPicker_show(this, selectTerm)
+            });
+            /**
+             * 获取对象属性的值
+             * 主要用于过滤三级联动中，可能出现的最低级的数据不存在的情况，实际开发中需要注意这一点；
+             * @param {Object} obj 对象
+             * @param {String} param 属性名
+             */
+            var _getParam = function (obj, param) {
+                return obj[param] || '';
+            };
+
+            //选择条件
+
+        });
+    })(mui, document);
+
+
+</script>
+</body>
+
+</html>

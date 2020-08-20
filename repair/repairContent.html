@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>报修记录</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link href="../css/app.css" rel="stylesheet" />
+		<style>
+			.mui-btn {
+				font-size: 16px;
+				padding: 8px;
+				margin: 3px;
+			}
+			h5.mui-content-padded {
+				margin-left: 3px;
+				margin-top: 20px !important;
+			}
+			h5.mui-content-padded:first-child {
+				margin-top: 12px !important;
+			}
+			.ui-alert {
+				text-align: center;
+				padding: 20px 10px;
+				font-size: 16px;
+			}
+		</style>
+	</head>
+	<body>
+			<header id="header" class="mui-bar mui-bar-nav backwhite shadow0">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left col333"></a>
+				<h1 class="mui-title col333">未解决</h1>
+			</header>
+			
+			<div class="mui-content">
+						<form action="" method="">
+							<div class="module">
+								<ul class="device-ul">
+									<li class="mui-card bor-radius5">
+										<div class="mui-card-content">
+											<div class="mui-card-content-inner">
+												<ul class="mui-table-view">
+													<li class="mui-table-view-cell padd0">
+														<label class="fl fosize09 list-form-name">标题</label>
+														<input readonly="readonly" type="text" class="mui-input-clear colgrey fosize09 fl reg-input" name=""  value="报修详情">					
+													</li>
+													<li class="mui-table-view-cell padd0">
+														<textarea readonly="readonly" class="mui-input-clear colgrey fosize09 mt15 repa-textarea">请描述您的问题</textarea>		
+														<!-- <input type="text" class="mui-input-clear colgrey fosize09 fl reg-input" name=""  value="23.00">					 -->
+													</li>
+													<li class="mui-table-view-cell padd0">
+														<label class="fl fosize09 list-form-name">场景</label>
+														<input readonly="readonly" type="text" class="mui-input-clear colgrey fosize09 fl reg-input" name=""  value="23.00">					
+													</li>
+													<li class="mui-table-view-cell padd0">
+														<label class="fl fosize09 list-form-name">联系电话</label>
+														<input readonly="readonly" type="text" class="mui-input-clear colgrey fosize09 fl reg-input" name=""  value="23.00">					
+													</li>
+													<li class="mui-table-view-cell padd0">
+														<label class="fl fosize09 list-form-name">报修时间</label>
+														<input readonly="readonly" type="text" class="mui-input-clear colgrey fosize09 fl reg-input" name=""  value="23.00">					
+													</li>
+												</ul>
+												<!-- <div class="mui-button-row">
+													<button type="button" class="mui-btn mui-btn-primary warn-btn regu-chang-btn" >未解决</button>
+												</div> -->
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</form>
+					
+			</div>
+			
+			
+			
+			
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			
+			
+			// 跳转控制页
+			mui(".mui-button-row").on("tap",".regu-chang-btn",function(){
+				mui.openWindow({
+					url: '../control/control.html', 
+					id:'info'
+				});
+			});
+			
+			
+			
+			
+		</script>
+	</body>
+
+</html>

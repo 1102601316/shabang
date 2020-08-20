@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>高频模式详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../font_icon/iconfont.css" rel="stylesheet" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link href="../css/app.css" rel="stylesheet" />
+		<style>
+			.mui-card .mui-control-content {
+				padding: 10px;
+			}
+			
+			.mui-control-content {
+				height: 150px;
+			}
+		</style>
+	</head>
+		
+	<body>
+		
+			
+			<header id="header" class="mui-bar mui-bar-nav backwhite shadow0">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left col333"></a>
+				<h1 class="mui-title col333">雨天模式</h1>
+				<!-- <button class="mui-btn mui-btn-link mui-pull-right col333" id="execu-jilu">执行记录</button> -->
+			</header>
+			
+			<div class="mui-content">
+				
+					<div class="mui-control-content mui-active">
+						<ul class="device-ul">
+							<li class="mui-card">
+								<div class="mui-card-header execu-title fosize09 ">
+									<a  class="mui-icon mui-icon-settings fosize1 fl colblue"><span class="colblue ml5">设备do1</span></a>
+									<!-- <span class="fr execu-change">修改计划</span> -->
+								</div>
+								<div class="mui-card-content">
+									<div class="mui-card-content-inner">
+										<p>开启时间:2018-12-02 00:00:00
+											<span class="execu-status ml5 fr">
+												<span class="icon iconfont icon-open colju fosize1"></span>
+													<span class="fosize08 col333">开启超时</span>
+											</span>
+										</p>
+										<p>关闭时间:2018-12-02 00:00:00
+											<span class="execu-status ml5 fr">
+												<span class="icon iconfont icon-open colju fosize1"></span>
+													<span class="fosize08 col333">未关闭</span>
+											</span>
+										</p>
+										
+										<!-- <p>最近执行:2020-08-10 00:00</p> -->
+										<p class="porelative">
+											<span class="fl">灌溉时间:20</span>
+											<span class="fr">间隔时间:20</span>
+										</p>
+									</div>
+								</div>
+								<div class="mui-card-footer  execu-title fosize09 ">
+										<span class="fl">最近执行:2020-08-10 00:00</span>
+										<!-- <span class="fr execu-jilu colju delete">删除</span> -->
+								</div>
+							</li>
+							<li class="mui-card">
+								<div class="mui-card-header execu-title fosize09 ">
+									<a  class="mui-icon mui-icon-settings fosize1 fl colblue"><span class="colblue ml5">设备do1</span></a>
+									<!-- <span class="fr execu-change">修改计划</span> -->
+								</div>
+								<div class="mui-card-content">
+									<div class="mui-card-content-inner">
+										<p>开启时间:2018-12-02 00:00:00
+											<span class="execu-status ml5 fr">
+												<span class="icon iconfont icon-open colju fosize1"></span>
+													<span class="fosize08 col333">开启超时</span>
+											</span>
+										</p>
+										<p>关闭时间:2018-12-02 00:00:00
+											<span class="execu-status ml5 fr">
+												<span class="icon iconfont icon-open colju fosize1"></span>
+													<span class="fosize08 col333">未关闭</span>
+											</span>
+										</p>
+										
+										<!-- <p>最近执行:2020-08-10 00:00</p> -->
+										<p class="porelative">
+											<span class="fl">灌溉时间:20</span>
+											<span class="fr">间隔时间:20</span>
+										</p>
+									</div>
+								</div>
+								<div class="mui-card-footer  execu-title fosize09 ">
+										<span class="fl">最近执行:2020-08-10 00:00</span>
+										<!-- <span class="fr execu-jilu colju delete">删除</span> -->
+								</div>
+							</li>
+						</ul>
+					</div>
+					
+					
+				</div>
+				
+			</div>
+			
+			
+			
+			
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init({
+				swipeBack: true ,//启用右滑关闭功能
+			});
+			
+			
+			(function($) {
+				$('#scroll').scroll({
+					indicators: true //是否显示滚动条
+				});
+				var segmentedControl = document.getElementById('segmentedControl');
+				
+				
+			})(mui);
+			
+		</script>
+	</body>
+
+</html>

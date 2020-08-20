@@ -1,0 +1,386 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>智能灌溉</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../font_icon/iconfont.css" rel="stylesheet" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link href="../css/app.css" rel="stylesheet" />
+		<link href="../css/mui.picker.css" rel="stylesheet" />
+		<link href="../css/mui.poppicker.css" rel="stylesheet" />
+		
+	</head>
+		
+	<body>
+			
+			<!-- <p class="title-header" id='showUserPicker'>
+				<sapn>选择控制模式</span>
+				<span id='userResult' class="fr colblue mr5">定时</span>
+			</p> -->
+			
+			<header id="header" class="mui-bar mui-bar-transparent">
+				<h1 class="mui-title colwhite left-title">
+					<!-- <p class="fl colwhite"  id='showUserPicker'><span id='userResult'>设备1</span>
+					<a id="menu" class="mui-icon mui-icon-arrowdown colwhite"></a></p> -->
+				</h1>
+				<a id="menu" class="mui-action-menu mui-icon mui-icon-bars mui-pull-right colwhite" href="#topPopover"></a>
+				<!-- <img class="mui-media-object mui-pull-right log-img m10" src="../images/shuijiao.jpg"> -->
+			</header>
+			
+			<div class="mui-content img-content">
+				<div class="imgback">
+					<div class="img-div">
+						<p class="img-p1 colwhite">2020年8月07日  星期五</p>
+						<p class="img-p2 colwhite">北京海淀花园路科贸大厦</p>
+					</div>
+					
+				</div>
+				<div class="img-point">
+					<div class="fl img-du">
+						31℃
+					</div>
+					<!-- <div class="fr"> -->
+						<marquee height="40" class="fr img-marquee" direction="up" scrollamount="5" scrolldelay="0" behavior="scroll">
+							<p class="img-marquee-p">未来不会有雨</p>
+							<p class="img-marquee-p">70  ｜  90  |  东北风</p>
+						</marquee>
+					<!-- </div> -->
+				</div>
+			</div>
+			
+			<!--右上角弹出菜单-->
+			<div id="topPopover" class="mui-popover change-popover">
+				<div class="mui-popover-arrow"></div>
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell">
+								<a id="menu" class="mui-icon mui-icon-extra mui-icon-extra-sweep fosize1">
+									<span class="fosize1">扫一扫</span></a>
+							</li>
+							<li class="mui-table-view-cell" id="baoxiu">
+								<a id="menu" class="mui-icon mui-icon-info fosize12">
+									<span class="fosize1">一键报修</span></a>
+							</li>
+							<li class="mui-table-view-cell" id="myinfo">
+								<a id="menu" class="mui-icon mui-icon-gear fosize12">
+									<span class="fosize1">我的信息</span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<nav class="mui-bar mui-bar-tab">
+				<a class="mui-tab-item mui-active" data-id="status" id="status">
+					<span class="icon iconfont icon-iconfkzt nav-icon"></span>
+					<span class="mui-tab-label fosize08">状态</span>
+				</a>
+				<a class="mui-tab-item" data-id="control" id="control">
+					<span class="icon iconfont icon-kongzhi1 nav-icon"></span>
+					<span class="mui-tab-label fosize08">控制</span>
+				</a>
+				<a class="mui-tab-item" data-id="intellect" id="intellect">
+					<span class="icon iconfont icon-tianchongxing- nav-icon"></span>
+					<span class="mui-tab-label fosize08">智能</span>
+				</a>
+				<a class="mui-tab-item" data-id="myself" id="myself">
+					<span class="icon iconfont icon-wode nav-icon"></span>
+					<span class="mui-tab-label fosize08">我的</span>
+				</a>
+			</nav>
+			
+			<div class="mui-content">
+				
+				<div class="module">
+					<h3 class="title-h3">首部系统</h3>
+					<ul class="device-ul">
+						<li class="mui-card bor-radius5">
+							<div class="mui-card-header">首部系统</div>
+							<div class="mui-card-content">
+								<div class="mui-card-content-inner">
+									<ul class="mui-table-view">
+										<li class="mui-table-view-cell">
+											<p class="fl icon-back icon-back-color">
+												<span class="icon iconfont icon-thin-_filter_fun icon-color"></span>
+											</p>
+											<span class="fl fosize09 list-name">过滤器</span>
+											<span class="fr fosize08 list-content colgrey ml5">正常</span>
+											<!-- <span class="fr fosize12 list-content colblue">正常</span> -->
+										</li>
+										<li class="mui-table-view-cell">
+											<p class="fl icon-back icon-back-color backfen">
+												<span class="icon iconfont icon-yali icon-color"></span>
+											</p>
+											<span class="fl fosize09 list-name">压力</span>
+											<span class="fr fosize08 list-content colgrey ml5">MPA</span>
+											<span class="fr fosize12 list-content colblue">36</span>
+										</li>
+										<li class="mui-table-view-cell">
+											<p class="fl icon-back icon-back-color backhuang">
+												<span class="icon iconfont icon-biao icon-color"></span>
+											</p>
+											<span class="fl fosize09 list-name">流量表</span>
+											<span class="fr fosize08 list-content colgrey ml5">%</span>
+											<span class="fr fosize12 list-content colblue">36</span>
+										</li>
+										<li class="mui-table-view-cell">
+											<p class="fl icon-back icon-back-color backlv">
+												<span class="icon iconfont icon-liuliang1 icon-color"></span>
+											</p>
+											<span class="fl fosize09 list-name">瞬时流量</span>
+											<span class="fr fosize08 list-content colgrey ml5">m³/h</span>
+											<span class="fr fosize12 list-content colblue">36</span>
+										</li>
+										<li class="mui-table-view-cell">
+											<p class="fl icon-back icon-back-color backju">
+												<span class="icon iconfont icon-liuliang1 icon-color"></span>
+											</p>
+											<span class="fl fosize09 list-name">累计流量</span>
+											<span class="fr fosize08 list-content colgrey ml5">m³</span>
+											<span class="fr fosize12 list-content colblue">36</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="module">
+					<h3 class="title-h3">灌溉量
+					<!-- <a class="fr more" href="">更多 ></a></h3> -->
+					<ul class="device-ul">
+						<li class="mui-card bor-radius5">
+							<div class="mui-card-content">
+									<ul class="mui-table-view backblue porelative">
+										<li class="index-guangai w33 fl">
+											<div class="fl">
+												<p class="colwhite h20">0立方</p>
+												<p class="colwhite h20">今日灌溉</p>
+											</div>
+											<p class="fr line"></p>
+										</li>
+										<li class="index-guangai w33 fl">
+											<div class="fl">
+												<p class="colwhite h20">0立方</p>
+												<p class="colwhite h20">昨日灌溉</p>
+											</div>
+											<p class="fr line"></p>
+										</li>
+										<li class="index-guangai w33 fl">
+											<p class="colwhite h20">12340立方</p>
+											<p class="colwhite h20">总量</p>
+										</li>
+									</ul>
+							</div>
+						</li>
+						
+					</ul>
+				</div>
+				
+				<div class="module">
+					<h3 class="title-h3">环境</h3>
+					<ul class="device-ul">
+						<li class="mui-card bor-radius5">
+							<div class="mui-card-header">环境
+							<p class="fr col333"  id='showUserPicker'><span id='userResult'>设备1</span>
+							<a id="menu" class="mui-icon mui-icon-arrowdown col333"></a></p>
+							</div>
+							<div class="mui-card-content">
+								<div class="mui-card-content-inner">
+									<ul class="mui-table-view">
+										<li class="mui-table-view-cell">
+											<p class="fl icon-back icon-back-color">
+												<span class="icon iconfont icon-wendu icon-color"></span>
+											</p>
+											<span class="fl fosize09 list-name">温度</span>
+											<span class="fr fosize08 list-content colgrey ml5">℃</span>
+											<span class="fr fosize12 list-content colblue">36</span>
+										</li>
+										<li class="mui-table-view-cell">
+											<p class="fl icon-back icon-back-color backfen">
+												<span class="icon iconfont icon-shidu icon-color"></span>
+											</p>
+											<span class="fl fosize09 list-name">湿度</span>
+											<span class="fr fosize08 list-content colgrey ml5">%</span>
+											<span class="fr fosize12 list-content colblue">36</span>
+										</li>
+										<li class="mui-table-view-cell">
+											<p class="fl icon-back icon-back-color backhuang">
+												<span class="icon iconfont icon-guangzhao icon-color"></span>
+											</p>
+											<span class="fl fosize09 list-name">光照</span>
+											<span class="fr fosize08 list-content colgrey ml5">LUX</span>
+											<span class="fr fosize12 list-content colblue">36</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				
+				
+				<div class="module">
+					<h3 class="title-h3">执行记录
+					<a class="fr more" href="javascript:;" id="more-jilu">更多 ></a></h3>
+					<ul class="device-ul">
+						<li class="mui-card bor-radius5">
+							<div class="mui-card-content">
+								<div class="mui-card-content-inner">
+									<ul class="mui-table-view">
+										<li class="mui-table-view-cell mui-media">
+											<a href="javascript:;">
+												<div class="mui-media-body">
+													<p class='mui-ellipsis log-content fosize1'>
+														设备1
+														<span class="log-name fosize09 fr">张猪猪</span>
+														<span class="icon iconfont icon-ziyuan1 fosize1 colblue fr mr5"></span>
+													</p>
+													<span class="fosize09 collv">[定时] 手动开启</span>
+													<span class="log-time fr fosize09">2020-08-11 23:29</span>
+												</div>
+											</a>
+										</li>
+										<li class="mui-table-view-cell mui-media">
+											<a href="javascript:;">
+												<div class="mui-media-body">
+													<p class='mui-ellipsis log-content fosize1'>
+														设备1
+														<span class="log-name fosize09 fr">系统</span>
+														<span class="icon iconfont icon-ziyuan1 fosize1 colblue fr mr5"></span>
+													</p>
+													<span class="fosize09 colblue">[高频] 自动开启</span>
+													<span class="log-time fr fosize09">2020-08-11 23:29</span>
+												</div>
+											</a>
+										</li>
+										<!-- <li class="mui-table-view-cell mui-media">
+											<a href="javascript:;">
+												<div class="mui-media-body">
+													<p class='mui-ellipsis log-content fosize09'>高频模式---电磁阀/水泵关闭
+													<span class="fr">设备1</span></p>
+													<span class="icon iconfont icon-ziyuan1 fosize1 colblue"></span>
+													<span class="log-name fosize09">张猪猪</span>
+													<span class="log-time fr fosize09">2020-08-11 23:29</span>
+												</div>
+											</a>
+										</li> -->
+									</ul>
+								</div>
+							</div>
+						</li>
+						
+					</ul>
+				</div>
+				
+				
+				
+			</div>
+			
+			
+			
+			
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.picker.js"></script>
+		<script src="../js/mui.poppicker.js"></script>
+		<script src="../js/city.data.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//打开新页面
+			document.getElementById('myself').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../myself/myself.html', 
+				id:'info'
+			  });
+			});
+			document.getElementById('intellect').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../intellect/intellect.html', 
+				id:'info'
+			  });
+			});
+			document.getElementById('control').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../control/control.html', 
+				id:'info'
+			  });
+			});
+			document.getElementById('status').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../index/index.html', 
+				id:'info'
+			  });
+			});
+			document.getElementById('more-jilu').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../execution/executionRecord.html', 
+				id:'info'
+			  });
+			});
+			document.getElementById('baoxiu').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../repair/repair.html',
+				id:'info'
+			  });
+			});
+			document.getElementById('myinfo').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../myself/myInfo.html',
+				id:'info'
+			  });
+			});
+			
+			// 弹出菜单
+			mui('.mui-scroll-wrapper').scroll();
+			
+			//选择设备
+			(function($, doc) {
+				$.init();
+				$.ready(function() {
+					/**
+					 * 获取对象属性的值
+					 * 主要用于过滤三级联动中，可能出现的最低级的数据不存在的情况，实际开发中需要注意这一点；
+					 * @param {Object} obj 对象
+					 * @param {String} param 属性名
+					 */
+					var _getParam = function(obj, param) {
+						return obj[param] || '';
+					};
+					//普通示例
+					var userPicker = new $.PopPicker();
+					userPicker.setData([{
+						value: 'dingshi',
+						text: '设备1'
+					}, {
+						value: 'gaopin',
+						text: '设备2'
+					}]);
+					var showUserPickerButton = doc.getElementById('showUserPicker');
+					var userResult = doc.getElementById('userResult');
+					showUserPickerButton.addEventListener('tap', function(event) {
+						userPicker.show(function(items) {
+							//数据为items[0]
+							// userResult.innerText = JSON.stringify(items[0]);
+							//显示文本
+							userResult.innerText = items[0].text;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+					
+				});
+			})(mui, document);
+			
+			
+
+		</script>
+	</body>
+
+</html>

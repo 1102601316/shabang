@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>执行记录</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../font_icon/iconfont.css" rel="stylesheet" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link href="../css/app.css" rel="stylesheet" />
+		<style>
+		</style>
+	</head>
+		
+	<body>
+		
+			<header id="header" class="mui-bar mui-bar-nav backwhite shadow0">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left col333"></a>
+				<h1 class="mui-title col333">执行记录</h1>
+			</header>
+			
+			<div class="mui-content">
+				<div class="my-device">
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell mui-media">
+								<a href="javascript:;">
+									<div class="mui-media-body">
+										<p class='mui-ellipsis log-content fosize1'>
+											设备1
+											<span class="log-name fosize09 fr">张猪猪</span>
+											<span class="icon iconfont icon-ziyuan1 fosize1 colblue fr mr5"></span>
+										</p>
+										<span class="zhuangtai fosize09">[定时]手动开启</span>
+										<span class="log-time fr fosize09">2020-08-11 23:29</span>
+									</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media">
+								<a href="javascript:;">
+									<div class="mui-media-body">
+										<p class='mui-ellipsis log-content fosize1'>
+											设备1
+											<span class="log-name fosize09 fr">系统</span>
+											<span class="icon iconfont icon-ziyuan1 fosize1 colblue fr mr5"></span>
+										</p>
+										<span class="zhuangtai fosize09">[高频]自动开启</span>
+										<span class="log-time fr fosize09">2020-08-11 23:29</span>
+									</div>
+								</a>
+							</li>
+							<!-- <li class="mui-table-view-cell mui-media">
+								<a href="javascript:;">
+									<div class="mui-media-body">
+										<p class='mui-ellipsis log-content fosize09'>高频模式---电磁阀/水泵关闭
+										<span class="fr">设备1</span></p>
+										<span class="icon iconfont icon-ziyuan1 fosize1 colblue"></span>
+										<span class="log-name fosize09">张猪猪</span>
+										<span class="log-time fr fosize09">2020-08-11 23:29</span>
+									</div>
+								</a>
+							</li> -->
+						</ul>
+				</div>
+				
+			</div>
+			
+			
+			
+			
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery-1.11.1.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			$(document).ready(function(){
+				//循环判断
+				$(".mui-table-view-cell").each(function(){
+					if($(this).find(".zhuangtai").html() == '[定时]手动开启'){
+						$(this).find(".zhuangtai").addClass("collv");
+					}else if($(this).find(".zhuangtai").html() == '[高频]自动开启'){
+						$(this).find(".zhuangtai").addClass("colblue");
+					}
+				 });
+			})
+			
+		</script>
+	</body>
+
+</html>

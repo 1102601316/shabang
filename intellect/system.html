@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>系统通知</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../font_icon/iconfont.css" rel="stylesheet" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link href="../css/app.css" rel="stylesheet" />
+		<style>
+			#alert-content {
+				width: 0px;
+				height: 0px;
+				position: fixed;
+				top: 70%;
+				left: 50%;
+			}
+			/*移除底部或顶部三角,需要在删除此代码*/
+			.mui-popover .mui-popover-arrow:after {
+				width: 0px;
+			}
+
+		</style>
+	</head>
+		
+	<body>
+		
+			<header id="header" class="mui-bar mui-bar-nav backwhite shadow0">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left col333"></a>
+				<h1 class="mui-title col333">系统通知</h1>
+				<!-- <button class="mui-btn mui-btn-link mui-pull-right col333 set-up" >设置</button> -->
+			</header>
+			
+			<div class="mui-content">
+				<div class="my-device">
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell mui-media sys-alert">
+								<a href="javascript:;">
+									<div class="mui-media-body">
+										<!-- <div class="fl">
+											<img class="mui-media-object mui-pull-left system-img" src="../images/shuijiao.jpg">
+										</div> -->
+										<p class="fl icon-back icon-img-share backblue">
+											<span class="icon iconfont icon-tongzhi icon-color"></span>
+										</p>
+										<div>
+											<p class='mui-ellipsis log-content fosize09'>
+												<span>测试</span>
+												<span class="fr">07-24 23:29</span>
+											</p>
+											<span class="log-name fosize09">系统</span>
+											<span class="log-time fr fosize09">阅读时间07-24 23:29</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media sys-alert">
+								<a href="javascript:;">
+									<div class="mui-media-body">
+										<p class="fl icon-back icon-img-share backblue">
+											<span class="icon iconfont icon-tongzhi icon-color"></span>
+										</p>
+										<div>
+											<p class='mui-ellipsis log-content fosize09'>
+												<span>测试</span>
+												<span class="fr">07-24 23:29</span>
+											</p>
+											<span class="log-name fosize09">系统</span>
+											<span class="log-time fr fosize09">阅读时间07-24 23:29</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							
+						</ul>
+				</div>
+				
+			</div>
+			<!-- 弹出框 系统通知内容-->
+			<div id="alert-content" class="alert-content"></div>
+			<div id="popover" class="mui-popover sys-popover" style="height:330px;">
+			   <div class="mui-popover-arrow"></div>
+				<div class="sys-pop-title">测试测试</div>
+				<div class="sys-pop-content">
+					<div class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<div>
+							通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="sys-pop-close">
+				<button type="button" class="mui-btn mui-btn-primary sys-pop-btn" >我知道了</button>
+				</div>
+				<p class="sys-pop-time">2020-07-24 23:29</p>
+			</div>
+			<!-- 结束 -->
+			
+			<!-- 弹出框 是否开启通知-->
+			<!-- <div id="open-close" class="alert-content"></div>
+			<div id="open-content" class="mui-popover sys-popover" style="height:200px;">
+			   <div class="mui-popover-arrow"></div>
+				<div class="sys-pop-title">系统通知</div>
+				<div class="sys-pop-content" style="height:50px;">
+					
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell padd0">
+							<span class="fl fosize09 list-form-name">系统通知</span>
+							<div class="mui-switch mui-switch-blue mui-switch-mini" id="mySwitch">
+								<div class="mui-switch-handle"></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div> -->
+			<!-- 结束 -->
+			
+			
+		
+		<script src="../js/mui.min.js "></script>
+		<script src="../js/mui.view.js "></script>
+		<script type="text/javascript">
+			mui.init();
+			mui('.mui-scroll-wrapper').scroll();
+			// 弹出框 详细内容
+			//绑定mui-table-view的子元素sys-alert
+			mui(".mui-table-view").on("tap",".sys-alert",function(){
+				mui("#popover").popover('toggle', document.getElementById("alert-content"));
+				 //当前对象直接就是--->this
+// 				var targetUrl = this.target;
+// 				console.log("你要跳转的地址是："+targetUrl);
+// 				window.location.href=targetUrl;
+
+			});
+			mui(".sys-pop-close").on("tap",".sys-pop-btn",function(){
+				mui("#popover").popover('toggle', document.getElementById("alert-content"));
+			});
+			
+			// 系统通知
+// 			mui(".mui-bar").on("tap",".set-up",function(){
+// 				mui.openWindow({
+// 								url: 'notice.html',
+// 								id:'info'
+// 				});
+// 
+// 			});
+// 			
+			
+
+		</script>
+	</body>
+
+</html>

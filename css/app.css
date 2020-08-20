@@ -1,0 +1,579 @@
+/*
+ *这是单独为hello mui准备的个性化css，可以覆盖标准mui的css定义；
+ * 在实际项目开发时，建议为App单独写一个css文件，从而实现项目的自定义皮肤功能；
+ * 
+ * */
+.mui-plus header.mui-bar{
+	display: none;
+}
+.mui-plus .mui-bar-nav~.mui-content{
+	padding: 0;
+}
+.mui-bar-transparent{
+	background: rgba(64,158,255,0);
+}
+.mui-switch-blue.mui-active{
+	border: 2px solid #409EFF;
+    background-color: #409EFF;
+}
+.mui-content{
+	/* background-color: #f5f5f5; */
+	background-color: #e2e4e7;
+}
+.mui-table-view:before{
+	background-color: #fff;
+}
+.mui-table-view:after{
+	background-color: #fff;
+}
+.mui-card{box-shadow: none;}
+.mui-switch.mui-active .mui-switch-handle{
+	-webkit-transform: translate(48px,0);
+    transform: translate(48px,0);
+}
+.mui-switch-mini.mui-active .mui-switch-handle{
+	-webkit-transform: translate(22px,0);
+    transform: translate(22px,0);
+}
+.mui-switch .mui-switch-handle{    
+	width: 23px;
+    height: 23px;
+	border-radius: 16px;}
+.mui-switch{
+	height: 25px;
+}
+
+/*hm开头的表示仅为 Hello MUI示例定义*/
+.hm-description{
+	margin: .5em 0;
+}
+
+.hm-description>li {
+	font-size: 14px;
+	color: #8f8f94;
+}
+
+html,body {
+	/* background-color: #f5f5f5; */
+	background-color: #e2e4e7;
+}
+
+
+
+
+.bor-radius5{
+	border-radius: 5px;
+}
+.bor-radius20{
+	border-radius: 20px;
+}
+
+.fosize1{
+	font-size:1rem;
+}
+.fosize12{
+	font-size:1.2rem;
+}
+.fosize07{
+	font-size:0.7rem;
+}
+.fosize08{
+	font-size:0.8rem;
+}
+.fosize09{
+	font-size:0.9rem;
+}
+.fosize14{
+	font-size:1.4rem;
+}
+.fosize60{
+	font-size:6rem;
+}
+.icon-back-color{text-align: center;background:#409EFF;}
+/* nav */
+.colwhite{
+	color:#fff;
+}
+.colblue{
+	color:#409EFF;
+}
+.colgrey{
+	color:#999 !important;
+}
+.col666{
+	color:#666 !important;
+}
+.col333{
+	color:#333 !important;
+}
+.colju{
+	color:#f7a921;
+}
+.collv{
+	color:#57d131;
+}
+.colred{
+	color:#f00;
+}
+
+.backblue{
+	background: #409EFF;
+}
+.backwhite{
+	background: #fff;
+}
+.backlv{
+	background: #32c94c;
+}
+.backju{
+	background: #f7a921;
+}
+.backfen{
+	background: #ff80ab;
+}
+.backhuang{
+	background: #f8ce5e;
+}
+.backred{
+	background: #f00;
+}
+
+
+
+
+
+.fr{float: right;}
+.fl{float:left;}
+.ml5{margin-left:0.5rem}
+.ml10{margin-left:10px}
+.ml20{margin-left:20px}
+.ml30{margin-left:30px}
+.ml40{margin-left:40px}
+.mr5{margin-right:0.5rem}
+.mr10{margin-right:10px}
+.mr20{margin-right:20px}
+.m10{margin:10px;}
+.mb0{margin-bottom:0px;}
+.mb10{margin-bottom:10px;}
+.mt10{margin-top: 10px;}
+.mt15{margin-top:15px;}
+.mt20{margin-top:20px;}
+.mt30{margin-top:30px;}
+.mt40{margin-top:40px;}
+.mtb20{margin-top:20px;margin-bottom:20px;}
+.w33{width:33%;}
+.w50{width:50% !important;}
+.w45{width:45% !important;}
+.w40{width:40% !important;}
+.padd0{padding: 0 !important;}
+.h20{
+	height:20px;
+	line-height: 20px;
+}
+
+.porelative{
+	position:relative;
+	overflow: auto;
+}
+.tc{text-align: center;}
+.disnone{display: none;}
+.shadow0{box-shadow: none;border-bottom:#ccc solid 1px;}
+.shadow-none{box-shadow: none;}
+.flex-juzhong{display: flex;justify-content: center;}
+/* icon */
+.icon-back{
+	width:2.3rem;
+	height:2.3rem;
+	border-radius: 1.15rem;
+	
+	display: inline-block;
+}
+
+.icon-color{
+	font-size:1.6rem;
+	color:#fff;
+	line-height: 2.3rem;
+	margin: 0;
+}
+.nav-icon{
+	font-size:1.6rem;
+	margin: 0;
+	display: block;
+}
+.icon-img-share{
+	text-align: center;
+	margin-top:5px;
+	margin-right:5px;
+}
+/* 首页  我的及分享我的设备 */
+.left-title{
+	text-align: left;
+	left: 10px !important;
+}   
+ .img-content{
+	 position: relative;
+	 overflow: auto;
+	 height:250px;
+ }
+.imgback{
+	width: 100%;
+	height:230px;
+	background: url('../images/yuantiao.jpg') no-repeat center;
+	position: relative;
+	overflow: auto;
+}
+.img-div{
+	position: absolute;
+	bottom:20px;
+	color: #fff;
+	margin-left: 20px;
+	width:160px;
+}
+.img-point{
+	width: 80%;
+    height: 40px;
+    border-radius: 10px;
+    background: #fff;
+    margin-left: 10%;
+    position: absolute;
+    bottom: 0px;
+}
+.img-du{
+	width:20%;
+	line-height: 40px;
+	padding-left:10px;
+}
+.img-marquee{
+	width:80%;
+	padding-left:15px;
+}
+.img-marquee-p{
+	line-height: 40px;
+	margin:0 !important;
+}
+
+#topPopover {
+	position: fixed;
+	top: 57px !important;
+	right: 6px;
+}
+#topPopover .mui-popover-arrow {
+	left: auto;
+	right: 6px;
+}
+.change-popover{
+	height: 125px;
+	width:130px;
+}
+.mui-plus .plus{
+	display: inline;
+}
+.plus{
+	display: none;
+}
+/* span.mui-icon {
+	font-size: 14px;
+	color: #007aff;
+	margin-left: -15px;
+	padding-right: 10px;
+} */
+
+
+
+
+.title-h3{
+	font-size: 18px;
+    position: relative;
+    overflow: hidden;
+    margin: 20px 10px;
+	font-weight: normal;}
+.device-ul{
+	margin: 0;
+	padding: 0;
+}
+.already{
+	font-size: 14px;
+	color:#999;
+}
+.not{
+	color:#f00;
+}
+.more{
+	font-size:0.8rem;
+	color:#999;
+	margin-right:1rem;
+}
+
+.list-name{
+	line-height: 2.5rem;
+	margin-left: 0.5rem;
+}
+.list-content{
+	line-height: 2.5rem;
+}
+.title-header{
+	font-size:0.8rem;
+	color:#999;
+	line-height:2rem;
+	margin: 0;
+	margin-left:1rem;
+}
+.log-content{
+	margin-bottom:5px !important;
+	color:#333;
+}
+.log-img{
+	width: 1.6rem;
+    height: 1.6rem !important;
+    border-radius: 0.8rem;
+}
+.log-name,.log-time{
+	color:#999;
+	display: inline-block;
+	line-height:1.6rem;
+}
+.line{
+	height:2.5rem;
+	width:1px;
+	background: #fff;
+	
+}
+.index-guangai {
+    position: relative;
+    overflow: hidden;
+    padding: 11px 15px;
+    -webkit-touch-callout: none;
+}
+
+/* 我的 */
+.myback{
+	width:100%;
+	height:250px;
+	background: url('../images/yuantiao.jpg') no-repeat center;
+	display: flex;
+	justify-content: center; /* 水平居中 */
+    align-items: center;     /* 垂直居中 */
+}
+.imgmyself{
+	width:5rem;
+	height:5rem;
+	border-radius: 2.5rem;
+}
+.myname,.myshebei{
+	text-align: center;
+}
+
+/* 控制 */
+.con-li{
+	width:50%;
+	text-align: center;
+	opacity: 0.6;
+}
+.con-active{
+	font-size:1.2rem;
+	opacity: 1;
+	
+}
+.con-pri{
+	width: 80%;
+    height: 40px;
+    border-radius: 25px;
+	padding: 0 !important;
+}
+.form-div{
+	height:50px !important;
+}
+.form-btn{
+	height:60px !important;
+}
+.form-label{
+	line-height:50px !important;
+	padding:0 15px !important;
+}
+.form-content,.form-icon{
+	line-height:50px !important;
+	margin-right: 5px !important;
+}
+.form-inp-select{
+	line-height: 50px !important;
+    margin-right: 5px !important;
+    float: right !important;
+    padding: 0 !important;
+    height: 50px !important;
+    width: 50% !important;
+	text-align: right;
+}
+.vol-list-img{
+	width:20vh;
+	height:15vh;
+	border-radius: 5vh;
+	display: block;
+	margin-bottom:20px;
+}
+.vol-list-name{
+	font-size: 1.2rem;
+	margin-top:10px;
+	margin-left:20px;
+}
+.vol-list-href{
+	margin-left:20px;
+	margin-top:20px;
+	margin-bottom:20px;
+	font-size:0.9rem;
+	width:10vh;
+	height:4vh;
+	line-height: 4vh;
+	border-radius: 3vh;
+	text-align: center;
+	background: #409EFF;
+	color: #fff;
+}
+.vol-square{
+	display: inline-block;
+	padding:0 5px;
+	border-radius: 2px;
+}
+/* 智能 */
+.execu-title{
+	min-height:40px !important;
+	
+}
+.execu-status{
+	width: 80px;
+    height: 25px;
+    display: inline-block;
+    text-align: center;
+    background: #efeff4;
+    border-radius: 2px;
+    line-height: 25px;
+    color: #333;
+    font-size: 0.8rem;
+}
+.excu-icon{
+	line-height: 25px;
+	margin-left:5px;
+}
+.system-img{
+	width: 2.6rem;
+    height: 2.6rem !important;
+    border-radius: 1.3rem;
+}
+.sys-popover{
+	background: #fff;
+	padding: 20px;
+}
+.sys-pop-title{
+	text-align: center;
+	font-size:1.2rem;
+	font-weight: bold;
+	margin-bottom:30px ;
+	margin-top:20px ;
+}
+.sys-pop-time{
+	text-align: center;
+	font-size:0.7rem ;
+	color: #666;
+	margin-top: 20px;
+}
+.sys-pop-content{
+	font-size: 0.8rem;
+    color: #666;
+    position: relative;
+    overflow: auto;
+    height: 100px;
+}
+.sys-pop-btn,.open-pop-btn{
+	width:230px;
+	height:40px;
+	margin-top:30px;
+	border-radius: 25px;
+}
+
+.warnlist-information{
+	padding:3px 5px;
+	margin:0;
+}
+.amblist{
+	font-size: 0.8rem;
+	position: relative;
+	overflow: hidden;
+	margin: 10px 10px;
+	font-weight: normal;
+}
+.warn-btn{
+	width: 90%;
+	height: 40px;
+	border-radius: 8px;
+	padding: 0 !important;
+}
+.more-btn{
+	width: 80%;
+	height: 30px;
+	border-radius: 8px;
+	padding: 0 !important;
+}
+.reg-input{
+	width:65% !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	border:0 !important;
+}
+.reg-input-ban{
+	width:50% !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	border:0 !important;
+}
+.share-input{
+	width:50% !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	border:0 !important;
+	/* text-align: right; */
+}
+.list-form-name{
+	line-height: 2.5rem;
+	margin-left: 0.5rem;
+	width: 30%;
+	color: #333;
+}
+.repa-li{
+	margin:10px;
+}
+.repa-textarea{
+	height:120px;
+	border-radius:5px;
+	background:#eee;
+	border:0px;
+	width:100%;
+	padding:10px;
+}
+.er-code{
+	width:80%;
+	height:auto;
+	margin-left:10%;
+	background: #f00;
+}
+.plan-xiang{
+	float: right;
+	margin-right: 35px;
+	font-size: 0.8rem;
+	color:#999;
+}
+
+.duigou-p{
+	float: right;
+	width: 24px;
+	height: 24px;
+	padding: 0;
+	border-radius: 12px;
+	color: #fff;
+	border:#999 solid 1px;
+}
+.duigou-a{
+	 display:block;position:relative;width:100%;
+}
+.dui-blue{
+	background: #007aff;
+	border:#007aff solid 1px;
+}

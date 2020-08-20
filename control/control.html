@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>控制</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../font_icon/iconfont.css" rel="stylesheet" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<link href="../css/app.css" rel="stylesheet" />
+		<style>
+			.mui-switch:before{
+				/* content:'停用'; */
+				top:0px;
+			}
+			/* .mui-switch.mui-active:before{
+				content:'启用';
+			} */
+		</style>
+	</head>
+		
+	<body>
+		
+			<header id="header" class="mui-bar mui-bar-nav backblue">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell colwhite con-li fl con-active" id="hand">手动</li>
+					<li class="mui-table-view-cell colwhite con-li fl" id="voluntarily">自动</li>
+				</ul>
+			</header>
+			<nav class="mui-bar mui-bar-tab">
+				<a class="mui-tab-item" data-id="status" id="status">
+					<span class="icon iconfont icon-iconfkzt nav-icon"></span>
+					<span class="mui-tab-label fosize08">状态</span>
+				</a>
+				<a class="mui-tab-item mui-active" data-id="control" id="control">
+					<span class="icon iconfont icon-kongzhi1 nav-icon"></span>
+					<span class="mui-tab-label fosize08">控制</span>
+				</a>
+				<a class="mui-tab-item" data-id="intellect" id="intellect">
+					<span class="icon iconfont icon-tianchongxing- nav-icon"></span>
+					<span class="mui-tab-label fosize08">智能</span>
+				</a>
+				<a class="mui-tab-item" data-id="myself" id="myself">
+					<span class="icon iconfont icon-wode nav-icon"></span>
+					<span class="mui-tab-label fosize08">我的</span>
+				</a>
+			</nav>
+			
+			<div class="mui-content">
+				<div class="my-device">
+					<p class="mb10"></p>
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell each-icon">
+							<div>
+								<p class="fl icon-back tc backblue mr10">
+									<span class="icon iconfont  icon-color"></span>
+								</p>
+								<div>
+									<p class="fosize09 col333 p-name">水泵</p>
+									<span  class="fosize07 colgrey">流量:0</span>
+									<span  class="fosize07 colgrey">压力:0</span>
+								</div>
+							</div>
+							<div class="mui-switch mui-switch-blue mui-active">
+								<div class="mui-switch-handle"></div>
+							</div>
+						</li>
+						<li class="mui-table-view-cell each-icon">
+							<div>
+								<p class="fl icon-back tc backblue mr10">
+									<span class="icon iconfont  icon-color"></span>
+								</p>
+								<div>
+									<p class="fosize09 col333 p-name">电磁阀</p>
+									<span  class="fosize07 colgrey">流量:0</span>
+									<span  class="fosize07 colgrey">压力:0</span>
+								</div>
+							</div>
+							<div class="mui-switch mui-switch-blue mui-active">
+								<div class="mui-switch-handle"></div>
+							</div>
+						</li>
+						<li class="mui-table-view-cell each-icon">
+							<div>
+								<p class="fl icon-back tc backblue mr10">
+									<span class="icon iconfont  icon-color"></span>
+								</p>
+								<div>
+									<p class="fosize09 col333 p-name">棉被</p>
+									<span  class="fosize07 colgrey">流量:0</span>
+									<span  class="fosize07 colgrey">压力:0</span>
+								</div>
+							</div>
+							<div class="mui-switch mui-switch-blue mui-active">
+								<div class="mui-switch-handle"></div>
+							</div>
+						</li>
+						<li class="mui-table-view-cell each-icon">
+							<div>
+								<p class="fl icon-back tc backblue mr10">
+									<span class="icon iconfont  icon-color"></span>
+								</p>
+								<div>
+									<p class="fosize09 col333 p-name">风口</p>
+									<span  class="fosize07 colgrey">流量:0</span>
+									<span  class="fosize07 colgrey">压力:0</span>
+								</div>
+							</div>
+							<div class="mui-switch mui-switch-blue mui-active">
+								<div class="mui-switch-handle"></div>
+							</div>
+						</li>
+						<!-- <li class="mui-table-view-cell">
+							<p class="fl icon-back icon-back-color">
+								<span class="icon iconfont icon-shebei icon-color"></span>
+							</p>
+							<span class="fl fosize1 list-name">DO3</span>
+							<div class="mui-switch mui-switch-blue mui-active">
+								<div class="mui-switch-handle"></div>
+							</div>
+						</li> -->
+					</ul>
+								
+				</div>
+				
+			</div>
+			
+			
+			
+			
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery-1.11.1.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			//打开新页面
+			document.getElementById('myself').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../myself/myself.html', 
+				id:'info'
+			  });
+			});
+			document.getElementById('intellect').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../intellect/intellect.html', 
+				id:'info'
+			  });
+			});
+			document.getElementById('control').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../control/control.html', 
+				id:'info'
+			  });
+			});
+			document.getElementById('status').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../index/index.html', 
+				id:'info'
+			  });
+			});
+			document.getElementById('voluntarily').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../control/voluntarilyList.html', 
+				id:'info'
+			  });
+			});
+			document.getElementById('hand').addEventListener('tap', function() {
+			  mui.openWindow({
+				url: '../control/control.html', 
+				id:'info'
+			  });
+			});
+			
+			
+			//手动控制开关
+			mui(".mui-table-view-cell").on("toggle",'.mui-switch',function(event){
+			  if(event.detail.isActive){
+				console.log("你启动了开关");
+			  }else{
+				console.log("你关闭了开关");  
+			  }
+			})
+			
+			
+			$(document).ready(function(){
+				//循环判断图标样式
+				$(".each-icon").each(function(){
+					if($(this).find(".p-name").html() == '水泵'){
+						$(this).find(".iconfont").addClass("icon-shuibeng");
+					}else if($(this).find(".p-name").html() == '电磁阀'){
+						$(this).find(".iconfont").addClass("icon-famen");
+					}else if($(this).find(".p-name").html() == '棉被'){
+						$(this).find(".iconfont").addClass("icon-mianbei");
+					}else if($(this).find(".p-name").html() == '风口'){
+						$(this).find(".iconfont").addClass("icon-wind");
+					}else{
+						$(this).find(".iconfont").addClass("icon-huabanfuben");
+					}
+				 });
+			})
+		</script>
+	</body>
+
+</html>
