@@ -370,8 +370,8 @@
                                 <div class="mui-card-header">就</div>
                                 <div class="mui-card-content">
                                     <div class="mui-card-content-inner">
-                                        <ul class="mui-table-view">
-                                            <li class="mui-table-view-cell padd0" id="">
+                                        <ul class="mui-table-view select-result">
+                                            <li class="mui-table-view-cell padd0">
                                                 <a href="javascript:;" class="mui-navigate-right" style="margin:0;">
                                                     <label class="fl fosize09 list-form-name">轮灌程序</label>
 
@@ -1101,14 +1101,23 @@
                         '</li>';
                 }
             });
-            $(".select-trem").html(select_tremHtml);
+            $(".select-trem").append(select_tremHtml);
         })
 
 		//结果选则完成
 		$(".result-finish").on('tap', function () {
-		    console.log(result_arr)
+
+            $('.check-result li').each(function (i,item) {
+                if($(item).data('status')==1){
+                    result_arr.push({name:$(item).find('label').text(),text:'打开'})
+                }else if($(item).data('status')==2){
+                    result_arr.push({name:$(item).find('label').text(),text:'关闭'})
+                }
+            })
+            console.log(result_arr)
 			var select_resultHtml = '';
 			$.each(result_arr, function (index, value) { //已添加条件结果列表
+			    console.log(value)
 				if (value.text) {
 					select_resultHtml += '<li class="mui-table-view-cell padd0">' +
 							'<a href="javascript:;" class="mui-navigate-right" style="margin:0;" >' +
@@ -1118,7 +1127,7 @@
 							'</li>';
 				}
 			});
-			$(".select-trem").html(select_resultHtml);
+			$(".select-result").append(select_resultHtml);
 		})
 
         //分
